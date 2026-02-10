@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pivot Health - Privacy Policy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                
+                    colors: {
+                        'pivot-blue': '#3B82F6',
+                        'pivot-teal': '#0EA5E9',
+                        'pivot-dark': '#1E293B',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Global font application */
+        html, body {
+            font-family: 'EB Garamond', serif !important;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* All elements inherit the font */
+        * {
+            font-family: inherit;
+        }
+        
+        /* Ensure proper font loading with fallback */
+        @font-face {
+            font-family: 'EB Garamond';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('EB Garamond'), url(https://fonts.gstatic.com/s/ebgaramond/v27/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-6_RUA4V-e6yH.woff2) format('woff2');
+        }
+        </style>
+
+    <style>
+        .icon-container {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover .icon-container {
+            transform: scale(1.1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .btn-evidence {
+            transition: all 0.3s ease;
+        }
+
+        .btn-evidence:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+
+    <style>
+        .bg-pattern {
+            background-color: #f8f9fa;
+            background-image: radial-gradient(#e6e9ed 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .quote-marks {
+            font-size: 6rem;
+            line-height: 0;
+            height: 40px;
+            display: inline-block;
+            color: rgba(23, 118, 142, 0.15);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .quote-marks {
+                font-size: 4rem;
+                top: -5px;
+                left: -20px;
+            }
+        }
+    </style>
+
+    <style>
+        .step-number {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 300;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            z-index: 1;
+            color: #1f2937;
+        }
+
+        .timeline-line {
+            height: 1px;
+            background-color: #e2e8f0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+
+ 
+
+   
+    <style>
+        .heart_hero_btn {
+            transition: all 0.3s ease;
+        }
+
+        .heart_hero_btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 128, 155, 0.3);
+        }
+
+        .heart_hero_image {
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .heart_hero_card {
+            background: linear-gradient(to right, #ffffff, #f7fafc);
+        }
+    </style>
+
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to bottom right, #FF9D6C, #FF5E62);
+            height: 200px;
+        }
+
+        .image-column-up {
+            animation: scrollUp 30s linear infinite;
+        }
+
+        .image-column-down {
+            animation: scrollDown 30s linear infinite;
+        }
+
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        @keyframes scrollDown {
+            0% {
+                transform: translateY(-50%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bpm-badge {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart-icon {
+            color: #FF5E62;
+            margin-left: 5px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+    </style>
+       <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+    
+</head>
+
+<body class=" antialiased">
+
+    <!-- Navbar -->
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div class="max-w-7xl px-6 py-3 md:py-4 border  lg:px-8 rounded-full bg-white/30 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-28 h-auto">
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+                <!--<a href="#about" class="text-black hover:text-teal-200 transition-colors">About</a>-->
+                <!-- Programs with dropdown -->
+                
+                 <a href="/" class="text-black hover:text-blue-600 transition-colors">Home</a>
+                
+                                    <a href="about-us" class="text-black hover:text-blue-600 transition-colors">About Us</a>
+
+                <div class="relative group">
+                    <a href="#programs" class="text-black hover:text-blue-600 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="/heartspan.html" class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="relative group">-->
+                <!--    <a href="#evidences" class="text-black hover:text-blue-600 transition-colors">Evidences</a>-->
+                    <!-- Dropdown menu -->
+                <!--    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">-->
+                <!--        <div class="py-2">-->
+                            <!-- HeartSpan - clickable -->
+                <!--            <a href="/heartspan-evidence" class="block px-4 py-2 text-gray-800 hover:bg-teal-500 hover:text-white transition-colors">-->
+                <!--                HeartSpan Evidence-->
+                <!--            </a>-->
+                            <!-- GutSpan - with clock icon -->
+                <!--            <div class="block px-4 py-2 text-gray-500 flex items-center">-->
+                <!--                <span class="mr-2">GutSpan Evidence</span>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                            <!-- BrainSpan - with clock icon -->
+                <!--            <div class="block px-4 py-2 text-gray-500 flex items-center">-->
+                <!--                <span class="mr-2">BrainSpan Evidence</span>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+                                    <a href="index#contact" class="text-black hover:text-blue-600 transition-colors">Contact</a>
+
+                <!--<a href="#testimonials" class="text-black hover:text-teal-200 transition-colors">Testimonials</a>-->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="/heartspan.html" class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                                        <a href="index#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+
+                    <!--<a href="#testimonials" class="text-gray-800 hover:text-teal-500 transition-colors">Testimonials</a>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+        <div class="w-full max-h-[80vh] md:flex md:mx-auto justify-center items-center md:overflow-hidden bg-gray-100 p-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8 py-8">
+             
+            </div>
+        </div>
+
+        <!-- Gradient background at bottom -->
+        <!-- <div class="gradient-bg w-full"></div> -->
+    </div>
+    
+       <header class="bg-blue-900 text-white py-6 sticky top-0 z-10 shadow-md items-center">
+        <div class="container mx-auto px-4 items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">Privacy Policy</h1>
+            <p class="mt-1 text-center">Virtus Growth Labs Private Limited - Pivot Health</p>
+        </div>
+  </header>
+
+
+    <!--<header class="bg-indigo-600 text-white py-6 sticky top-0 z-10 shadow-md">-->
+    <!--    <div class="container mx-auto px-4">-->
+    <!--        <h1 class="text-2xl md:text-3xl font-bold">Privacy Policy</h1>-->
+    <!--        <p class="mt-1">Virtus Growth Labs Private Limited - Pivot Health</p>-->
+    <!--    </div>-->
+    <!--</header>-->
+
+    <main class="container mx-auto px-4 py-6 max-w-4xl">
+        <!-- Table of Contents -->
+        <div class="bg-white shadow rounded-lg p-4 mb-6">
+            <h2 class="text-xl font-bold mb-3">Contents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <a href="#introduction" class="text-blue-600 hover:text-blue-800">Introduction</a>
+                <a href="#information-collected" class="text-blue-600 hover:text-blue-800">1. Information We Collect</a>
+                <a href="#information-usage" class="text-blue-600 hover:text-blue-800">2. How We Use Your Information</a>
+                <a href="#legal-basis" class="text-blue-600 hover:text-blue-800">3. Legal Basis for Processing</a>
+                <a href="#consent" class="text-blue-600 hover:text-blue-800">4. Consent and Withdrawal</a>
+                <a href="#sharing" class="text-blue-600 hover:text-blue-800">5. Sharing of Information</a>
+                <a href="#international" class="text-blue-600 hover:text-blue-800">6. International Data Transfers</a>
+                <a href="#storage" class="text-blue-600 hover:text-blue-800">7. Data Storage and Security</a>
+                <a href="#user-rights" class="text-blue-600 hover:text-blue-800">8. User Rights</a>
+                <a href="#minors" class="text-blue-600 hover:text-blue-800">9. Minors' Data</a>
+                <a href="#cookies" class="text-blue-600 hover:text-blue-800">10. Cookies and Tracking</a>
+                <a href="#device" class="text-blue-600 hover:text-blue-800">11. Device and Metadata</a>
+                <a href="#advertising" class="text-blue-600 hover:text-blue-800">12. Advertising</a>
+                <a href="#anonymized" class="text-blue-600 hover:text-blue-800">13. Anonymized Data</a>
+                <a href="#notifications" class="text-blue-600 hover:text-blue-800">14. Notifications</a>
+                <a href="#updates" class="text-blue-600 hover:text-blue-800">15. Updates to Policy</a>
+                <a href="#governing-law" class="text-blue-600 hover:text-blue-800">16. Governing Law</a>
+                <a href="#contact" class="text-blue-600 hover:text-blue-800">17. Contact Information</a>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <section id="introduction" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">Introduction</h2>
+            <p class="text-gray-600 mb-4">Last updated: April 2025</p>
+            <p class="mb-3">Thank you for choosing to be part of our community at Virtus Growth Labs Pvt. Ltd., operating through our health and wellness website www.thepivothealth.com ("Virtus", "Pivot", "Pivot Health", "we", "us", or "our"). We are committed to protecting your personal information and your right to privacy.</p>
+            <p class="mb-3">This privacy policy applies to all information collected through our website (www.thepivothealth.com), mobile application, chat applications (e.g., WhatsApp), social media accounts, email survey forms, email, and/or any related services, sales, marketing, or events, website of the parent Virtus called www.velocityx.in and/or buying our Program(s) and/or plans, and using our products (we refer to them collectively in this Privacy Policy as the "Services").</p>
+            <p class="mb-3">This document is an electronic record in terms of the Digital Personal Data Protection Act, 2023 and rules made there under as applicable. No physical or digital signatures are required, being an electronic record.</p>
+            <p>By using our Services, you trust us with your personal information and agree to all the terms of this Privacy Policy. We take your privacy very seriously. We hope you take some time to read through this document carefully, as it is important. If you do not agree with the terms under this Privacy Policy, please discontinue use of our website(s) and/or our Services.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Information We Collect -->
+        <section id="information-collected" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">1. What Information Do We Collect?</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Personal identification data</strong> (e.g., name, email address, phone number, birth date, gender, picture, photographs, mailing address)</li>
+                <li><strong>Health-related data</strong> (e.g., blood reports data, weight, height, food preferences, nutrition data, workouts, steps, sleep data, SPO2, HRV, body temperature, medical conditions, health goals)</li>
+                <li><strong>Payment information</strong> (only name and billing address, not card details)</li>
+                <li><strong>Automatically collected data</strong> (e.g., IP address, device and browser information, usage patterns, location, metadata)</li>
+                <li><strong>Data from third party devices, mobile and messaging apps</strong> (e.g., geo-location, device access, push notifications)</li>
+                <li><strong>Usage data</strong> (e.g., cookies, pixel tags, analytics tools, mobile and web logs, timestamps, interaction data)</li>
+                <li><strong>Information from third-party integrations</strong> (e.g., HealthKit, Google Fit, Apple Health, email, social media login data)</li>
+                <li><strong>Data from Integrated Health Apps and devices:</strong> If you connect your Apple Watch or Apple Health, Morpheus Training, or similar applications with our Services, we may access certain health metrics (e.g., heart rate, HRV, step count, activity data, sleep). This data is only accessed with your explicit consent and is used solely to enhance our wellness recommendations and progress tracking.</li>
+                <li><strong>Your Contributions:</strong> Information and content you provide, including content, communications and other information you provide when you use our Products and Services, including when you sign up for an account, create or share content, and message or communicate with others.</li>
+            </ul>
+            <p class="mt-4">Some information – such as IP address and/or browser and device characteristics – is collected automatically when you visit our Website or access our Services or Apps.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- How We Use Your Information -->
+        <section id="information-usage" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">2. How Do We Use Your Information?</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>To create and manage user accounts</li>
+                <li>To deliver and personalize our Services</li>
+                <li>For marketing and promotional communication as well as Testimonials on our website(s) and other social media channels (with consent)</li>
+                <li>To fulfill and manage orders (including third-party delivery)</li>
+                <li>For analytics, improvement, and development of Services</li>
+                <li>To track progress and personalize health reports</li>
+                <li>For compliance with legal requirements</li>
+                <li>For risk monitoring, fraud detection, and platform optimization</li>
+            </ul>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Legal Basis for Processing -->
+        <section id="legal-basis" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">3. Legal Basis for Processing</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Consent</li>
+                <li>Legitimate interest</li>
+                <li>Contractual necessity</li>
+                <li>Legal obligations</li>
+            </ul>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Consent and Withdrawal -->
+        <section id="consent" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">4. Consent and Withdrawal</h2>
+            <p>By using our Services, you provide explicit consent for the collection, use, and processing of your personal and health-related data. You may withdraw consent at any time by emailing us at ankur@thepivothealth.com. Upon withdrawal, we may no longer be able to offer our Services to you. We will retain necessary data for up to 180 days after withdrawal for legal or transactional requirements.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Sharing of Information -->
+        <section id="sharing" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">5. Sharing of Information</h2>
+            <p class="mb-3">We may share your data with:</p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Third-party vendors and service providers (e.g., payment processors, delivery partners, analytics tools, marketing platforms, healthcare apps and devices)</li>
+                <li>Cloud storage providers such as Amazon Web Services (AWS) and Google Workspace</li>
+                <li>Legal authorities, if required by law or regulation</li>
+                <li>In case of mergers or acquisitions, with the acquiring entity (with continued privacy safeguards)</li>
+            </ul>
+            <p class="mt-3">We do not sell or rent your data to third parties for marketing purposes without consent.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- International Data Transfers -->
+        <section id="international" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">6. International Data Transfers</h2>
+            <p>Your data may be transferred to and processed in countries outside your own, including India, the EU, and others via third-party tools. We take appropriate safeguards to ensure data protection.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Data Storage and Security -->
+        <section id="storage" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">7. Data Storage and Security</h2>
+            <p class="mb-3">Your data is stored on Amazon Web Services (AWS) and Google Workspace. To protect your personal information, we take reasonable precautions and follow practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p>
+            <p>However, no method of transmission or storage is 100% secure. Users are encouraged to safeguard passwords and log out after use.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- User Rights -->
+        <section id="user-rights" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">8. User Rights</h2>
+            <p class="mb-3">Users have the right to:</p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Access, rectify, or delete their data</li>
+                <li>Withdraw consent at any time</li>
+                <li>Object to processing</li>
+                <li>Request data portability</li>
+                <li>Lodge a complaint with data protection authorities</li>
+            </ul>
+            <p class="mt-3">To exercise these rights, contact us at ankur@thepivothealth.com. Correction of personal information or retrieval of access credentials can also be requested via this email.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Minors' Data -->
+        <section id="minors" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">9. Minors' Data</h2>
+            <p>Our Services are intended for individuals aged 18 or older. If we become aware of any data collected from minors without guardian consent, we will promptly delete it. Guardians may contact the Grievance Officer to request deletion.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Cookies and Tracking -->
+        <section id="cookies" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">10. Cookies and Tracking Technologies</h2>
+            <p>We use cookies, pixels, and analytics tools (e.g., Google Analytics, Facebook Pixel) to personalize experiences and analyze usage. You may manage cookie settings in your browser. Some services may be impacted if cookies are disabled.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Device and Metadata -->
+        <section id="device" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">11. Device and Metadata Usage</h2>
+            <p>We collect metadata such as device ID, browser version, app activity, and feature usage. This data is used for analytics, fraud detection, and service optimization.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Advertising -->
+        <section id="advertising" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">12. Advertising and Remarketing</h2>
+            <p>We may use third-party platforms to deliver targeted advertisements based on your interaction with our Services. These may include pixels or tracking technologies. Users can opt out via industry-standard opt-out tools.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Anonymized Data -->
+        <section id="anonymized" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">13. Aggregated and Anonymized Data</h2>
+            <p>We may use anonymized and aggregated data for research, analytics, or product development purposes. This data cannot identify any individual user.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Notifications -->
+        <section id="notifications" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">14. Notifications and Compliance</h2>
+            <p>We may send periodic notifications about updates to this policy or important service information. Users will be informed annually of their rights and our right to suspend access for non-compliance with this policy or Terms of Use.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Updates to Policy -->
+        <section id="updates" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">15. Updates to this Policy</h2>
+            <p>We may update this privacy policy periodically. The updated version will carry a revision date. If material changes are made, users will be notified via email or a website notice.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Governing Law -->
+        <section id="governing-law" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">16. Governing Law and Jurisdiction</h2>
+            <p>This policy is governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Delhi.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+
+        <!-- Contact Information -->
+        <section id="contact" class="section bg-white shadow rounded-lg p-5 mb-6">
+            <h2 class="text-xl font-bold mb-3 text-blue-700">17. Contact Information</h2>
+            <p>If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Grievance Officer at <a href="mailto:ankur@thepivothealth.com" class="text-blue-600 hover:underline">ankur@thepivothealth.com</a>.</p>
+            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800">Back to top ↑</a>
+        </section>
+    </main>
+
+
+  
+
+
+
+
+
+
+        <!-- Footer -->
+    <footer class="py-12 bg-teal-50">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="assets/pivot-logo-old.png" alt="Pivot Logo" class="w-32 h-auto">
+            </div>
+
+            <!-- Description -->
+            <!--<p class="text-gray-600 max-w-3xl mx-auto mb-6">-->
+            <!--    Lifestyle Medicine is dedicated to helping you improve your health through evidence-based lifestyle-->
+            <!--    changes-->
+            <!--    that can prevent, treat, and reverse chronic disease.-->
+            <!--</p>-->
+
+            <!-- Contact Link -->
+             <div>
+                    <a href="index#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                                        <a href="privacy-policy" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy |</a>
+                    <a href="t&c" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms and Conditions |</a>
+                                        <a href="terms&conditions" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms </a>
+
+
+            
+        </div>
+            <!--<a href="#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact-->
+            <!--    Us</a>-->
+
+            <!-- Copyright -->
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Pivot Healthcare. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+  <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+  // Select the hamburger button and mobile menu
+  const menuButton = document.querySelector('.md\\:hidden.focus\\:outline-none');
+  const mobileMenu = document.querySelector('.hidden.absolute.top-full');
+  
+  // Toggle mobile menu when hamburger is clicked
+  menuButton.addEventListener('click', function() {
+    mobileMenu.classList.toggle('hidden');
+  });
+  
+  // For the Programs dropdown in mobile view
+  const mobilePrograms = document.querySelector('.mobile-programs-dropdown, .relative button');
+  const mobileProgramsMenu = document.querySelector('.pl-4.mt-2.hidden');
+  
+  if (mobilePrograms && mobileProgramsMenu) {
+    mobilePrograms.addEventListener('click', function() {
+      mobileProgramsMenu.classList.toggle('hidden');
+    });
+  }
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = mobileMenu.contains(event.target);
+    const isClickOnButton = menuButton.contains(event.target);
+    
+    if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+  
+  // Close mobile menu when window resizes to desktop size
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) { // md breakpoint in Tailwind
+      mobileMenu.classList.add('hidden');
+      if (mobileProgramsMenu) {
+        mobileProgramsMenu.classList.add('hidden');
+      }
+    }
+  });
+});
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animation for each reveal element
+            gsap.utils.toArray('.reveal').forEach(element => {
+                gsap.fromTo(element,
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.7, ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            // Timeline line animation (desktop only)
+            if (window.innerWidth >= 1024) {
+                gsap.fromTo('.timeline-line',
+                    { scaleX: 0, transformOrigin: "left center" },
+                    {
+                        scaleX: 1, duration: 1.2, ease: "power1.inOut",
+                        scrollTrigger: {
+                            trigger: '.timeline-line',
+                            start: "top 80%"
+                        }
+                    }
+                );
+            }
+
+            // Step number animation
+            gsap.utils.toArray('.step-number').forEach((step, index) => {
+                gsap.fromTo(step,
+                    { scale: 0.8, opacity: 0 },
+                    {
+                        scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.5)",
+                        scrollTrigger: {
+                            trigger: step,
+                            start: "top 85%"
+                        },
+                        delay: 0.2 + (index * 0.1)
+                    }
+                );
+            });
+        });
+    </script>
+
+    <script>
+        function toggleCollapsible(element) {
+            const parent = element.parentElement;
+            const wasActive = parent.classList.contains('hp-active');
+            const index = parent.getAttribute('data-index');
+
+            // Close all collapsibles
+            document.querySelectorAll('.hp-collapsible').forEach(item => {
+                item.classList.remove('hp-active');
+                const content = item.querySelector('.hp-collapsible-content');
+                content.style.display = 'none';
+            });
+
+            // Update indicators
+            document.querySelectorAll('.hp-indicator').forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+
+            // If clicked one wasn't active, open it
+            if (!wasActive) {
+                parent.classList.add('hp-active');
+                const content = parent.querySelector('.hp-collapsible-content');
+                content.style.display = 'block';
+
+                // Update indicator
+                document.querySelector(`.hp-indicator[data-index="${index}"]`).classList.add('active');
+            }
+        }
+
+        // Initialize - set first item active
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const firstItem = document.querySelector('.hp-collapsible');
+        //     const firstIndicator = document.querySelector('.hp-indicator');
+
+        //     if (firstItem && firstIndicator) {
+        //         firstItem.classList.add('hp-active');
+        //         firstItem.querySelector('.hp-collapsible-content').style.display = 'block';
+        //         firstIndicator.classList.add('active');
+        //     }
+        // });
+    </script>
+
+    <script>
+        // Function to ensure columns are properly initialized 
+        document.addEventListener('DOMContentLoaded', function () {
+            // Start with the right column showing the first set of images
+            const downColumn = document.querySelector('.image-column-down');
+            downColumn.style.transform = 'translateY(-50%)';
+
+            // After animation completes, adjust for seamless looping if needed
+            document.querySelectorAll('.image-column-up, .image-column-down').forEach(column => {
+                column.addEventListener('animationiteration', () => {
+                    // This helps ensure the animation remains smooth
+                    column.style.animationPlayState = 'running';
+                });
+            });
+        });
+    </script>
+        <script>
+        // Animation utility
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Select all sections to animate
+            document.querySelectorAll('section, .animate-fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+    <style>
+        /* Simple animations */
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* For intersection observer */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        section.fade-in-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</html>

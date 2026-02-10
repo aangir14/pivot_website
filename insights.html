@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore our latest insights, articles, and thought leadership on industry trends and innovations.">
+    <title>Insights | Latest Articles and Thought Leadership</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        'pivot-blue': '#3B82F6',
+                        'pivot-teal': '#0EA5E9',
+                        'pivot-dark': '#1E293B',
+                    },
+                    animation: {
+                        'twinkle': 'twinkle 2s infinite ease-in-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        twinkle: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.5))' },
+                            '50%': { filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 0.8))' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Global font application */
+        html,
+        body {
+            font-family: 'EB Garamond', serif !important;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* All elements inherit the font */
+        * {
+            font-family: inherit;
+        }
+
+        /* Ensure proper font loading with fallback */
+        @font-face {
+            font-family: 'EB Garamond';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('EB Garamond'), url(https://fonts.gstatic.com/s/ebgaramond/v27/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-6_RUA4V-e6yH.woff2) format('woff2');
+        }
+    </style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Optimize font rendering */
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Fade-in animation for blog cards */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .insightsPage-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Image container styling */
+        .insightsPage-blog-image {
+            background-color: #f3f4f6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Aspect ratio container */
+        .insightsPage-aspect-ratio {
+            height: 0;
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
+            position: relative;
+        }
+
+        .insightsPage-aspect-ratio>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div
+            class="max-w-7xl px-6 py-3 md:py-4  lg:px-8 rounded-full bg-black/5 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-28 h-auto">
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+
+                <a href="/" class="text-black hover:text-teal-600 transition-colors">Home</a>
+
+                <a href="/insights" class="text-black hover:text-teal-600 transition-colors">Insights</a>
+
+                <a href="about-us" class="text-black hover:text-teal-600 transition-colors">About Us</a>
+                <!-- Programs with dropdown -->
+
+                <div class="relative group">
+
+                    <a href="#programs" class="text-black hover:text-teal-500 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="/heartspan.html"
+                                class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- HeartSpan Corporate -->
+                            <a href="/corporate-heartspan.html"
+                                class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan — Corporate
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/#testimonials" class="text-black hover:text-teal-500 transition-colors">Client Stories</a>
+                <a href="/#contact" class="text-black hover:text-teal-500 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div
+                class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <!--<a href="#about" class="text-gray-800 hover:text-teal-500 transition-colors">About</a>-->
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button
+                            class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="/heartspan.html"
+                                class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <a href="/corporate-heartspan.html"
+                                class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan —
+                                Corporate</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/#testimonials" class="text-gray-800 hover:text-teal-500 transition-colors">Client
+                        Stories</a>
+                    <a href="/#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <main id="insightsPage ">
+        <!-- Hero Section -->
+        <section class="bg-gray-50 py-16 md:pb-24 pt-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                    <div class="mb-8 lg:mb-0">
+                        <span class="text-blue-600 font-medium text-sm tracking-wide uppercase">Featured Insight</span>
+                        <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">Navigating Health
+                            amidst the Modern-Day Chaos: Striking the Balance</h1>
+                        <p class="mt-4 text-xl text-gray-500">Modern life brings with it a unique set of health
+                            challenges. The pressure to perform, achieve, and constantly stay busy can result in both
+                            physical and mental strain. </p>
+                        <!--<div class="mt-6 flex items-center">-->
+                        <!--    <div class="flex-shrink-0">-->
+                        <!--        <img class="h-10 w-10 object-cover rounded-full" src="assets/ankur.png" alt="Ankur Bhatia" />-->
+                        <!--    </div>-->
+                        <!--    <div class="ml-3">-->
+                        <!--        <p class="text-sm font-medium text-gray-900">Ankur Bhatia</p>-->
+                        <!--        <div class="flex space-x-1 text-sm text-gray-500">-->
+                        <!--            <span>Chief Coach</span>-->
+                        <!--            <span>&middot;</span>-->
+                        <!--            <time datetime="2025-04-05">March 12, 2025</time>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        <div class="mt-8">
+                            <a href="/blogs/navigating-health"
+                                class="inline-flex items-center border-b-2 border-blue-600 font-medium text-blue-600 pb-1 hover:text-blue-800 hover:border-blue-800 transition-colors">
+                                Read article
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="insightsPage-aspect-ratio">
+                        <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?q=80&w=2998&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="The Future of Digital Innovation" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 pb-6 mb-6">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900">All Insights</h2>
+                <div class="mt-4 sm:mt-0 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <!-- Categories Filter -->
+                    <div class="insightsPage-filter relative" id="categoryFilter">
+                        <button id="categoryButton"
+                            class="flex items-center justify-between w-48 px-4 py-2 text-sm bg-white border border-gray-300 text-gray-700">
+                            <span>All Categories</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="categoryDropdown"
+                            class="absolute z-10 mt-1 w-48 bg-white border border-gray-300 divide-y divide-gray-200 hidden">
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-category="all">
+                                All Categories
+                            </button>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-category="technology">
+                                Technology
+                            </button>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-category="sustainability">
+                                Sustainability
+                            </button>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-category="workplace">
+                                Workplace
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sort Filter -->
+                    <div class="insightsPage-filter relative" id="sortFilter">
+                        <button id="sortButton"
+                            class="flex items-center justify-between w-48 px-4 py-2 text-sm bg-white border border-gray-300 text-gray-700">
+                            <span>Most Recent</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="sortDropdown"
+                            class="absolute z-10 mt-1 w-48 bg-white border border-gray-300 divide-y divide-gray-200 hidden">
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-sort="recent">
+                                Most Recent
+                            </button>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-sort="oldest">
+                                Oldest First
+                            </button>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-sort="az">
+                                A-Z
+                            </button>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                                data-sort="za">
+                                Z-A
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="blogGrid">
+                <!-- Blog 1 -->
+                <article class="insightsPage-blog-card insightsPage-fade-in hover:text-blue-600"
+                    data-category="sustainability" data-date="2025-03-18"
+                    data-title="Sustainable Business Practices for 2025">
+                    <a href="/blogs/the-buzz-about-habits" class="insightsPage-blog-image block mb-5">
+                        <div class="insightsPage-aspect-ratio">
+                            <img src="https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="The Buzz About Habits: Making and Breaking" loading="lazy" />
+                        </div>
+                    </a>
+                    <div class="flex-1 flex flex-col">
+                        <div class="mb-2">
+                            <span class="inline-block text-xs font-medium text-blue-600 uppercase">Sustainability</span>
+                        </div>
+                        <a href="/blogs/the-buzz-about-habits" class="block mb-3">
+                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">The Buzz
+                                About Habits: Making and Breaking</h3>
+                        </a>
+                        <p class="text-gray-600 mb-4 flex-grow">Considering we have a certain level of free will that we
+                            get to exercise independently, crafting our life in the way we want to should be a rather
+                            smooth ride. In a land far away from our own, this might be true, but here on Earth, human
+                            minds offer a rather bumpy journey.</p>
+                        <div class="flex items-center text-sm">
+                            <!--<div class="flex-shrink-0">-->
+                            <!--    <img class="h-8 w-8 object-cover" src="/api/placeholder/80/80" alt="James Wilson" />-->
+                            <!--</div>-->
+                            <div class="ml-3">
+                                <!--<p class="font-medium text-gray-900">James Wilson</p>-->
+                                <div class="flex items-center text-gray-500">
+                                    <span>Ankur Bhatia</span>
+                                    <span class="mx-1">&middot;</span>
+                                    <time datetime="2025-03-22">March 18, 2025</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog 2 -->
+                <article class="insightsPage-blog-card insightsPage-fade-in" data-category="technology"
+                    data-date="2025-03-12" data-title="The AI Revolution in Healthcare">
+                    <a href="/blogs/navigating-health" class="insightsPage-blog-image block mb-5">
+                        <div class="insightsPage-aspect-ratio">
+                            <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?q=80&w=2998&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="The AI Revolution in Healthcare" loading="lazy" />
+                        </div>
+                    </a>
+                    <div class="flex-1 flex flex-col">
+                        <div class="mb-2">
+                            <span class="inline-block text-xs font-medium text-blue-600 uppercase">Technology</span>
+                        </div>
+                        <a href="/blogs/navigating-health" class="block mb-3">
+                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Navigating
+                                Health amidst the Modern-Day Chaos: Striking the Balance</h3>
+                        </a>
+                        <p class="text-gray-600 mb-4 flex-grow">In the fast-paced world of today, where time is a
+                            precious commodity and the demands of work, family, and personal aspirations never seem to
+                            slow down, maintaining good health often feels like a daunting challenge.The modern
+                            lifestyle, with its constant hustle...</p>
+                        <div class="flex items-center text-sm">
+                            <!--<div class="flex-shrink-0">-->
+                            <!--    <img class="h-8 w-8 object-cover" src="/api/placeholder/80/80" alt="Dr. Michael Chen" />-->
+                            <!--</div>-->
+                            <div class="ml-3">
+                                <!--<p class="font-medium text-gray-900">Dr. Michael Chen</p>-->
+                                <div class="flex items-center text-gray-500">
+                                    <span>Ankur Bhatia</span>
+                                    <span class="mx-1">&middot;</span>
+                                    <time datetime="2025-03-15">March 12, 2025</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog 3 -->
+                <article class="insightsPage-blog-card insightsPage-fade-in" data-category="workplace"
+                    data-date="2025-03-08" data-title="Zone 2 Cardio and Cardiac Health">
+                    <a href="/blogs/zone-cardio" class="insightsPage-blog-image block mb-5">
+                        <div class="insightsPage-aspect-ratio">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Zone 2 Cardio and Cardiac Health" loading="lazy" />
+                        </div>
+                    </a>
+                    <div class="flex-1 flex flex-col">
+                        <div class="mb-2">
+                            <span class="inline-block text-xs font-medium text-blue-600 uppercase">Workplace</span>
+                        </div>
+                        <a href="/blogs/zone-cardio" class="block mb-3">
+                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Zone 2
+                                Cardio and Cardiac Health</h3>
+                        </a>
+                        <p class="text-gray-600 mb-4 flex-grow">From the lens of children, running is majorly divided
+                            into 2 categories - sprints and slow running. However, the categories and potential running
+                            or cardio in general holds extends beyond those 2 categories. Running or cardio training is
+                            divided into five heart rate zones, each targeting different fitness goals and energy
+                            systems.</p>
+                        <div class="flex items-center text-sm">
+                            <!--<div class="flex-shrink-0">-->
+                            <!--    <img class="h-8 w-8 object-cover" src="/api/placeholder/80/80" alt="Emily Rodriguez" />-->
+                            <!--</div>-->
+                            <div class="ml-3">
+                                <!--<p class="font-medium text-gray-900">Emily Rodriguez</p>-->
+                                <div class="flex items-center text-gray-500">
+                                    <span>Ankur Bhatia</span>
+                                    <span class="mx-1">&middot;</span>
+                                    <time datetime="2025-03-05">March 5, 2025</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog 4 -->
+                <article class="insightsPage-blog-card insightsPage-fade-in" data-category="workplace"
+                    data-date="2025-03-08"
+                    data-title="The Spheres of Control: Taking Charge of Your Health with Balance">
+                    <a href="/blogs/spheres-of-health" class="insightsPage-blog-image block mb-5">
+                        <div class="insightsPage-aspect-ratio">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="The Spheres of Control: Taking Charge of Your Health with Balance"
+                                loading="lazy" />
+                        </div>
+                    </a>
+                    <div class="flex-1 flex flex-col">
+                        <div class="mb-2">
+                            <span class="inline-block text-xs font-medium text-blue-600 uppercase">Workplace</span>
+                        </div>
+                        <a href="/blogs/spheres-of-health" class="block mb-3">
+                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">The
+                                Spheres of Control: Taking Charge of Your Health with Balance</h3>
+                        </a>
+                        <p class="text-gray-600 mb-4 flex-grow">In today's fast-paced world, we are constantly bombarded
+                            with advice on how to live healthier lives, eat this, avoid that, exercise like this, sleep
+                            more, stress less. The list goes on. Yet, despite the abundance of information, many of us
+                            still struggle to prioritize our health in a meaningful and sustainable way.</p>
+                        <div class="flex items-center text-sm">
+                            <!--<div class="flex-shrink-0">-->
+                            <!--    <img class="h-8 w-8 object-cover" src="/api/placeholder/80/80" alt="Emily Rodriguez" />-->
+                            <!--</div>-->
+                            <div class="ml-3">
+                                <!--<p class="font-medium text-gray-900">Emily Rodriguez</p>-->
+                                <div class="flex items-center text-gray-500">
+                                    <span>Ankur Bhatia</span>
+                                    <span class="mx-1">&middot;</span>
+                                    <time datetime="2025-03-01">March 1, 2025</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-teal-50">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-32 h-auto">
+            </div>
+
+            <!-- Description -->
+            <!--<p class="text-gray-600 max-w-3xl mx-auto mb-6">-->
+            <!--    Lifestyle Medicine is dedicated to helping you improve your health through evidence-based lifestyle-->
+            <!--    changes-->
+            <!--    that can prevent, treat, and reverse chronic disease.-->
+            <!--</p>-->
+
+            <!-- Contact Link -->
+            <div>
+                <a href="/#contact"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                <a href="privacy-policy"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy
+                    |</a>
+                <a href="t&c" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms
+                    and Conditions |</a>
+                <a href="terms&conditions"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms</a>
+
+
+
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Pivot Healthcare. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for filters and sorting -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize filter dropdowns
+            const categoryButton = document.getElementById('categoryButton');
+            const categoryDropdown = document.getElementById('categoryDropdown');
+            const sortButton = document.getElementById('sortButton');
+            const sortDropdown = document.getElementById('sortDropdown');
+
+            // Toggle category dropdown
+            categoryButton.addEventListener('click', function () {
+                categoryDropdown.classList.toggle('hidden');
+
+                // Close the other dropdown
+                sortDropdown.classList.add('hidden');
+            });
+
+            // Toggle sort dropdown
+            sortButton.addEventListener('click', function () {
+                sortDropdown.classList.toggle('hidden');
+
+                // Close the other dropdown
+                categoryDropdown.classList.add('hidden');
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!categoryButton.contains(event.target) && !categoryDropdown.contains(event.target)) {
+                    categoryDropdown.classList.add('hidden');
+                }
+
+                if (!sortButton.contains(event.target) && !sortDropdown.contains(event.target)) {
+                    sortDropdown.classList.add('hidden');
+                }
+            });
+
+            // Current filter state
+            let currentCategory = 'all';
+            let currentSort = 'recent';
+
+            // Category filter handlers
+            document.querySelectorAll('#categoryDropdown button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+                    currentCategory = category;
+
+                    // Update button text
+                    categoryButton.querySelector('span').textContent = this.textContent.trim();
+
+                    // Close dropdown
+                    categoryDropdown.classList.add('hidden');
+
+                    // Apply filters
+                    applyFilters();
+                });
+            });
+
+            // Sort handlers
+            document.querySelectorAll('#sortDropdown button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const sort = this.getAttribute('data-sort');
+                    currentSort = sort;
+
+                    // Update button text
+                    sortButton.querySelector('span').textContent = this.textContent.trim();
+
+                    // Close dropdown
+                    sortDropdown.classList.add('hidden');
+
+                    // Apply filters
+                    applyFilters();
+                });
+            });
+
+            // Apply filters and sorting
+            function applyFilters() {
+                const blogGrid = document.getElementById('blogGrid');
+                const cards = Array.from(blogGrid.querySelectorAll('.insightsPage-blog-card'));
+
+                // First filter by category
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+
+                    if (currentCategory === 'all' || cardCategory === currentCategory) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // Then sort the visible cards
+                const visibleCards = cards.filter(card => !card.classList.contains('hidden'));
+
+                // Sort based on current sort option
+                visibleCards.sort((a, b) => {
+                    const dateA = new Date(a.getAttribute('data-date'));
+                    const dateB = new Date(b.getAttribute('data-date'));
+                    const titleA = a.getAttribute('data-title');
+                    const titleB = b.getAttribute('data-title');
+
+                    switch (currentSort) {
+                        case 'recent':
+                            return dateB - dateA;
+                        case 'oldest':
+                            return dateA - dateB;
+                        case 'az':
+                            return titleA.localeCompare(titleB);
+                        case 'za':
+                            return titleB.localeCompare(titleA);
+                        default:
+                            return 0;
+                    }
+                });
+
+                // Remove all cards from the grid
+                cards.forEach(card => card.remove());
+
+                // Add visible cards back in the correct order
+                visibleCards.forEach((card, index) => {
+                    // Refresh the animation
+                    card.classList.remove('insightsPage-fade-in');
+                    void card.offsetWidth; // Trigger reflow
+                    card.classList.add('insightsPage-fade-in');
+
+                    // Add a small delay based on index
+                    card.style.animationDelay = `${index * 0.05}s`;
+
+                    // Add back to grid
+                    blogGrid.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Buzz About Habits: Making and Breaking - Learn the science of habit formation and strategies for creating positive change in your life.">
+    <title>The Buzz About Habits: Making and Breaking | Health Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#FDF8F1',
+                100: '#F8ECD9',
+                200: '#F0D9B3',
+                300: '#E7C48D',
+                400: '#DEB366',
+                500: '#D4A76A', /* Main whiskey color */
+                600: '#BF8F4E',
+                700: '#A97532',
+                800: '#836022',
+                900: '#5C4518',
+              },
+              highlight: {
+                50: '#F0E6D2',
+                100: '#E4D1AB',
+              },
+              accent: {
+                50: '#E6F0FD',
+                100: '#C7DFFA',
+                300: '#90C2F4',
+                500: '#63B3ED', /* Light blue */
+                700: '#2B6CB0',
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+        :root {
+            --primary-color: #D4A76A; /* Whiskey color */
+            --accent-color: #63B3ED; /* Light blue */
+            --text-color: #4A5568;
+            --bg-color: #FAF9F7; /* Slight cream background */
+            --sidebar-bg: #FFFAF0; /* Lighter cream for sidebar */
+            --highlight-color: #F0E6D2; /* Light whiskey for highlights */
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        h1, h2, h3 {
+            scroll-margin-top: 2rem;
+            color: #2D3748;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* IMPORTANT FIX: Ensure table of contents is visible */
+        .table-of-contents {
+            position: sticky;
+            top: 2rem;
+            background-color: var(--sidebar-bg);
+            border-left: 3px solid var(--primary-color);
+            display: block !important; /* Force display */
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            font-style: italic;
+            color: #4a5568;
+            background-color: var(--highlight-color);
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Reading Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 50;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--primary-color);
+            width: 0%;
+        }
+        
+        /* Estimated reading time */
+        .reading-time {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+        .back-to-top:hover {
+            background: #BF8F4E; /* Darker whiskey */
+        }
+        
+        /* Text highlight for active section */
+        .toc-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Font size controls */
+        .font-controls {
+            display: flex;
+            gap: 8px;
+            z-index: 30;
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        /* Mobile sidebar */
+        .sidebar-toggle {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .sidebar-toggle:hover {
+            background: #BF8F4E;
+        }
+        
+        .mobile-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background-color: var(--sidebar-bg);
+            overflow-x: hidden;
+            transition: 0.3s;
+            z-index: 60;
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-sidebar.active {
+            width: 300px;
+        }
+        
+        .mobile-sidebar .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        .mobile-sidebar-content {
+            padding: 0 20px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .mobile-sidebar.active .mobile-sidebar-content {
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+        
+        /* IMPORTANT: Media query adjustments for table of contents */
+        @media (max-width: 1023px) {
+            .sidebar-toggle {
+                display: flex;
+            }
+            .font-controls {
+                display: none;
+            }
+            .table-of-contents {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-bg-color">
+    
+    <!-- Navbar -->
+     <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div class="max-w-7xl px-6 py-3 border md:py-4 lg:px-8 rounded-full bg-white/30 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="../assets/logo/main.png" alt="Health Blog Logo" class="w-28 h-auto">
+            </a>
+            <!-- Font Size Controls for Desktop -->
+            <div class="font-controls bg-white text-primary-500 p-2 rounded-lg border">
+                <button class="font-control-btn" id="decreaseFont" aria-label="Decrease font size">A-</button>
+                <button class="font-control-btn" id="resetFont" aria-label="Reset font size">A</button>
+                <button class="font-control-btn" id="increaseFont" aria-label="Increase font size">A+</button>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href=".././" class="text-black hover:text-teal-600 transition-colors">Home</a>
+                <a href="../about-us" class="text-black hover:text-teal-600 transition-colors">About Us</a>
+                <div class="relative group">
+                    <a href="#programs" class="text-black hover:text-teal-600 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="../heartspan.html" class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="../index#contact" class="text-black hover:text-teal-600 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="../heartspan.html" class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../index#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+                </div>
+            </div>
+                
+        </div>
+    </nav>
+    
+    <div class="h-16"></div>
+    
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Mobile Sidebar Toggle Button -->
+    <div class="sidebar-toggle" id="sidebarToggle" aria-label="Open sidebar menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </div>
+    
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="close-btn" id="closeSidebar">&times;</div>
+        <div class="mobile-sidebar-content">
+            <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
+            <nav>
+                <ul class="space-y-2 text-sm mb-8">
+                    <li><a href="#top" class="toc-link text-gray-700 hover:text-primary">Introduction</a></li>
+                    <li><a href="#reality-habits" class="toc-link text-gray-700 hover:text-primary">The Reality of Habit Formation</a></li>
+                    <li><a href="#neuroscience" class="toc-link text-gray-700 hover:text-primary">The Neuroscience Behind Habits</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#brain-regions" class="toc-link text-gray-600 hover:text-primary">Key Brain Regions</a></li>
+                            <li><a href="#neuroplasticity" class="toc-link text-gray-600 hover:text-primary">Neuroplasticity</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#habit-failures" class="toc-link text-gray-700 hover:text-primary">Why Habit Changes Fail</a></li>
+                    <li><a href="#habit-strategies" class="toc-link text-gray-700 hover:text-primary">Understanding Habits 101</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#connect-why" class="toc-link text-gray-600 hover:text-primary">Connect to Your "Why"</a></li>
+                            <li><a href="#habit-loop" class="toc-link text-gray-600 hover:text-primary">Habits vs The Habit Loop</a></li>
+                            <li><a href="#habit-stacking" class="toc-link text-gray-600 hover:text-primary">Habit Stacking</a></li>
+                            <li><a href="#keep-quiet" class="toc-link text-gray-600 hover:text-primary">Don't Talk About Your Habits</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3 class="text-lg font-semibold mb-3">Text Size</h3>
+                <div class="flex items-center space-x-4 mb-6">
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileDcrFont">A-</button>
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileResetFont">A</button>
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileIncFont">A+</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT SECTION WITH FIXED LAYOUT -->
+    <div class="max-w-5xl mx-auto px-4 py-10 md:px-8">
+        <!-- This div must use flex on lg screens -->
+        <div class="lg:flex lg:gap-12">
+            <!-- Main Content -->
+            <main class="lg:w-3/4">
+                <article class="prose prose-lg max-w-none">
+                    <header class="mb-10">
+                        <h1 id="top" class="text-3xl md:text-4xl font-bold mb-4">The Buzz About Habits: Making and Breaking</h1>
+                        <div class="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
+                            <time datetime="2025-04-22" class="text-sm">April 22, 2025</time>
+                            <span class="reading-time" id="readingTime">6 min read</span>
+                        </div>
+                        <!-- Hero Image -->
+                        <div class="my-6 rounded-lg overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Person building new habits" class="w-full h-auto object-cover">
+                        </div>
+                    </header>
+                    
+                    <div class="space-y-6">
+                        <h2 id="reality-habits" class="text-2xl font-bold mt-10 mb-4">The Reality of Habit Formation</h2>
+                        
+                        <p>Considering we have a certain level of free will that we get to exercise independently, crafting our life in the way we want to should be a rather smooth ride. In a land far away from our own, this might be true, but here on Earth, human minds offer a rather bumpy journey.</p>
+                        
+                        <p>Our lives are intrinsically crafted through habits that become a part of our second nature. Eventually, we stop questioning the power and impact they have. Habits are automatic behaviors that we perform regularly, often without conscious thought. They develop through repetition and are reinforced by rewards or consequences.</p>
+                        
+                        <p>Be it having a dessert after each meal or doomscrolling when bored or stressed; these actions and many more become a part of our identity, either consciously or subconsciously. Unless an individual is aware enough, habits are not really questioned but just repeatedly lived on autopilot.</p>
+                        
+                        <p>While alertness and awareness of our habits is a starting point to understanding and changing them, they do not suffice. Habit building and breaking is something that cannot entirely depend on motivation or awareness. Had that been the case, the majority would be able to break negative habit loops and be free.</p>
+                        
+                        <h2 id="neuroscience" class="text-2xl font-bold mt-10 mb-4">The Neuroscience Behind Habits</h2>
+                        
+                        <p>The brain is responsible for our habits. It is a culmination of things we pick up from our environment, things we learn, coping mechanisms we develop, the way we are brought up, and many more factors that lead to habit formation.</p>
+                        
+                        <p>Habits are formed through a neurological process that automates behaviors. The brain's key role is to reduce cognitive effort by shifting repeated actions from conscious decision-making to automatic execution.</p>
+                        
+                        <h3 id="brain-regions" class="text-xl font-semibold mt-8 mb-3">Key Brain Regions</h3>
+                        
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Basal Ganglia</strong> - Also known as the habit storage center, it's responsible for storing and automating habits. As behaviors repeat, the basal ganglia take over and reduces the need for conscious thought. This is why you can drive home without remembering the journey! However, this part is activated once we embody a particular habit.</li>
+                            
+                            <li><strong>Pre-Frontal Cortex</strong> - Inside the brain, this is responsible for forming new habits and breaking older ones. As a habit becomes automatic, the prefrontal cortex is less involved, allowing you to focus on other things.</li>
+                            
+                            <li><strong>Dopamine System</strong> - The Reward Driver. The brain releases dopamine when you perform a habit, reinforcing it. This is why pleasurable activities (like eating sweets, scrolling social media, or smoking) create strong habits quickly.</li>
+                            
+                            <li><strong>Hippocampus</strong> - The Memory Keeper. Stores context and cues related to habits. It helps your brain recognize when to trigger a habit (e.g., smelling coffee in the morning prompts you to make a cup).</li>
+                        </ul>
+                        
+                        <h3 id="neuroplasticity" class="text-xl font-semibold mt-8 mb-3">Neuroplasticity: The Hope for Change</h3>
+                        
+                        <p>Some negative tendencies that become habits seem too rigid to let go. However, this is where the recent studies of neuroplasticity come to the rescue. According to this, the brain is like a muscle and can change and adapt at any point in life. This is a testament to the fact that no habit is big enough to not be able to change or replace by another.</p>
+                        
+                        <h2 id="habit-failures" class="text-2xl font-bold mt-10 mb-4">Why Habit Changes Fail</h2>
+                        
+                        <p>Is it not ironic that despite a strong and firm start to changing or forming new habits, most people fail to continue? This is precisely what happens during January every year. People's motivation and their drive gets them started but the start is a rather short one without a firm base. This primarily happens because people's focus for building or changing habits lie in the habits solely.</p>
+                        
+                        <blockquote>
+                            Let's break this down with an example: Tina wants to get fit in 2025 and the extrinsic motivation of January 1st got her started with her workout of choice—running. The new year energy in the air was crisp which kept her going for the first 10-15 days, after which, due to a lack in her intrinsic motivation, she stopped. The extrinsic motivation of the new year started to fade. To counter feeling guilty, she began depending on sugar as her choice of a coping mechanism. Through this, a new set of negative tendencies started. If Tina does not work on her 'habit loop' immediately instead of a particular 'habit'—'running' in her case—she would be back to square one.
+                        </blockquote>
+                        
+                        <h2 id="habit-strategies" class="text-2xl font-bold mt-10 mb-4">Understanding Habits 101</h2>
+                        
+                        <h3 id="connect-why" class="text-xl font-semibold mt-8 mb-3">1. Connect to Your "Why"</h3>
+                        
+                        <p>Through Tina's example, the first pillar of a solid base for habits needs to be a strong "why." Intrinsic motivation comes from within, while extrinsic motivation comes from outside. The new year's fresh energy managed to provide a kickstart for Tina's workout journey but not a sustainable start. Had Tina aligned her new habit with her own individual motivation, the base would be firmer. This step requires honesty and clarity.</p>
+                        
+                        <h3 id="habit-loop" class="text-xl font-semibold mt-8 mb-3">2. Habits vs. The Habit Loop</h3>
+                        
+                        <p>The secret to whether you are successful or not in making or breaking your habits lies here! In Tina's case, she jumped straight into going for her runs daily based on when she got free time in her day. Running is the 'habit' she wanted to develop but she directly executed the task without setting up her unique formula for it. This formula is what we are going to refer to as the Habit Loop.</p>
+                        
+                        <p>The habit loop is a neurological pattern that describes how habits form and are repeated. Understanding the habit loop can help you change bad habits or form good ones. However, routines do not exist in a vacuum. The cues and rewards mechanism make it possible to change even something that seems to be impossible at first.</p>
+                        
+                        <p>The habit loop is a three-step neurological cycle that drives habit formation:</p>
+                        
+                        <ol class="list-decimal pl-6 space-y-2 mb-6">
+                            <li><strong>Cue</strong> - Acts as a trigger, signaling the brain to initiate a behavior.</li>
+                            <li><strong>Routine</strong> - The action itself, which, through repetition, becomes automatic.</li>
+                            <li><strong>Reward</strong> - Reinforces the habit by releasing dopamine, making the brain associate the behavior with pleasure or relief.</li>
+                        </ol>
+                        
+                        <p>Over time, this loop strengthens neural pathways in the basal ganglia, shifting habits from conscious effort to subconscious automation.</p>
+                        
+                        <p>Tina decided on working on this habit loop. She dedicated a specific time for her daily runs which, over time, brought down the resistance to show up. The night before her runs, she neatly kept the running gear next to her bed. This acted as her cue, and as soon as she woke up in the morning, even before brushing, she changed into her running gear. As for her reward, she decided to treat herself with a lavish breakfast after the run daily.</p>
+                        
+                        <p>The initial few days were when she had to use her intrinsic motivation to get out of bed, but within a month, the cue and reward system integrated running to feel like a part of her routine, without any effort!</p>
+                        
+                        <div class="bg-highlight-50 p-6 rounded-lg my-8">
+                            <h4 class="font-semibold mb-4">Building a Habit:</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Repetition strengthens neural pathways.</li>
+                                <li>Positive reinforcement increases dopamine release, making the habit more automatic.</li>
+                                <li>Use the cue and reward system, always!</li>
+                            </ul>
+                            
+                            <h4 class="font-semibold mt-6 mb-4">Breaking a Habit:</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Old habits don't completely disappear, but the less you engage, the weaker the neural pathway becomes.</li>
+                                <li>Replacing a habit (instead of stopping it cold turkey) is more effective because it still satisfies the brain's craving for a reward.</li>
+                                <li>Change Your Environment – Remove temptations</li>
+                                <li>Make It Harder – Add friction</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 id="habit-stacking" class="text-xl font-semibold mt-8 mb-3">3. Habit Stacking</h3>
+                        
+                        <p>It is funny but mostly good habits breed good habits and bad habits breed bad habits. Incorporating daily workouts could potentially and most likely lead to clean eating, sleep hygiene, and an overall better life. The key here is to start small and stick to it, till the point it compounds to be big and second nature.</p>
+                        
+                        <h3 id="keep-quiet" class="text-xl font-semibold mt-8 mb-3">4. Don't Talk About Your Habits When You Are in the Process of Forming Them</h3>
+                        
+                        <p>This sounds unnecessary but has an explanation to it. The more we talk about something we have not fully achieved and are striving towards, the more likely we are to get our dopamine dose by just talking, which can lead to inaction when the task needs to be done. Instead, keeping it to ourselves and journaling can go a long way in bridging this sort of gap.</p>
+                        
+                        <p>The more you work with your brain's habit-forming mechanisms, the easier it becomes to build positive habits and break negative ones, no matter how stubborn the habit!</p>
+                        
+                        <div class="mt-12 border-t pt-6">
+                            <h4 class="text-lg font-semibold mb-4">Share this article</h4>
+                            <div class="text-center max-w-4xl mx-auto">
+    
+        <!--<p class="text-gray-600 mb-8">Click any button to share this page</p>-->
+        
+        
+        <!-- Outlined Style -->
+        <div class="mb-4">
+            <!--<h2 class="text-xl font-semibold text-gray-700 mb-4">Outlined Style</h2>-->
+            <div id="share-buttons-outlined" class="flex flex-wrap gap-4"></div>
+        </div>
+        
+        <!-- Copy feedback message -->
+        <div id="copy-feedback" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 translate-y-20 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none">
+            <i class="fas fa-check-circle"></i>
+            <span>Link copied to clipboard!</span>
+        </div>
+    </div>
+                        </div>
+                        <!-- Related articles -->
+                        <div class="mt-12 border-t pt-6">
+                            <h4 class="text-lg font-semibold mb-6">You might also like</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <a href="navigating-health" class="block group">
+                                    <div class="bg-highlight-50 rounded-lg p-4 transition-all duration-200 hover:shadow-md h-full">
+                                        <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600">Navigating Health amidst the Modern-Day Chaos: Striking the Balance</h5>
+                                        <p class="text-gray-600 text-sm">In the fast-paced world of today, where time is a precious commodity and the demands of work, family, and personal aspirations never seem to slow down,</p>
+                                    </div>
+                                </a>
+                                <a href="zone-cardio" class="block group">
+                                    <div class="bg-highlight-50 rounded-lg p-4 transition-all duration-200 hover:shadow-md h-full">
+                                        <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600">Zone 2 Cardio and Cardiac Health</h5>
+                                        <p class="text-gray-600 text-sm">From the lens of children, running is majorly divided into 2 categories - sprints and slow running. However, the categories and potential running or cardio in general holds extends beyond those 2 categories.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                </article>
+                                </main>
+                                
+                                            <aside class="lg:w-1/4 mt-10 lg:mt-0">
+                <div class="table-of-contents p-6 rounded-lg border border-primary-200 bg-white shadow-sm">
+                    <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
+                    <nav>
+                        <ul class="space-y-2 text-sm">
+                           
+                    <li><a href="#top" class="toc-link text-gray-700 hover:text-primary">Introduction</a></li>
+                    <li><a href="#reality-habits" class="toc-link text-gray-700 hover:text-primary">The Reality of Habit Formation</a></li>
+                    <li><a href="#neuroscience" class="toc-link text-gray-700 hover:text-primary">The Neuroscience Behind Habits</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#brain-regions" class="toc-link text-gray-600 hover:text-primary">Key Brain Regions</a></li>
+                            <li><a href="#neuroplasticity" class="toc-link text-gray-600 hover:text-primary">Neuroplasticity</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#habit-failures" class="toc-link text-gray-700 hover:text-primary">Why Habit Changes Fail</a></li>
+                    <li><a href="#habit-strategies" class="toc-link text-gray-700 hover:text-primary">Understanding Habits 101</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#connect-why" class="toc-link text-gray-600 hover:text-primary">Connect to Your "Why"</a></li>
+                            <li><a href="#habit-loop" class="toc-link text-gray-600 hover:text-primary">Habits vs The Habit Loop</a></li>
+                            <li><a href="#habit-stacking" class="toc-link text-gray-600 hover:text-primary">Habit Stacking</a></li>
+                            <li><a href="#keep-quiet" class="toc-link text-gray-600 hover:text-primary">Don't Talk About Your Habits</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+                                </div>
+                                </div>
+                  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+                  <footer class="py-20 bg-teal-50 relative overflow-hidden">
+    <!-- Text Outline Background -->
+    <!--<div class="absolute inset-0 z-0 text-outline-container overflow-hidden">-->
+    <!--    <div class="text-outline">PIVOT</div>-->
+    <!--</div>-->
+    
+    <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+        <!-- Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="../assets/pivot-logo-old.png" alt="Pivot Logo" class="w-32 h-auto">
+        </div>
+        <!-- Contact Link -->
+        <div>
+                    <a href="../index#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                                        <a href="../privacy-policy" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy |</a>
+                    <a href="../t&c" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms and Conditions |</a>
+                                        <a href="../terms&conditions" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms </a>
+
+
+            
+        </div>
+        <!-- Copyright -->
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Pivot Healthcare. All rights reserved.
+        </p>
+    </div>
+
+    <style>
+        /* Text Outline Background Styles */
+        .text-outline-container {
+            pointer-events: none;
+        }
+        
+        .text-outline {
+            position: absolute;
+            font-size: 25vw;
+            font-family: Georgia, serif;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: 5px;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(0, 128, 128, 0.1);
+            text-stroke: 1px rgba(0, 128, 128, 0.1);
+            white-space: nowrap;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .text-outline {
+                font-size: 40vw;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .text-outline {
+                font-size: 50vw;
+                -webkit-text-stroke: 0.8px rgba(0, 128, 128, 0.1);
+                text-stroke: 0.8px rgba(0, 128, 128, 0.1);
+            }
+        }
+    </style>
+</footer>
+
+<script>
+        class ShareButtons {
+            constructor(options = {}) {
+                this.currentUrl = options.url || window.location.href;
+                this.pageTitle = options.title || document.title;
+                
+                this.platforms = {
+                    x: {
+                        name: 'Share on X',
+                        icon: 'fab fa-x-twitter',
+                        color: 'bg-black hover:bg-gray-800',
+                        outlineColor: 'border-black text-black hover:bg-black hover:text-white',
+                        shareUrl: 'https://twitter.com/intent/tweet',
+                        params: () => ({
+                            url: this.currentUrl,
+                            text: this.pageTitle
+                        })
+                    },
+                    whatsapp: {
+                        name: 'Share on WhatsApp',
+                        icon: 'fab fa-whatsapp',
+                        color: 'bg-green-500 hover:bg-green-600',
+                        outlineColor: 'border-green-500 text-green-500 hover:bg-green-500 hover:text-white',
+                        shareUrl: 'https://api.whatsapp.com/send',
+                        params: () => ({
+                            text: `${this.pageTitle} ${this.currentUrl}`
+                        })
+                    },
+                    linkedin: {
+                        name: 'Share on LinkedIn',
+                        icon: 'fab fa-linkedin-in',
+                        color: 'bg-blue-600 hover:bg-blue-700',
+                        outlineColor: 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+                        shareUrl: 'https://www.linkedin.com/sharing/share-offsite/',
+                        params: () => ({
+                            url: this.currentUrl
+                        })
+                    },
+                    facebook: {
+                        name: 'Share on Facebook',
+                        icon: 'fab fa-facebook-f',
+                        color: 'bg-blue-500 hover:bg-blue-600',
+                        outlineColor: 'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white',
+                        shareUrl: 'https://www.facebook.com/sharer/sharer.php',
+                        params: () => ({
+                            u: this.currentUrl
+                        })
+                    },
+                    // telegram: {
+                    //     name: 'Share on Telegram',
+                    //     icon: 'fab fa-telegram-plane',
+                    //     color: 'bg-sky-500 hover:bg-sky-600',
+                    //     outlineColor: 'border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white',
+                    //     shareUrl: 'https://t.me/share/url',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         text: this.pageTitle
+                    //     })
+                    // },
+                    // pinterest: {
+                    //     name: 'Share on Pinterest',
+                    //     icon: 'fab fa-pinterest-p',
+                    //     color: 'bg-red-600 hover:bg-red-700',
+                    //     outlineColor: 'border-red-600 text-red-600 hover:bg-red-600 hover:text-white',
+                    //     shareUrl: 'https://pinterest.com/pin/create/button/',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         description: this.pageTitle
+                    //     })
+                    // },
+                    // reddit: {
+                    //     name: 'Share on Reddit',
+                    //     icon: 'fab fa-reddit-alien',
+                    //     color: 'bg-orange-600 hover:bg-orange-700',
+                    //     outlineColor: 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white',
+                    //     shareUrl: 'https://reddit.com/submit',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         title: this.pageTitle
+                    //     })
+                    // },
+                    // email: {
+                    //     name: 'Share via Email',
+                    //     icon: 'fas fa-envelope',
+                    //     color: 'bg-gray-700 hover:bg-gray-800',
+                    //     outlineColor: 'border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white',
+                    //     action: () => {
+                    //         const subject = encodeURIComponent(this.pageTitle);
+                    //         const body = encodeURIComponent(`Check out this page: ${this.currentUrl}`);
+                    //         window.location.href = `mailto:?subject=${subject}&body=${body}`;
+                    //     }
+                    // },
+                    copy: {
+                        name: 'Copy Link',
+                        icon: 'fas fa-link',
+                        color: 'bg-gray-600 hover:bg-gray-700',
+                        outlineColor: 'border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white',
+                        action: () => this.copyToClipboard()
+                    }
+                };
+            }
+            
+            generateShareUrl(platform) {
+                const config = this.platforms[platform];
+                if (!config || !config.shareUrl) return null;
+                
+                const params = config.params();
+                const queryString = new URLSearchParams(params).toString();
+                return `${config.shareUrl}?${queryString}`;
+            }
+            
+            share(platform) {
+                const config = this.platforms[platform];
+                
+                if (config.action) {
+                    config.action();
+                    return;
+                }
+                
+                const shareUrl = this.generateShareUrl(platform);
+                if (!shareUrl) return;
+                
+                // Mobile detection for WhatsApp
+                if (platform === 'whatsapp' && /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    window.location.href = shareUrl;
+                    return;
+                }
+                
+                const width = 600;
+                const height = 500;
+                const left = (window.innerWidth - width) / 2;
+                const top = (window.innerHeight - height) / 2;
+                
+                window.open(shareUrl, `share-${platform}`, `width=${width},height=${height},left=${left},top=${top}`);
+            }
+            
+            copyToClipboard() {
+                navigator.clipboard.writeText(this.currentUrl).then(() => {
+                    this.showCopyFeedback();
+                }).catch(() => {
+                    // Fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = this.currentUrl;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    this.showCopyFeedback();
+                });
+            }
+            
+            showCopyFeedback() {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('translate-y-20', 'opacity-0');
+                feedback.classList.add('translate-y-0', 'opacity-100');
+                
+                setTimeout(() => {
+                    feedback.classList.add('translate-y-20', 'opacity-0');
+                    feedback.classList.remove('translate-y-0', 'opacity-100');
+                }, 3000);
+            }
+            
+            createButton(platform, style = 'default') {
+                const config = this.platforms[platform];
+                if (!config) return null;
+                
+                const button = document.createElement('button');
+                button.setAttribute('aria-label', config.name);
+                
+                // Base classes
+                let baseClasses = 'relative w-12 h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group';
+                
+                // Style specific classes
+                if (style === 'circular') {
+                    button.className = `${baseClasses} rounded-full text-white ${config.color} shadow-lg hover:shadow-xl`;
+                } else if (style === 'square') {
+                    button.className = `${baseClasses} rounded-lg text-white ${config.color} shadow-lg hover:shadow-xl`;
+                } else if (style === 'outlined') {
+                    button.className = `${baseClasses} rounded-full border-2 ${config.outlineColor} transition-colors duration-300`;
+                }
+                
+                // Icon
+                const icon = document.createElement('i');
+                icon.className = `${config.icon} text-xl`;
+                
+                // Tooltip
+                const tooltip = document.createElement('span');
+                tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none';
+                tooltip.textContent = config.name;
+                
+                // Tooltip arrow
+                const arrow = document.createElement('span');
+                arrow.className = 'absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800';
+                tooltip.appendChild(arrow);
+                
+                button.appendChild(icon);
+                button.appendChild(tooltip);
+                
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.share(platform);
+                });
+                
+                return button;
+            }
+            
+            render(containerId, style = 'default') {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                Object.keys(this.platforms).forEach(platform => {
+                    const button = this.createButton(platform, style);
+                    if (button) {
+                        container.appendChild(button);
+                    }
+                });
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const shareButtons = new ShareButtons({
+                url: window.location.href,
+                title: document.title || 'Check out this awesome page!'
+            });
+            
+            // Render different styles
+            // shareButtons.render('share-buttons-circular', 'circular');
+            // shareButtons.render('share-buttons-square', 'square');
+            shareButtons.render('share-buttons-outlined', 'outlined');
+        });
+    </script>
+
+    <script>
+        // Calculate reading time
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = document.querySelector('article').innerText;
+            const wordCount = text.split(/\s+/).length;
+            const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+            document.getElementById('readingTime').textContent = `${readingTime} min read`;
+        });
+        
+        // Progress bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Back to top button visibility
+            if (winScroll > 300) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+            
+            // Highlight active section in TOC
+            highlightCurrentSection();
+        };
+        
+        // Highlight active section in table of contents
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('h2, h3');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < 100) {
+                    currentSectionId = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Font size adjustment
+        let currentFontSize = 100; // percentage
+        
+        function setupFontSizeButtons(increaseBtn, decreaseBtn, resetBtn) {
+            if (increaseBtn) {
+                increaseBtn.addEventListener('click', function() {
+                    if (currentFontSize < 150) {
+                        currentFontSize += 10;
+                        updateFontSize();
+                    }
+                });
+            }
+            
+            if (decreaseBtn) {
+                decreaseBtn.addEventListener('click', function() {
+                    if (currentFontSize > 70) {
+                        currentFontSize -= 10;
+                        updateFontSize();
+                    }
+                });
+            }
+            
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    currentFontSize = 100;
+                    updateFontSize();
+                });
+            }
+        }
+        
+        setupFontSizeButtons(
+            document.getElementById('increaseFont'), 
+            document.getElementById('decreaseFont'),
+            document.getElementById('resetFont')
+        );
+        
+        setupFontSizeButtons(
+            document.getElementById('mobileIncFont'), 
+            document.getElementById('mobileDcrFont'),
+            document.getElementById('mobileResetFont')
+        );
+        
+        function updateFontSize() {
+            document.querySelector('article').style.fontSize = `${currentFontSize}%`;
+            // Save the preference in localStorage for future visits
+            localStorage.setItem('blogFontSize', currentFontSize);
+        }
+        
+        // Mobile Sidebar Toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        
+        sidebarToggle.addEventListener('click', function() {
+            mobileSidebar.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+        });
+        
+        closeSidebar.addEventListener('click', function() {
+            mobileSidebar.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close sidebar when clicking outside or on a link
+        document.addEventListener('click', function(e) {
+            if (mobileSidebar.classList.contains('active') && 
+                !mobileSidebar.contains(e.target) && 
+                e.target !== sidebarToggle &&
+                !sidebarToggle.contains(e.target)) {
+                mobileSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        document.querySelectorAll('.mobile-sidebar a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function() {
+                mobileSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Load saved font size preference if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedFontSize = localStorage.getItem('blogFontSize');
+            if (savedFontSize) {
+                currentFontSize = parseInt(savedFontSize);
+                updateFontSize();
+            }
+            
+            // Initial highlighting of current section
+            highlightCurrentSection();
+            
+            // Check for tablet and adjust layout
+            const checkForTablet = () => {
+                if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
+                    // Tablet optimizations
+                    document.querySelector('article').classList.add('tablet-optimized');
+                    // Increase base font size slightly for better tablet reading
+                    if (!document.querySelector('.tablet-style')) {
+                        const style = document.createElement('style');
+                        style.className = 'tablet-style';
+                        style.textContent = `
+                            @media (min-width: 768px) and (max-width: 1024px) {
+                                article {
+                                    font-size: 110%;
+                                    line-height: 1.8;
+                                    padding: 0 5%;
+                                }
+                                .max-w-5xl {
+                                    max-width: 90%;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                } else {
+                    // Remove tablet optimizations if not on tablet
+                    document.querySelector('article')?.classList.remove('tablet-optimized');
+                    document.querySelector('.tablet-style')?.remove();
+                }
+            };
+            
+            // Run on load and resize
+            checkForTablet();
+            window.addEventListener('resize', checkForTablet);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+        
+        // Add tailwind classes for whiskey and light blue color scheme
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add tailwind classes to elements
+            const links = document.querySelectorAll('a:not(.toc-link)');
+            links.forEach(link => {
+                link.classList.add('text-primary-700', 'hover:text-primary-500');
+            });
+            
+            // Add hover effects to list items
+            const listItems = document.querySelectorAll('article li');
+            listItems.forEach(item => {
+                item.classList.add('transition-colors', 'duration-150', 'hover:bg-highlight-50', 'rounded');
+            });
+            
+            // Debugging - console log to check if the table of contents is in the DOM
+            console.log('Table of contents element exists:', !!document.querySelector('.table-of-contents'));
+            console.log('Table of contents visibility:', getComputedStyle(document.querySelector('.table-of-contents')).display);
+        });
+    </script>
+                  
+                                
+                                </body>
+                                </html>
+                                
+                                
+                                
+                                
+                                

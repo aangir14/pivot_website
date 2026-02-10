@@ -1,0 +1,35 @@
+# Redirects for Cloudflare Pages
+# This file replaces .htaccess functionality
+
+# Remove .html extensions - serve HTML files without extension
+/heartspan /heartspan.html 200
+/corporate-heartspan /corporate-heartspan.html 200
+/about-us /about-us.html 200
+/insights /insights.html 200
+/heart-health-assessment /heart-health-assessment.html 200
+/heartspan-evidence /heartspan-evidence.html 200
+/privacy-policy /privacy-policy.html 200
+/t&c /t&c.html 200
+/terms&conditions /terms&conditions.html 200
+/thank-you /thank-you.html 200
+
+# Blog pages - remove .html extensions
+/blogs/navigating-health /blogs/navigating-health.html 200
+/blogs/the-buzz-about-habits /blogs/the-buzz-about-habits.html 200
+/blogs/zone-cardio /blogs/zone-cardio.html 200
+/blogs/spheres-of-health /blogs/spheres-of-health.html 200
+
+# Redirect .html URLs to clean URLs (301 permanent redirect)
+/heartspan.html /heartspan 301
+/corporate-heartspan.html /corporate-heartspan 301
+/about-us.html /about-us 301
+/insights.html /insights 301
+/heart-health-assessment.html /heart-health-assessment 301
+/heartspan-evidence.html /heartspan-evidence 301
+/privacy-policy.html /privacy-policy 301
+/t&c.html /t&c 301
+/terms&conditions.html /terms&conditions 301
+/thank-you.html /thank-you 301
+
+# Custom 404 page
+/* /404.html 404

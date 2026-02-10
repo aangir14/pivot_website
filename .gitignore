@@ -1,0 +1,50 @@
+# Development and documentation files
+README_LOCAL_SETUP.md
+DEPLOYMENT_CHECKLIST.md
+PROJECT_OVERVIEW.md
+CORPORATE_ASSETS_NEEDED.md
+start-server.ps1
+start-dev-server.ps1
+download_assets.ps1
+
+# Apache-specific (not needed for Cloudflare Pages)
+.htaccess
+cgi-bin/
+
+# Backups
+backup_*
+*.backup
+*.bak
+*_backup/
+
+# Large backup files
+*.zip
+*.tar.gz
+*.rar
+04-06-25.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Agent directory (AI assistant files)
+.agent/
+
+# Well-known directory (if not needed)
+.well-known/

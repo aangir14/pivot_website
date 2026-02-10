@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Health Assessment - Pivot Health</title>
+    <meta name="description"
+        content="PIVOT helps you prevent chronic conditions and extend your healthspan through personalized, science-backed programs designed for real life.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0f9ff;
+            color: #334155;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+
+        .stepper-item {
+            position: relative;
+        }
+
+        .stepper-item:not(:last-child):after {
+            position: absolute;
+            content: '';
+            border-bottom: 2px solid #cbd5e1;
+            width: 100%;
+            top: 20px;
+            left: 50%;
+            z-index: 0;
+        }
+
+        .stepper-item.completed:not(:last-child):after {
+            border-bottom: 2px solid #0ea5e9;
+        }
+
+        .stepper-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #cbd5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .stepper-circle.active {
+            background-color: #0ea5e9;
+            border-color: #0ea5e9;
+            color: white;
+        }
+
+        .stepper-circle.completed {
+            background-color: #0ea5e9;
+            border-color: #0ea5e9;
+            color: white;
+        }
+
+        .form-section {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+
+        input:focus,
+        select:focus {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #0ea5e9;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0284c7;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: #94a3b8;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #64748b;
+            transform: translateY(-1px);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+            }
+        }
+
+        .heart-icon {
+            color: #f87171;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.15);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.15);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+       
+/* Invalid input styling */
+input:invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+input:valid {
+    border-color: #10b981;
+}
+
+/* Show error message on invalid fields */
+input:invalid:focus {
+    outline: 2px solid #ef4444;
+    outline-offset: 2px;
+}
+
+    </style>
+</head>
+
+<body>
+    
+        <!-- Navbar -->
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div class="max-w-7xl px-6 py-3 md:py-4 border  lg:px-8 rounded-full bg-white/30 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-28 h-auto">
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+                <!--<a href="#about" class="text-black hover:text-teal-200 transition-colors">About</a>-->
+                <!-- Programs with dropdown -->
+                
+                 <a href="/" class="text-black hover:text-teal-600 transition-colors">Home</a>
+                
+                
+                                    <a href="about-us" class="text-black hover:text-teal-600 transition-colors">About Us</a>
+
+                <div class="relative group">
+                    <a href="#programs" class="text-black hover:text-teal-600 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="/heartspan.html" class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="relative group">-->
+                <!--    <a href="#evidences" class="text-black hover:text-teal-600 transition-colors">Evidences</a>-->
+                    <!-- Dropdown menu -->
+                <!--    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">-->
+                <!--        <div class="py-2">-->
+                            <!-- HeartSpan - clickable -->
+                <!--            <a href="/heartspan-evidence" class="block px-4 py-2 text-gray-800 hover:bg-teal-500 hover:text-white transition-colors">-->
+                <!--                HeartSpan Evidence-->
+                <!--            </a>-->
+                            <!-- GutSpan - with clock icon -->
+                <!--            <div class="block px-4 py-2 text-gray-500 flex items-center">-->
+                <!--                <span class="mr-2">GutSpan Evidence</span>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                            <!-- BrainSpan - with clock icon -->
+                <!--            <div class="block px-4 py-2 text-gray-500 flex items-center">-->
+                <!--                <span class="mr-2">BrainSpan Evidence</span>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+                                    <a href="#contact" class="text-black hover:text-teal-600 transition-colors">Contact</a>
+
+                <!--<a href="#testimonials" class="text-black hover:text-teal-200 transition-colors">Testimonials</a>-->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="/heartspan.html" class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                                        <a href="#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+
+                    <!--<a href="#testimonials" class="text-gray-800 hover:text-teal-500 transition-colors">Testimonials</a>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="min-h-screen bg-gradient-to-r from-green-50 to-sky-50 flex items-center justify-center pt-24">
+    <div class="container border bg-white bg-opacity-50 rounded-2xl mx-auto pt-8 px-4 py-4 max-w-7xl">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <div class="text-5xl heart-icon mr-3">❤️</div>
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-sky-700">Heart Health Assessment</h1>
+                    <p class="text-slate-500">Complete this form to assess your heart health risk factors</p>
+                </div>
+            </div>
+            <!-- <div class="hidden md:block">
+                <img src="/api/placeholder/200/120" alt="Heart health" class="rounded-lg shadow-md" />
+            </div> -->
+        </div>
+        <!-- Stepper -->
+        <div class="flex justify-between mb-8 px-2">
+            <div class="stepper-item flex flex-col items-center w-full completed">
+                <div class="stepper-circle completed flex-shrink-0 mx-auto">1</div>
+                <div class="text-xs font-medium mt-2 text-center">Personal Info</div>
+            </div>
+            <div class="stepper-item flex flex-col items-center w-full">
+                <div class="stepper-circle flex-shrink-0 mx-auto">2A</div>
+                <div class="text-xs font-medium mt-2 text-center">Biomarkers</div>
+            </div>
+            <div class="stepper-item flex flex-col items-center w-full">
+                <div class="stepper-circle flex-shrink-0 mx-auto">2B</div>
+                <div class="text-xs font-medium mt-2 text-center">Lifestyle</div>
+            </div>
+            <div class="stepper-item flex flex-col items-center w-full">
+                <div class="stepper-circle flex-shrink-0 mx-auto">2C</div>
+                <div class="text-xs font-medium mt-2 text-center">Additional</div>
+            </div>
+            <div class="stepper-item flex flex-col items-center w-full">
+                <div class="stepper-circle flex-shrink-0 mx-auto">3</div>
+                <div class="text-xs font-medium mt-2 text-center">Results</div>
+            </div>
+        </div>
+        <!-- Form -->
+        <form id="heartRiskForm" class="bg-white rounded-xl p-6 border border-sky-200">
+            <!-- Step 1: Personal Information -->
+            <div id="step1" class="step active">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 flex-shrink-0 bg-sky-100 rounded-full flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-sky-800">Personal Information</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                            >
+                    </div>
+                    <div>
+                        <label for="number" class="block text-gray-700 font-medium mb-2">Your phone number</label>
+                        <input type="number" id="number" name="number"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                            >
+                    </div>
+                    <div>
+                        <label for="city" class="block text-gray-700 font-medium mb-2">Your City</label>
+                        <input type="text" id="city" name="city"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                            >
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Your email</label>
+                        <input type="email" id="email" name="mail"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                            >
+                    </div>
+
+                    <div>
+                        <label for="age" class="block text-gray-700 font-medium mb-2">Age</label>
+                        <input type="number" id="age" name="age"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                             min="18" max="120">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Gender</label>
+                        <div class="flex gap-4">
+                            <label class="inline-flex items-center bg-white px-4 py-2 border rounded-lg cursor-pointer">
+                                <input type="radio" name="gender" value="M" class="form-radio h-5 w-5 text-sky-600"
+                                    checked>
+                                <span class="ml-2">Male</span>
+                            </label>
+                            <label class="inline-flex items-center bg-white px-4 py-2 border rounded-lg cursor-pointer">
+                                <input type="radio" name="gender" value="F" class="form-radio h-5 w-5 text-sky-600">
+                                <span class="ml-2">Female</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="height" class="block text-gray-700 font-medium mb-2">Height (cm)</label>
+                            <input type="number" id="height" name="height"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                 min="100" max="250">
+                        </div>
+
+                        <div>
+                            <label for="weight" class="block text-gray-700 font-medium mb-2">Weight (kg)</label>
+                            <input type="number" id="weight" name="weight"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                 min="30" max="300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end mt-8">
+                    <button type="button" id="nextToStep2A"
+                        class="btn-primary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 flex items-center">
+                        Next Step
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2A: Cardiovascular Biomarkers -->
+            <div id="step2A" class="step">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 flex-shrink-0 bg-sky-100 rounded-full flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-sky-800">Cardiovascular Biomarkers</h2>
+                </div>
+
+                <div class="form-section p-6 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="systolicBP" class="block text-gray-700 font-medium mb-2">Systolic Blood Pressure
+                                (mmHg)</label>
+                            <input type="number" id="systolicBP" name="systolicBP"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                 min="80" max="220">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Normal: &lt;120, At Risk: 120-139, High: ≥140</p> -->
+                        </div>
+
+                        <div>
+                            <label for="ldl" class="block text-gray-700 font-medium mb-2">LDL Cholesterol
+                                (mg/dL)</label>
+                            <input type="number" id="ldl" name="ldl"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                 min="20" max="300">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Optimal: &lt;100, Borderline: 100-160, High: >160</p> -->
+                        </div>
+
+                        <div>
+                            <label for="hdl" class="block text-gray-700 font-medium mb-2">HDL Cholesterol
+                                (mg/dL)</label>
+                            <input type="number" id="hdl" name="hdl"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                 min="20" max="100">
+                            <!-- <p class="text-xs text-gray-500 mt-1">For men: Low: &lt;40, Moderate: 40-60, High:
+                                >60<br>For
+                                women: Low: &lt;50, Moderate: 50-60, High: >60</p> -->
+                        </div>
+
+                        <div>
+                            <label for="triglycerides" class="block text-gray-700 font-medium mb-2">Triglycerides
+                                (mg/dL)</label>
+                            <input type="number" id="triglycerides" name="triglycerides"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                 min="20" max="500">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Normal: &lt;100, Borderline: 100-150, High: >150</p> -->
+                        </div>
+
+                        <div>
+                            <label for="hscrp" class="block text-gray-700 font-medium mb-2">hs-CRP (mg/L)</label>
+                            <input type="number" id="hscrp" name="hscrp"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                min="0" max="20" step="0.1">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Low: &lt;1, Average: 1-3, High: >3</p> -->
+                        </div>
+
+                        <div>
+                            <label for="lpa" class="block text-gray-700 font-medium mb-2">Lp(a) (nmol/L)</label>
+                            <input type="number" id="lpa" name="lpa"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                min="0" max="500">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Normal: &lt;30, Borderline: 30-50, High: >50</p> -->
+                        </div>
+
+                        <div>
+                            <label for="homocysteine" class="block text-gray-700 font-medium mb-2">Homocysteine
+                                (μmol/L)</label>
+                            <input type="number" id="homocysteine" name="homocysteine"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                min="0" max="50" step="0.1">
+                            <!--<p class="text-xs text-gray-500 mt-1">Normal: &lt;10, Moderate: 10-15, High: >15</p>-->
+                        </div>
+
+                        <div>
+                            <label for="fastingGlucose" class="block text-gray-700 font-medium mb-2">Fasting Glucose
+                                (mg/dL)</label>
+                            <input type="number" id="fastingGlucose" name="fastingGlucose"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                min="50" max="300">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Normal: &lt;100, Prediabetic: 100-125, Diabetic: ≥126
+                            </p> -->
+                        </div>
+
+                        <div>
+                            <label for="fastingInsulin" class="block text-gray-700 font-medium mb-2">Fasting Insulin
+                                (μIU/mL)</label>
+                            <input type="number" id="fastingInsulin" name="fastingInsulin"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                min="0" max="100" step="0.1">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Optimal: &lt;10, Moderate: 10-15, High: >15</p> -->
+                        </div>
+
+                        <div>
+                            <label for="hba1c" class="block text-gray-700 font-medium mb-2">HbA1c (%)</label>
+                            <input type="number" id="hba1c" name="hba1c"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                                min="4" max="15" step="0.1">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Normal: &lt;5.4, Prediabetic: 5.4-6.4, Diabetic: >6.4
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="backToStep1"
+                        class="btn-secondary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Back
+                    </button>
+                    <button type="button" id="nextToStep2B"
+                        class="btn-primary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 flex items-center">
+                        Next Step
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2B: Lifestyle Factors -->
+            <div id="step2B" class="step">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 flex-shrink-0 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-teal-800">Lifestyle Factors</h2>
+                </div>
+
+                <div class="form-section p-6 mb-6 border-l-4 border-l-teal-400">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Do you smoke?</label>
+                            <select id="smoking" name="smoking"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Alcohol Intake</label>
+                                <select id="alcohol" name="alcohol"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                     <option value="None">I don't drink</option>
+                                     <option value="Low">Once a fortnight or month or casually</option>
+                                     <option value="Moderate">1-2 times a week</option>
+                                     <option value="High">More than 2 times a week</option>
+                                </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Processed Food Intake</label>
+                            <select id="processedFood" name="processedFood"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="Low">Low</option>
+                                <option value="Med">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Fruit & Vegetable Intake</label>
+                            <select id="fruitVegIntake" name="fruitVegIntake"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="High">High</option>
+                                <option value="Med">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Physical Activity</label>
+                            <select id="physicalInactivity" name="physicalInactivity"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="Low">Low (Sedentary)</option>
+                                <option value="Mod">Moderate</option>
+                                <option value="High">High (active lifestyle)</option>
+                            </select>
+                            <!-- <p class="text-xs text-gray-500 mt-1">Based on exercise less than 150 minutes per week</p> -->
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Family History of Heart Disease</label>
+                            <select id="familyHistory" name="familyHistory"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="airPollution" class="block text-gray-700 font-medium mb-2">Air Pollution (AQI in
+                                your area)</label>
+                            <input type="number" id="airPollution" name="airPollution"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+                                 min="0" max="500">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Good: &lt;50, Moderate: 50-100, Unhealthy: >100</p> -->
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Stress Level</label>
+                            <select id="stressLevel" name="stressLevel"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="Low">Low</option>
+                                <option value="Med">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Sleep Quality</label>
+                            <select id="sleepQuality" name="sleepQuality"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                                <option value="Good">Good</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Poor">Poor</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="backToStep2A"
+                        class="btn-secondary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Back
+                    </button>
+                    <button type="button" id="nextToStep2C"
+                        class="btn-primary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 flex items-center">
+                        Next Step
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2C: Additional Factors -->
+            <div id="step2C" class="step">
+                <div class="flex items-center mb-6">
+                    <div
+                        class="w-10 h-10 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-purple-800">Additional Information</h2>
+                </div>
+
+                <div class="form-section p-6 mb-6 border-l-4 border-l-purple-400">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div id="menopauseContainer" class="hidden">
+                            <label class="block text-gray-700 font-medium mb-2">Menopause Status (for women)</label>
+                            <select id="menopause" name="menopause"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                                <option value="Premenopausal">Premenopausal</option>
+                                <option value="Perimenopausal">Perimenopausal</option>
+                                <option value="Postmenopausal">Postmenopausal</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">On BP Medication</label>
+                            <select id="bpMedication" name="bpMedication"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">On Diabetes Medication</label>
+                            <select id="diabetesMedication" name="diabetesMedication"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">On Cholesterol Medication</label>
+                            <select id="cholesterolMedication" name="cholesterolMedication"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <!--<div>-->
+                        <!--    <label for="bodyFat" class="block text-gray-700 font-medium mb-2">Body Fat Percentage-->
+                        <!--        (%)</label>-->
+                        <!--    <input type="number" id="bodyFat" name="bodyFat"-->
+                        <!--        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"-->
+                        <!--        min="5" max="70" step="0.1">-->
+                            <!-- <p class="text-xs text-gray-500 mt-1">Depends on gender and age</p> -->
+                        <!--</div>-->
+
+                        <!--<div>-->
+                        <!--    <label for="waistHipRatio" class="block text-gray-700 font-medium mb-2">Waist-Hip-->
+                        <!--        Ratio</label>-->
+                        <!--    <input type="number" id="waistHipRatio" name="waistHipRatio"-->
+                        <!--        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"-->
+                        <!--        min="0.5" max="2" step="0.01">-->
+                            <!-- <p class="text-xs text-gray-500 mt-1">For men: <0.9 low risk, 0.9-1.0 moderate,>1.0 high
+                        <!--            risk<br>For women: <0.8 low risk, 0.8-0.85 moderate,>0.85 high risk</p> -->
+                        <!--</div>-->
+
+                        <div>
+                            <label for="vitaminD" class="block text-gray-700 font-medium mb-2">Vitamin D Level
+                                (ng/mL)</label>
+                            <input type="number" id="vitaminD" name="vitaminD"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                                 min="0" max="100">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Deficient: &lt;20, Insufficient: 20-30, Optimal: >30
+                            </p> -->
+                        </div>
+
+                        <div>
+                            <label for="vitaminB12" class="block text-gray-700 font-medium mb-2">Vitamin B12 Level
+                                (pg/mL)</label>
+                            <input type="number" id="vitaminB12" name="vitaminB12"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                                 min="100" max="2000">
+                            <!-- <p class="text-xs text-gray-500 mt-1">Deficient: &lt;200, Borderline: 200-300, Optimal: >300
+                            </p> -->
+                        </div>
+
+                        <!--<div>-->
+                        <!--    <label for="omega3Index" class="block text-gray-700 font-medium mb-2">Omega 3 Index-->
+                        <!--        (%)</label>-->
+                        <!--    <input type="number" id="omega3Index" name="omega3Index"-->
+                        <!--        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"-->
+                        <!--        min="0" max="15" step="0.1">-->
+                            <!-- <p class="text-xs text-gray-500 mt-1">High risk: <4%, Intermediate: 4-8%, Low risk:>8%</p> -->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="backToStep2B"
+                        class="btn-secondary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Back
+                    </button>
+                    <button type="button" id="nextToStep3"
+                        class="btn-primary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 flex items-center">
+                        Calculate Results
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Results -->
+            <div id="step3" class="step">
+                <div class="flex items-center mb-6">
+                    <div
+                        class="w-10 h-10 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-green-800">Your Heart Risk Results</h2>
+                </div>
+
+                <div class="mb-6 p-6 bg-white border rounded-xl shadow-sm">
+                    <div class="text-center mb-6">
+                        <h3 class="text-lg font-bold">Total Risk Score</h3>
+                        <div class="text-6xl font-bold my-6 pulse-animation text-sky-700" id="totalScore">--</div>
+                        <div class="text-xl font-medium text-gray-700 mb-4" id="riskCategory">--</div>
+                        <div class="w-full bg-gray-200 rounded-full h-5 mt-4 overflow-hidden">
+                            <div id="riskIndicator"
+                                class="h-5 rounded-full bg-gradient-to-r from-green-400 via-yellow-400 to-red-500"
+                                style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                            <span>Low Risk</span>
+                            <span>Moderate Risk</span>
+                            <span>High Risk</span>
+                        </div>
+                    </div>
+
+                    <!--<div class="mt-8">-->
+                        <!-- <h4 class="font-medium mb-3 text-sky-700 border-b pb-2">Risk Factor Breakdown</h4> -->
+                    <!--    <div id="riskFactors" class="space-y-3 mt-4">-->
+                            <!-- Risk factors will be populated by JavaScript -->
+                    <!--    </div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="p-5 bg-sky-50 rounded-lg border border-sky-100">
+                        <h3 class="text-lg font-medium text-sky-700 mb-2">What Your Results Mean</h3>
+                        <p class="text-gray-600 mb-3">This risk assessment provides an indication of potential
+                            cardiovascular risk factors based on your inputs. A higher score suggests more risk factors
+                            present.</p>
+                        <p class="text-gray-600"><strong class="text-sky-700">Important:</strong> This calculator is for
+                            informational purposes only and does not substitute for professional medical advice.</p>
+                    </div>
+                    <div class="p-5 bg-teal-50 rounded-lg border border-teal-100">
+                        <h3 class="text-lg font-medium text-teal-700 mb-2">Next Steps</h3>
+                        <p class="text-gray-600 mb-3">At PIVOT health we have a evidence based program for improving your Heart health click to <a class="font-bold text-blue-500" href="/heartspan.html">know more</a></p>
+                        <!--<p class="text-gray-600">Regular check-ups, a balanced diet, physical activity, and stress-->
+                        <!--    management can all contribute to better heart health.</p>-->
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="backToStep2C"
+                        class="btn-secondary font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Back
+                    </button>
+                    <button type="submit" id="submitForm"
+                        class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Submit Results
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    <!-- <div class="container mx-auto px-4 py-6 max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white p-5 rounded-lg shadow-md flex items-center">
+                <img src="/api/placeholder/80/80" alt="Heart health tip" class="mr-4 rounded" />
+                <div>
+                    <h3 class="font-medium text-sky-700">Regular Exercise</h3>
+                    <p class="text-sm text-gray-600">Aim for at least 150 minutes of moderate activity weekly.</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-md flex items-center">
+                <img src="/api/placeholder/80/80" alt="Heart health tip" class="mr-4 rounded" />
+                <div>
+                    <h3 class="font-medium text-sky-700">Balanced Diet</h3>
+                    <p class="text-sm text-gray-600">Focus on fruits, vegetables, whole grains, and lean proteins.</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-md flex items-center">
+                <img src="/api/placeholder/80/80" alt="Heart health tip" class="mr-4 rounded" />
+                <div>
+                    <h3 class="font-medium text-sky-700">Stress Management</h3>
+                    <p class="text-sm text-gray-600">Practice meditation, deep breathing, or yoga regularly.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <footer class="mt-10 bg-gradient-to-r from-sky-600 to-sky-800 text-white py-6">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Heart Risk Calculator</h3>
+                    <p class="text-sm text-sky-100">Take charge of your heart health today</p>
+                </div>
+                <div class="text-sm text-sky-100">
+                    <p>© 2025 Heart Health Initiative</p>
+                    <p>For informational purposes only</p>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Elements
+        const form = document.getElementById('heartRiskForm');
+        const progressBar = document.querySelector('.progress-bar');
+
+        // Steps
+        const step1 = document.getElementById('step1');
+        const step2A = document.getElementById('step2A');
+        const step2B = document.getElementById('step2B');
+        const step2C = document.getElementById('step2C');
+        const step3 = document.getElementById('step3');
+
+        // Navigation buttons
+        const nextToStep2A = document.getElementById('nextToStep2A');
+        const backToStep1 = document.getElementById('backToStep1');
+        const nextToStep2B = document.getElementById('nextToStep2B');
+        const backToStep2A = document.getElementById('backToStep2A');
+        const nextToStep2C = document.getElementById('nextToStep2C');
+        const backToStep2B = document.getElementById('backToStep2B');
+        const nextToStep3 = document.getElementById('nextToStep3');
+        const backToStep2C = document.getElementById('backToStep2C');
+        const submitForm = document.getElementById('submitForm');
+
+        // Additional elements
+        const menopauseContainer = document.getElementById('menopauseContainer');
+        const genderRadios = document.querySelectorAll('input[name="gender"]');
+
+        // Risk score elements
+        const totalScoreElement = document.getElementById('totalScore');
+        const riskCategoryElement = document.getElementById('riskCategory');
+        const riskIndicatorElement = document.getElementById('riskIndicator');
+        const riskFactorsElement = document.getElementById('riskFactors');
+
+        // Steps management
+        const steps = ['step1', 'step2A', 'step2B', 'step2C', 'step3'];
+        const stepperCircles = document.querySelectorAll('.stepper-circle');
+        const stepperItems = document.querySelectorAll('.stepper-item');
+
+        // Function to show a specific step and update UI
+        function showStep(stepId) {
+            // Hide all steps
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Show the target step
+            document.getElementById(stepId).classList.add('active');
+
+            // Update stepper
+            const stepIndex = steps.indexOf(stepId);
+            updateStepper(stepIndex);
+
+            // Update progress bar
+            const progressPercentage = (stepIndex / (steps.length - 1)) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Update stepper UI
+        function updateStepper(activeIndex) {
+            // Reset all steps
+            stepperItems.forEach((item, index) => {
+                item.classList.remove('completed');
+                const circle = item.querySelector('.stepper-circle');
+                circle.classList.remove('active', 'completed');
+            });
+
+            // Update completed and active steps
+            stepperItems.forEach((item, index) => {
+                if (index < activeIndex) {
+                    item.classList.add('completed');
+                    item.querySelector('.stepper-circle').classList.add('completed');
+                }
+                else if (index === activeIndex) {
+                    item.querySelector('.stepper-circle').classList.add('active');
+                }
+            });
+        }
+
+        // Show menopause option only for females
+        genderRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.value === 'F') {
+                    menopauseContainer.classList.remove('hidden');
+                } else {
+                    menopauseContainer.classList.add('hidden');
+                }
+            });
+        });
+
+        // Navigation event listeners - REMOVED VALIDATION CHECKS
+        nextToStep2A.addEventListener('click', function () {
+            showStep('step2A');
+        });
+
+        backToStep1.addEventListener('click', function () {
+            showStep('step1');
+        });
+
+        nextToStep2B.addEventListener('click', function () {
+            showStep('step2B');
+        });
+
+        backToStep2A.addEventListener('click', function () {
+            showStep('step2A');
+        });
+
+        nextToStep2C.addEventListener('click', function () {
+            showStep('step2C');
+        });
+
+        backToStep2B.addEventListener('click', function () {
+            showStep('step2B');
+        });
+
+        nextToStep3.addEventListener('click', function () {
+            calculateHeartRisk();
+            showStep('step3');
+        });
+
+        backToStep2C.addEventListener('click', function () {
+            showStep('step2C');
+        });
+
+        // Configure form for standard Formester submission
+        function prepareFormForFormesterSubmission() {
+            // Make sure form has the correct action URL for Formester
+            form.setAttribute('action', 'https://app.formester.com/forms/GuQgd2Hmn/submissions');
+            form.setAttribute('method', 'POST');
+
+            // Add a hidden field for the risk score results
+            let scoreInput = document.getElementById('hiddenTotalScore');
+            if (!scoreInput) {
+                scoreInput = document.createElement('input');
+                scoreInput.type = 'hidden';
+                scoreInput.id = 'hiddenTotalScore';
+                scoreInput.name = 'totalScore';
+                form.appendChild(scoreInput);
+            }
+
+            // Add a hidden field for the risk category
+            let categoryInput = document.getElementById('hiddenRiskCategory');
+            if (!categoryInput) {
+                categoryInput = document.createElement('input');
+                categoryInput.type = 'hidden';
+                categoryInput.id = 'hiddenRiskCategory';
+                categoryInput.name = 'riskCategory';
+                form.appendChild(categoryInput);
+            }
+        }
+
+        // Form submission handler
+        form.addEventListener('submit', function (e) {
+            // First check if the form is valid
+            const isFormValid = form.checkValidity();
+            
+            if (!isFormValid) {
+                // Let HTML5 validation show its native error messages
+                form.reportValidity();
+                return;
+            }
+            
+            // Only prevent default if form is valid
+            e.preventDefault();
+            
+            // Prepare the form for Formester submission
+            prepareFormForFormesterSubmission();
+            
+            try {
+                // Try to calculate risk score before submission
+                calculateHeartRisk();
+            } catch (error) {
+                console.error('Error during final calculation:', error);
+                totalScoreElement.textContent = '0';
+                riskCategoryElement.textContent = 'Not calculated';
+            }
+
+            // Set hidden fields
+            document.getElementById('hiddenTotalScore').value = document.getElementById('totalScore').textContent || '0';
+            document.getElementById('hiddenRiskCategory').value = document.getElementById('riskCategory').textContent || 'Not calculated';
+
+            // Submit the form data
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Form submitted successfully!');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Fallback to regular form submission
+                form.submit();
+            });
+        });
+
+        // Heart Risk Calculation - Made more resilient to invalid inputs
+        function calculateHeartRisk() {
+            // Helper function to safely parse values
+            function safeParse(elementId, defaultValue = 0, isSelect = false) {
+                const element = document.getElementById(elementId);
+                if (!element) return defaultValue;
+                
+                if (isSelect) return element.value || defaultValue;
+                
+                const value = element.value;
+                if (value === null || value === undefined || value === '') return defaultValue;
+                const parsed = parseFloat(value);
+                return isNaN(parsed) ? defaultValue : parsed;
+            }
+
+            // Get all form values with safe parsing
+            const gender = document.querySelector('input[name="gender"]:checked')?.value || 'M';
+            const age = safeParse('age');
+            const systolicBP = safeParse('systolicBP');
+            const ldl = safeParse('ldl');
+            const hdl = safeParse('hdl', 1); // Default to 1 to prevent division by zero
+            const triglycerides = safeParse('triglycerides');
+            const hscrp = safeParse('hscrp');
+            const lpa = safeParse('lpa');
+            const homocysteine = safeParse('homocysteine');
+            const smoking = safeParse('smoking', 'No', true);
+            const alcohol = safeParse('alcohol', 'None', true);
+            const processedFood = safeParse('processedFood', 'Low', true);
+            const fruitVegIntake = safeParse('fruitVegIntake', 'High', true);
+            const physicalInactivity = safeParse('physicalInactivity', 'Low', true);
+            const familyHistory = safeParse('familyHistory', 'No', true);
+            const airPollution = safeParse('airPollution');
+            const bpMedication = safeParse('bpMedication', 'No', true);
+            const diabetesMedication = safeParse('diabetesMedication', 'No', true);
+            const cholesterolMedication = safeParse('cholesterolMedication', 'No', true);
+            const fastingGlucose = safeParse('fastingGlucose');
+            const fastingInsulin = safeParse('fastingInsulin');
+            const hba1c = safeParse('hba1c');
+            const vitaminD = safeParse('vitaminD');
+            const vitaminB12 = safeParse('vitaminB12');
+            const stressLevel = safeParse('stressLevel', 'Low', true);
+            const sleepQuality = safeParse('sleepQuality', 'Good', true);
+            const menopause = gender === 'F' ? safeParse('menopause', 'N/A', true) : 'N/A';
+
+            // Risk calculation logic - made more resilient
+            const riskFactors = [
+                {
+                    name: "Systolic BP",
+                    score: systolicBP <= 0 ? 0 : (systolicBP < 120 ? 0 : (systolicBP < 140 ? 1 : 2)),
+                    weight: 3,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "LDL Cholesterol",
+                    score: ldl <= 0 ? 0 : (ldl < 100 ? 0 : (ldl <= 160 ? 1 : 2)),
+                    weight: 6,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "HDL Cholesterol",
+                    score: hdl <= 0 ? 0 : (gender === "M"
+                        ? (hdl > 60 ? 0 : (hdl >= 40 ? 1 : 2))
+                        : (hdl > 60 ? 0 : (hdl >= 50 ? 1 : 2))),
+                    weight: 4,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "Triglycerides",
+                    score: triglycerides <= 0 ? 0 : (triglycerides < 100 ? 0 : (triglycerides < 150 ? 1 : 2)),
+                    weight: 2,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "hs-CRP",
+                    score: hscrp <= 0 ? 0 : (hscrp < 1 ? 0 : (hscrp <= 3 ? 1 : 2)),
+                    weight: 3,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "Lp(a)",
+                    score: lpa <= 0 ? 0 : (lpa < 30 ? 0 : (lpa <= 50 ? 1 : 2)),
+                    weight: 3,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "Homocysteine",
+                    score: homocysteine <= 0 ? 0 : (homocysteine < 10 ? 0 : (homocysteine <= 15 ? 1 : 2)),
+                    weight: 2,
+                    category: "Cardiovascular Biomarker"
+                },
+                {
+                    name: "Fasting Glucose",
+                    score: fastingGlucose <= 0 ? 0 : (fastingGlucose < 100 ? 0 : (fastingGlucose <= 125 ? 1 : 2)),
+                    weight: 4,
+                    category: "Metabolic Health"
+                },
+                {
+                    name: "Fasting Insulin",
+                    score: fastingInsulin <= 0 ? 0 : (fastingInsulin < 10 ? 0 : (fastingInsulin < 15 ? 2 : 3)),
+                    weight: 3,
+                    category: "Metabolic Health"
+                },
+                {
+                    name: "HbA1c",
+                    score: hba1c <= 0 ? 0 : (hba1c < 5.4 ? 0 : (hba1c <= 6.4 ? 1 : 2)),
+                    weight: 4,
+                    category: "Metabolic Health"
+                },
+                {
+                    name: "Smoking",
+                    score: smoking === "No" ? 0 : 2,
+                    weight: 7,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Alcohol Intake",
+                    score: alcohol === "None" ? 0 : 
+                          (alcohol === "Low" ? 1 : 
+                          (alcohol === "Moderate" ? 2 : 3)),
+                    weight: 2,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Processed Food Intake",
+                    score: processedFood === "Low" ? 0 : (processedFood === "Med" ? 1 : 2),
+                    weight: 3,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Fruit & Vegetable Intake",
+                    score: fruitVegIntake === "High" ? 0 : (fruitVegIntake === "Med" ? 1 : 2),
+                    weight: 3,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Physical Inactivity",
+                    score: physicalInactivity === "Low" ? 0 : (physicalInactivity === "Mod" ? 1 : 2),
+                    weight: 4,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Family History of Heart Disease",
+                    score: familyHistory === "No" ? 0 : 2,
+                    weight: 5,
+                    category: "Risk Factors"
+                },
+                {
+                    name: "Air Pollution (AQI)",
+                    score: airPollution <= 0 ? 0 : (airPollution <= 50 ? 0 : (airPollution <= 100 ? 1 : 2)),
+                    weight: 2,
+                    category: "Environmental Factor"
+                },
+                {
+                    name: "On BP Medication",
+                    score: bpMedication === "No" ? 0 : 2,
+                    weight: 2,
+                    category: "Medical Treatment"
+                },
+                {
+                    name: "On Diabetes Medication",
+                    score: diabetesMedication === "No" ? 0 : 2,
+                    weight: 2,
+                    category: "Medical Treatment"
+                },
+                {
+                    name: "On Cholesterol Medication",
+                    score: cholesterolMedication === "No" ? 0 : 2,
+                    weight: 2,
+                    category: "Medical Treatment"
+                },
+                {
+                    name: "Menopause Status",
+                    score: (gender === "F" && menopause === "Postmenopausal") ? 2 : 0,
+                    weight: 2,
+                    category: "Hormonal Factor"
+                },
+                {
+                    name: "Stress Level",
+                    score: stressLevel === "Low" ? 0 : (stressLevel === "Med" ? 1 : 2),
+                    weight: 2,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Sleep Quality",
+                    score: sleepQuality === "Good" ? 0 : (sleepQuality === "Fair" ? 1 : 2),
+                    weight: 2,
+                    category: "Lifestyle Factor"
+                },
+                {
+                    name: "Vitamin D",
+                    score: vitaminD <= 0 ? 0 : (vitaminD < 20 ? 3 : (vitaminD < 30 ? 2 : 0)),
+                    weight: 1,
+                    category: "Micronutrients"
+                },
+                {
+                    name: "Vitamin B12",
+                    score: vitaminB12 <= 0 ? 0 : (vitaminB12 < 200 ? 3 : (vitaminB12 < 300 ? 2 : 0)),
+                    weight: 1,
+                    category: "Micronutrients"
+                }
+            ];
+
+            // Calculate weighted scores and total
+            let totalWeightedScore = 0;
+            riskFactors.forEach(factor => {
+                factor.weightedScore = factor.score * factor.weight;
+                totalWeightedScore += factor.weightedScore;
+            });
+
+            // Calculate maximum possible score for scale
+            const maxScore = riskFactors.reduce((sum, factor) => sum + (factor.score >= 3 ? 3 : 2) * factor.weight, 0);
+
+            // Calculate percentage of maximum (prevent division by zero)
+            const scorePercentage = maxScore > 0 ? Math.round((totalWeightedScore / maxScore) * 100) : 0;
+
+            // Determine risk category based on percentage
+            let riskCategory;
+            let indicatorClass;
+
+            if (scorePercentage < 25) {
+                riskCategory = "Low Risk";
+                indicatorClass = "from-green-500 to-green-400";
+            } else if (scorePercentage < 50) {
+                riskCategory = "Moderate Risk";
+                indicatorClass = "from-yellow-500 to-yellow-400";
+            } else if (scorePercentage < 75) {
+                riskCategory = "High Risk";
+                indicatorClass = "from-orange-500 to-orange-400";
+            } else {
+                riskCategory = "Very High Risk";
+                indicatorClass = "from-red-500 to-red-400";
+            }
+
+            // Update the UI with results
+            if (totalScoreElement) totalScoreElement.textContent = totalWeightedScore;
+            if (riskCategoryElement) riskCategoryElement.textContent = riskCategory;
+            if (riskIndicatorElement) {
+                riskIndicatorElement.style.width = `${scorePercentage}%`;
+                riskIndicatorElement.className = `h-5 rounded-full bg-gradient-to-r ${indicatorClass}`;
+            }
+
+            // Clear and rebuild risk factors display
+            if (riskFactorsElement) {
+                riskFactorsElement.innerHTML = '';
+
+                // Group risk factors by category
+                const categorizedFactors = {};
+                riskFactors.forEach(factor => {
+                    if (!categorizedFactors[factor.category]) {
+                        categorizedFactors[factor.category] = [];
+                    }
+                    categorizedFactors[factor.category].push(factor);
+                });
+
+                // Create sections for each category
+                for (const [category, factors] of Object.entries(categorizedFactors)) {
+                    const categorySection = document.createElement('div');
+                    categorySection.className = 'mb-6';
+                    
+                    const categoryHeader = document.createElement('h3');
+                    categoryHeader.className = 'text-lg font-semibold mb-2';
+                    categoryHeader.textContent = category;
+                    categorySection.appendChild(categoryHeader);
+
+                    const factorsList = document.createElement('ul');
+                    factorsList.className = 'space-y-2';
+
+                    factors.forEach(factor => {
+                        if (factor.score > 0) { // Only show factors with positive scores
+                            const factorItem = document.createElement('li');
+                            factorItem.className = 'flex justify-between';
+                            
+                            const factorName = document.createElement('span');
+                            factorName.textContent = factor.name;
+                            
+                            const factorScore = document.createElement('span');
+                            factorScore.className = 'font-medium';
+                            factorScore.textContent = `${factor.score} × ${factor.weight} = ${factor.weightedScore}`;
+                            
+                            factorItem.appendChild(factorName);
+                            factorItem.appendChild(factorScore);
+                            factorsList.appendChild(factorItem);
+                        }
+                    });
+
+                    // Only add the category if it has factors with scores
+                    if (factorsList.children.length > 0) {
+                        categorySection.appendChild(factorsList);
+                        riskFactorsElement.appendChild(categorySection);
+                    }
+                }
+            }
+        }
+
+        // Initialize form settings when the page loads
+        prepareFormForFormesterSubmission();
+    });
+</script>
+</body>
+
+</html>

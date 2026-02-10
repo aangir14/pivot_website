@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .main-404 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .error-container {
+            padding: 2rem;
+            z-index: 10;
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: 200;
+            background: linear-gradient(45deg, #6366F1, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+        
+        .home-button {
+            display: inline-block;
+            background-color: #343a40;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #6366F1, #EC4899);
+            top: 10%;
+            left: 10%;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #6366F1, #EC4899);
+            bottom: 10%;
+            right: 10%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- Navbar (Unchanged) -->
+        <nav class="navbar absolute z-50 w-full bg-transparent  py-4 px-6 text-white">
+            <div class="max-w-7xl px-6 py-3 md:py-4  lg:px-8 shadow-lg bg-white rounded-full  w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <img src="assets/logo/main.png" alt="Pivot Logo" class="w-28 h-auto">
+                </a>
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8 text-white">
+                    <a href="#about" class="text-gray-800 hover:text-teal-200 transition-colors">About</a>
+                    <!-- Programs with dropdown -->
+                    <div class="relative group">
+                        <a href="#programs" class="text-gray-800 hover:text-teal-200 transition-colors">Programs</a>
+                        <!-- Dropdown menu -->
+                        <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                            <div class="py-2">
+                                <!-- HeartSpan - clickable -->
+                                <a href="/heartspan.html" class="block px-4 py-2 text-gray-800 hover:bg-teal-500 hover:text-white transition-colors">
+                                    HeartSpan
+                                </a>
+                                <!-- GutSpan - with clock icon -->
+                                <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                    <span class="mr-2">GutSpan</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <!-- BrainSpan - with clock icon -->
+                                <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                    <span class="mr-2">BrainSpan</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#testimonials" class="text-gray-800 hover:text-teal-200 transition-colors">Testimonials</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden focus:outline-none">
+                    <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                
+                <!-- Mobile Menu Dropdown (hidden by default) -->
+                <div class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                    <div class="flex flex-col space-y-3">
+                        <a href="#about" class="text-gray-800 hover:text-teal-500 transition-colors">About</a>
+                        <!-- Mobile Programs Dropdown -->
+                        <div class="relative">
+                            <button class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                                Programs
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="pl-4 mt-2 hidden">
+                                <a href="/heartspan.html" class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                                <div class="flex items-center py-2 text-gray-500">
+                                    <span class="mr-2">GutSpan</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div class="flex items-center py-2 text-gray-500">
+                                    <span class="mr-2">BrainSpan</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#testimonials" class="text-gray-800 hover:text-teal-500 transition-colors">Testimonials</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Main 404 Section (Fixed) -->
+        <main class="main-404 bg-gray-200">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            
+            <div class="error-container">
+                <h1 class="error-code">404</h1>
+                <p class="message">The page you're looking for doesn't exist.</p>
+                <a href="/" class="home-button">Back to Home</a>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer (Unchanged) -->
+    <footer class="py-12 bg-teal-50">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-32 h-auto">
+            </div>
+
+            <!-- Contact Link -->
+            <a href="#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact
+                Us</a>
+
+            <!-- Copyright -->
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Pivot Healthcare. All rights reserved.
+            </p>
+        </div>
+    </footer>
+   
+</body>
+</html>

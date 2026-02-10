@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Navigating Health amidst the Modern-Day Chaos: Striking the Balance - Learn practical strategies for maintaining health in today's busy world.">
+    <title>Navigating Health amidst the Modern-Day Chaos | Health Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+       <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.png">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#FDF8F1',
+                100: '#F8ECD9',
+                200: '#F0D9B3',
+                300: '#E7C48D',
+                400: '#DEB366',
+                500: '#D4A76A', /* Main whiskey color */
+                600: '#BF8F4E',
+                700: '#A97532',
+                800: '#836022',
+                900: '#5C4518',
+              },
+              highlight: {
+                50: '#F0E6D2',
+                100: '#E4D1AB',
+              },
+              accent: {
+                50: '#E6F0FD',
+                100: '#C7DFFA',
+                300: '#90C2F4',
+                500: '#63B3ED', /* Light blue */
+                700: '#2B6CB0',
+              },
+            },
+            typography: {
+              DEFAULT: {
+                css: {
+                  a: {
+                    color: '#A97532',
+                    '&:hover': {
+                      color: '#D4A76A',
+                    },
+                  },
+                  h1: {
+                    color: '#2D3748',
+                  },
+                  h2: {
+                    color: '#2D3748',
+                  },
+                  h3: {
+                    color: '#2D3748',
+                  },
+                  h4: {
+                    color: '#2D3748',
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+        :root {
+            --primary-color: #D4A76A; /* Whiskey color */
+            --accent-color: #63B3ED; /* Light blue */
+            --text-color: #4A5568;
+            --bg-color: #FAF9F7; /* Slight cream background */
+            --sidebar-bg: #FFFAF0; /* Lighter cream for sidebar */
+            --highlight-color: #F0E6D2; /* Light whiskey for highlights */
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        h1, h2, h3 {
+            scroll-margin-top: 2rem;
+            color: #2D3748;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .table-of-contents {
+            position: sticky;
+            top: 2rem;
+            background-color: var(--sidebar-bg);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            font-style: italic;
+            color: #4a5568;
+            background-color: var(--highlight-color);
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Reading Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 50;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--primary-color);
+            width: 0%;
+        }
+        
+        /* Estimated reading time */
+        .reading-time {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+        .back-to-top:hover {
+            background: #BF8F4E; /* Darker whiskey */
+        }
+        
+        /* Text highlight for active section */
+        .toc-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Font size controls */
+        .font-controls {
+            /*position: fixed;*/
+            /*top: 100px;*/
+            /*right: 20px;*/
+            display: flex;
+            gap: 8px;
+            z-index: 30;
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+        }
+        
+        /* Mobile sidebar */
+        .sidebar-toggle {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .sidebar-toggle:hover {
+            background: #BF8F4E;
+        }
+        
+        .mobile-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background-color: var(--sidebar-bg);
+            overflow-x: hidden;
+            transition: 0.3s;
+            z-index: 60;
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-sidebar.active {
+            width: 300px;
+        }
+        
+        .mobile-sidebar .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        .mobile-sidebar-content {
+            padding: 0 20px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .mobile-sidebar.active .mobile-sidebar-content {
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+        
+        @media (max-width: 1023px) {
+            .sidebar-toggle {
+                display: flex;
+            }
+            .font-controls {
+                display: none;
+            }
+            .table-of-contents {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-bg-color">
+    
+        <!-- Navbar -->
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div class="max-w-7xl px-6 py-3 border md:py-4 lg:px-8 rounded-full bg-white/30 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="../assets/logo/main.png" alt="Health Blog Logo" class="w-28 h-auto">
+            </a>
+            <!-- Font Size Controls for Desktop -->
+            <div class="font-controls bg-white text-primary-500 p-2 rounded-lg border">
+                <button class="font-control-btn" id="decreaseFont" aria-label="Decrease font size">A-</button>
+                <button class="font-control-btn" id="resetFont" aria-label="Reset font size">A</button>
+                <button class="font-control-btn" id="increaseFont" aria-label="Increase font size">A+</button>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href=".././" class="text-black hover:text-teal-600 transition-colors">Home</a>
+                <a href="../about-us" class="text-black hover:text-teal-600 transition-colors">About Us</a>
+                <div class="relative group">
+                    <a href="#programs" class="text-black hover:text-teal-600 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="../heartspan.html" class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="../index#contact" class="text-black hover:text-teal-600 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="../heartspan.html" class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../index#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+                </div>
+            </div>
+                
+        </div>
+    </nav>
+    
+    <div class="h-16"></div>
+    
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Font Size Controls for Desktop -->
+    <!--<div class="font-controls bg-white p-2 rounded-lg shadow-md">-->
+    <!--    <button class="font-control-btn" id="decreaseFont" aria-label="Decrease font size">A-</button>-->
+    <!--    <button class="font-control-btn" id="resetFont" aria-label="Reset font size">A</button>-->
+    <!--    <button class="font-control-btn" id="increaseFont" aria-label="Increase font size">A+</button>-->
+    <!--</div>-->
+    
+    <!-- Mobile Sidebar Toggle Button -->
+    <div class="sidebar-toggle" id="sidebarToggle" aria-label="Open sidebar menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </div>
+    
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="close-btn" id="closeSidebar">&times;</div>
+        <div class="mobile-sidebar-content">
+            <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
+            <nav>
+                <ul class="space-y-2 text-sm mb-8">
+                    <li><a href="#top" class="toc-link text-gray-700 hover:text-primary">Introduction</a></li>
+                    <li><a href="#modern-challenges" class="toc-link text-gray-700 hover:text-primary">Modern Health Challenges</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#sedentary-lifestyle" class="toc-link text-gray-600 hover:text-primary">Sedentary Lifestyles</a></li>
+                            <li><a href="#chronic-stress" class="toc-link text-gray-600 hover:text-primary">Chronic Stress</a></li>
+                            <li><a href="#sleep-deprivation" class="toc-link text-gray-600 hover:text-primary">Sleep Deprivation</a></li>
+                            <li><a href="#poor-diet" class="toc-link text-gray-600 hover:text-primary">Poor Diet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#practical-strategies" class="toc-link text-gray-700 hover:text-primary">Practical Strategies</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#prioritize-movement" class="toc-link text-gray-600 hover:text-primary">Prioritize Movement</a></li>
+                            <li><a href="#manage-stress" class="toc-link text-gray-600 hover:text-primary">Manage Stress</a></li>
+                            <li><a href="#sleep-health" class="toc-link text-gray-600 hover:text-primary">Sleep Health</a></li>
+                            <li><a href="#nutrition" class="toc-link text-gray-600 hover:text-primary">Nutrition</a></li>
+                            <li><a href="#social-connection" class="toc-link text-gray-600 hover:text-primary">Social Connection</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#conclusion" class="toc-link text-gray-700 hover:text-primary">Conclusion</a></li>
+                </ul>
+                <h3 class="text-lg font-semibold mb-3">Text Size</h3>
+                <div class="flex items-center space-x-4 mb-6">
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileDcrFont">A-</button>
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileResetFont">A</button>
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileIncFont">A+</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 py-10 md:px-8">
+        <div class="lg:flex lg:gap-12">
+            <!-- Main Content -->
+            <main class="lg:w-3/4">
+                <article class="prose prose-lg max-w-none">
+                    <header class="mb-10">
+                        <h1 id="top" class="text-3xl md:text-4xl font-bold mb-4">Navigating Health amidst the Modern-Day Chaos: Striking the Balance</h1>
+                        <div class="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
+                            <time datetime="2025-04-04" class="text-sm">April 4, 2025</time>
+                            <span class="reading-time" id="readingTime">8 min read</span>
+                        </div>
+                        <!-- Hero Image -->
+                        <div class="my-6 rounded-lg overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?q=80&w=2998&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Person balancing life and work" class="w-full h-auto object-cover">
+                        </div>
+                    </header>
+                    
+                    <div class="space-y-6">
+                        <p>In the fast-paced world of today, where time is a precious commodity and the demands of work, family, and personal aspirations never seem to slow down, maintaining good health often feels like a daunting challenge. The modern lifestyle, with its constant hustle and endless to-do lists, can easily lead to burnout, stress, and neglect of our physical and mental well-being.</p>
+                        
+                        <p>We live in a time where convenience and productivity reign supreme, but ironically, these very factors can also distance us from the foundational practices that sustain our health. In the rush to succeed, to meet deadlines, and to keep up with everything, our personal health can sometimes take a back seat.</p>
+                        
+                        <p>But navigating health in today's busy life isn't an impossible feat. It's about being intentional, making small, sustainable changes, and learning how to prioritize your well-being amidst the chaos. In this article, we will explore practical ways to cultivate a balanced and healthy lifestyle while managing the demands of modern life.</p>
+                        
+                        <h2 id="modern-challenges" class="text-2xl font-bold mt-10 mb-4">Modern Health Challenges</h2>
+                        <p>Modern life brings with it a unique set of health challenges. The pressure to perform, achieve, and constantly stay busy can result in both physical and mental strain. A combination of technology, work culture, and social expectations has created an environment where chronic stress, sleep deprivation, and sedentary behaviour have become commonplace.</p>
+                        
+                        <h3 id="sedentary-lifestyle" class="text-xl font-semibold mt-8 mb-3">1. Sedentary Lifestyles</h3>
+                        <p>One of the most significant health challenges today is the sedentary nature of most jobs. Many people sit at desks for hours, working in front of computers or attending virtual meetings, with little to no movement. This lack of physical activity leads to a range of health problems, including obesity, cardiovascular disease, and poor posture.</p>
+                        
+                        <h3 id="chronic-stress" class="text-xl font-semibold mt-8 mb-3">2. Chronic Stress</h3>
+                        <p>Stress has become an omnipresent part of modern life. From the constant bombardment of emails to the pressure to be constantly available and productive, stress levels are at an all-time high. Chronic stress can lead to a myriad of health issues, including anxiety, depression, and heart disease.</p>
+                        
+                        <h3 id="sleep-deprivation" class="text-xl font-semibold mt-8 mb-3">3. Sleep Deprivation</h3>
+                        <p>The demands of work and personal life often leave little room for rest. Sleep is one of the most important aspects of health, yet millions of people sacrifice it to meet deadlines or accommodate busy schedules. Chronic sleep deprivation affects cognitive function, mood, and overall health, contributing to long-term physical and mental health problems.</p>
+                        
+                        <h3 id="poor-diet" class="text-xl font-semibold mt-8 mb-3">4. Poor Diet</h3>
+                        <p>Busy lives often translate to poor eating habits. Fast food, processed snacks, and sugary drinks become the go-to options when there's little time to cook or sit down for a nutritious meal. This diet, while convenient, can have serious long-term health effects, including weight gain, digestive issues, and increased risk for chronic diseases like diabetes and hypertension.</p>
+                        
+                        <h2 id="practical-strategies" class="text-2xl font-bold mt-10 mb-4">Practical Strategies for Health in a Busy Life</h2>
+                        <p>It's clear that modern life presents significant challenges when it comes to maintaining health. However, by implementing small, intentional changes, it's possible to navigate these obstacles and cultivate a healthier lifestyle. Here are several practical strategies to help you maintain your well-being despite a hectic schedule.</p>
+                        
+                        <h3 id="prioritize-movement" class="text-xl font-semibold mt-8 mb-3">1. Prioritize Movement—Incorporate Physical Activity Throughout Your Day</h3>
+                        <p>In a busy world, finding time to exercise can be difficult. However, it's not about squeezing in a full workout every day but rather about incorporating movement into your routine, no matter how busy you are.</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Walk or Cycle to Work:</strong> If possible, walk or cycle instead of driving or taking public transport. It's a great way to get your body moving and adds a few extra steps to your day. Even small changes, like parking farther away from your destination or taking the stairs instead of the elevator, can make a significant difference over time.</li>
+                            <li><strong>Desk Exercises and Stretching:</strong> For those with desk jobs, incorporating short bursts of physical activity throughout the day can help alleviate the negative effects of sitting. Simple stretches, short walks, or even seated leg lifts can reduce muscle stiffness and improve circulation.</li>
+                            <li><strong>Exercise in Small Time Blocks:</strong> You don't need an hour-long gym session to stay healthy. Try shorter, more intense workouts—such as 10-15 minutes of high-intensity interval training (HIIT)—which can be just as effective as longer workouts. Squeezing in a quick workout before or after work, or even during lunch breaks, can go a long way in keeping you fit.</li>
+                        </ul>
+                        
+                        <h3 id="manage-stress" class="text-xl font-semibold mt-8 mb-3">2. Manage Stress with Mindfulness and Restorative Practices</h3>
+                        <p>The pressures of modern life are unavoidable, but managing stress effectively is crucial for both mental and physical health. Fortunately, there are simple and accessible tools to help you manage stress even during the busiest of days.</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Mindfulness and Meditation:</strong> Mindfulness is the practice of staying present and aware, even in moments of stress. Taking a few minutes to practice deep breathing, meditation, or even just stepping outside for a short walk can help reset your nervous system and reduce stress. Apps like Headspace or Calm can guide you through quick mindfulness sessions if you're short on time.</li>
+                            <li><strong>Set Boundaries:</strong> With work demanding more time than ever, it's essential to set clear boundaries between your professional and personal life. Avoid checking emails or taking work calls after hours. Protecting your time for rest and recreation allows you to recharge, reducing stress and preventing burnout.</li>
+                            <li><strong>Restorative Practices:</strong> Activities like yoga or tai chi are excellent for managing stress, improving flexibility, and enhancing mental clarity. Even if you can only fit in a 15-minute practice before bed, it can be a highly effective tool for winding down and reducing tension.</li>
+                        </ul>
+                        
+                        <h3 id="sleep-health" class="text-xl font-semibold mt-8 mb-3">3. Sleep—The Ultimate Health Booster</h3>
+                        <p>In our modern, always-on society, sleep is often sacrificed in favour of productivity. But without proper rest, our physical and mental health begins to deteriorate. Sleep is critical for everything from cognitive function and emotional regulation to immune health and cellular repair.</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Set a Consistent Sleep Schedule:</strong> Even if your days are unpredictable, try to stick to a regular sleep schedule. Going to bed and waking up at the same time each day helps regulate your body's internal clock and improves sleep quality.</li>
+                            <li><strong>Create a Restful Environment:</strong> Your bedroom should be a sanctuary for sleep. Keep it dark, quiet, and cool, and limit the use of electronics like smartphones or computers before bedtime. Blue light emitted from screens can disrupt the production of melatonin, the hormone responsible for sleep.</li>
+                            <li><strong>Practice Relaxation Techniques Before Bed:</strong> If your mind is racing with thoughts, try relaxation exercises before bed. Gentle stretching, a warm bath, or even journaling can help signal to your body that it's time to unwind and prepare for restful sleep.</li>
+                        </ul>
+                        
+                        <h3 id="nutrition" class="text-xl font-semibold mt-8 mb-3">4. Nutrition—Fuelling Your Body for the Demands of Modern Life</h3>
+                        <p>In our busy lives, eating healthy often takes a backseat to convenience. But making time to nourish your body properly is one of the most important things you can do for your health.</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Meal Prep for Success:</strong> Meal prepping can save you time and energy throughout the week. Set aside a few hours on the weekend to prepare healthy meals and snacks for the week ahead. This ensures that you always have nutritious options on hand, even on your busiest days.</li>
+                            <li><strong>Prioritize Whole Foods:</strong> Instead of reaching for processed snacks or fast food, focus on whole foods like fruits, vegetables, lean proteins, and healthy fats. These provide your body with the nutrients it needs to stay energized and function optimally.</li>
+                            <li><strong>Stay Hydrated:</strong> Dehydration can lead to fatigue, headaches, and poor concentration. Carry a water bottle with you throughout the day to ensure that you stay hydrated and opt for water or herbal teas over sugary drinks.</li>
+                        </ul>
+                        
+                        <h3 id="social-connection" class="text-xl font-semibold mt-8 mb-3">5. The Importance of Social Connection</h3>
+                        <p>In our digital age, it's easy to feel disconnected, despite being constantly connected through social media and technology. However, strong social connections are key to maintaining good mental health and well-being.</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Schedule Quality Time with Loved Ones:</strong> Despite your busy schedule, make it a priority to spend time with friends, family, or loved ones. Whether it's a weekly dinner or a short catch-up over the phone, regular social interactions are vital for emotional health.</li>
+                            <li><strong>Join Groups or Activities:</strong> Finding communities that align with your interests—whether it's a fitness class, book club, or volunteer group—can provide a sense of belonging and purpose, helping to combat feelings of isolation.</li>
+                        </ul>
+                        
+                        <h2 id="conclusion" class="text-2xl font-bold mt-10 mb-4">Conclusion</h2>
+                        <p>Maintaining good health in today's busy world is undeniably challenging. Yet, it is far from impossible. The key lies in creating intentional, sustainable habits that prioritize your well-being amidst the demands of modern life. By incorporating small changes, such as prioritizing movement, managing stress, sleeping better, and eating well, you can begin to reclaim your health, one day at a time.</p>
+                        
+                        <p>It's important to remember that you don't need to be perfect. Life will always have its pressures, and sometimes things won't go as planned. But by making conscious choices that support your health, you'll be better equipped to handle whatever challenges come your way. So, take a deep breath, focus on what you can control, and take the first step toward navigating your health in today's busy world. Your future self will thank you.</p>
+                        
+                        <div class="mt-12 border-t pt-6">
+                            <h4 class="text-lg font-semibold mb-4">Share this article</h4>
+                            <div class="text-center max-w-4xl mx-auto">
+    
+        <!--<p class="text-gray-600 mb-8">Click any button to share this page</p>-->
+        
+        
+        <!-- Outlined Style -->
+        <div class="mb-4">
+            <!--<h2 class="text-xl font-semibold text-gray-700 mb-4">Outlined Style</h2>-->
+            <div id="share-buttons-outlined" class="flex flex-wrap gap-4"></div>
+        </div>
+        
+        <!-- Copy feedback message -->
+        <div id="copy-feedback" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 translate-y-20 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none">
+            <i class="fas fa-check-circle"></i>
+            <span>Link copied to clipboard!</span>
+        </div>
+    </div>
+                        </div>
+                        
+                        <!-- Related articles -->
+                        <div class="mt-12 border-t pt-6">
+                            <h4 class="text-lg font-semibold mb-6">You might also like</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <a href="the-buzz-about-habits" class="block group">
+                                    <div class="bg-highlight-50 rounded-lg p-4 transition-all duration-200 hover:shadow-md h-full">
+                                        <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600">The Buzz About Habits: Making and Breaking</h5>
+                                        <p class="text-gray-600 text-sm">Considering we have a certain level of free will that we get to exercise independently, crafting our life in the way we want to should be a rather smooth ride.</p>
+                                    </div>
+                                </a>
+                                <a href="zone-cardio" class="block group">
+                                    <div class="bg-highlight-50 rounded-lg p-4 transition-all duration-200 hover:shadow-md h-full">
+                                        <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600">Zone 2 Cardio and Cardiac Health</h5>
+                                        <p class="text-gray-600 text-sm">From the lens of children, running is majorly divided into 2 categories - sprints and slow running. However, the categories and potential running or cardio in general holds extends beyond those 2 categories.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            
+            <!-- Sidebar with Table of Contents -->
+            <aside class="lg:w-1/4 mt-10 lg:mt-0">
+                <div class="table-of-contents p-6 rounded-lg shadow-sm">
+                    <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
+                    <nav>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#top" class="toc-link text-gray-700 hover:text-primary-600">Introduction</a></li>
+                            <li><a href="#modern-challenges" class="toc-link text-gray-700 hover:text-primary-600">Modern Health Challenges</a>
+                                <ul class="pl-4 mt-1 space-y-1">
+                                    <li><a href="#sedentary-lifestyle" class="toc-link text-gray-600 hover:text-primary-600">Sedentary Lifestyles</a></li>
+                                    <li><a href="#chronic-stress" class="toc-link text-gray-600 hover:text-primary-600">Chronic Stress</a></li>
+                                    <li><a href="#sleep-deprivation" class="toc-link text-gray-600 hover:text-primary-600">Sleep Deprivation</a></li>
+                                    <li><a href="#poor-diet" class="toc-link text-gray-600 hover:text-primary-600">Poor Diet</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#practical-strategies" class="toc-link text-gray-700 hover:text-primary-600">Practical Strategies</a>
+                                <ul class="pl-4 mt-1 space-y-1">
+                                    <li><a href="#prioritize-movement" class="toc-link text-gray-600 hover:text-primary-600">Prioritize Movement</a></li>
+                                    <li><a href="#manage-stress" class="toc-link text-gray-600 hover:text-primary-600">Manage Stress</a></li>
+                                    <li><a href="#sleep-health" class="toc-link text-gray-600 hover:text-primary-600">Sleep Health</a></li>
+                                    <li><a href="#nutrition" class="toc-link text-gray-600 hover:text-primary-600">Nutrition</a></li>
+                                    <li><a href="#social-connection" class="toc-link text-gray-600 hover:text-primary-600">Social Connection</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#conclusion" class="toc-link text-gray-700 hover:text-primary-600">Conclusion</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </div>
+    <footer class="py-20 bg-teal-50 relative overflow-hidden">
+    <!-- Text Outline Background -->
+    <!--<div class="absolute inset-0 z-0 text-outline-container overflow-hidden">-->
+    <!--    <div class="text-outline">PIVOT</div>-->
+    <!--</div>-->
+    
+    <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+        <!-- Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="../assets/pivot-logo-old.png" alt="Pivot Logo" class="w-32 h-auto">
+        </div>
+        <!-- Contact Link -->
+        <div>
+                    <a href="../index#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                                        <a href="../privacy-policy" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy |</a>
+                    <a href="../t&c" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms and Conditions |</a>
+                                        <a href="../terms&conditions" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms </a>
+
+
+            
+        </div>
+        <!-- Copyright -->
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Pivot Healthcare. All rights reserved.
+        </p>
+    </div>
+
+    <style>
+        /* Text Outline Background Styles */
+        .text-outline-container {
+            pointer-events: none;
+        }
+        
+        .text-outline {
+            position: absolute;
+            font-size: 25vw;
+            font-family: Georgia, serif;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: 5px;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(0, 128, 128, 0.1);
+            text-stroke: 1px rgba(0, 128, 128, 0.1);
+            white-space: nowrap;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .text-outline {
+                font-size: 40vw;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .text-outline {
+                font-size: 50vw;
+                -webkit-text-stroke: 0.8px rgba(0, 128, 128, 0.1);
+                text-stroke: 0.8px rgba(0, 128, 128, 0.1);
+            }
+        }
+    </style>
+</footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+    
+    
+    
+    <script>
+        class ShareButtons {
+            constructor(options = {}) {
+                this.currentUrl = options.url || window.location.href;
+                this.pageTitle = options.title || document.title;
+                
+                this.platforms = {
+                    x: {
+                        name: 'Share on X',
+                        icon: 'fab fa-x-twitter',
+                        color: 'bg-black hover:bg-gray-800',
+                        outlineColor: 'border-black text-black hover:bg-black hover:text-white',
+                        shareUrl: 'https://twitter.com/intent/tweet',
+                        params: () => ({
+                            url: this.currentUrl,
+                            text: this.pageTitle
+                        })
+                    },
+                    whatsapp: {
+                        name: 'Share on WhatsApp',
+                        icon: 'fab fa-whatsapp',
+                        color: 'bg-green-500 hover:bg-green-600',
+                        outlineColor: 'border-green-500 text-green-500 hover:bg-green-500 hover:text-white',
+                        shareUrl: 'https://api.whatsapp.com/send',
+                        params: () => ({
+                            text: `${this.pageTitle} ${this.currentUrl}`
+                        })
+                    },
+                    linkedin: {
+                        name: 'Share on LinkedIn',
+                        icon: 'fab fa-linkedin-in',
+                        color: 'bg-blue-600 hover:bg-blue-700',
+                        outlineColor: 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+                        shareUrl: 'https://www.linkedin.com/sharing/share-offsite/',
+                        params: () => ({
+                            url: this.currentUrl
+                        })
+                    },
+                    facebook: {
+                        name: 'Share on Facebook',
+                        icon: 'fab fa-facebook-f',
+                        color: 'bg-blue-500 hover:bg-blue-600',
+                        outlineColor: 'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white',
+                        shareUrl: 'https://www.facebook.com/sharer/sharer.php',
+                        params: () => ({
+                            u: this.currentUrl
+                        })
+                    },
+                    // telegram: {
+                    //     name: 'Share on Telegram',
+                    //     icon: 'fab fa-telegram-plane',
+                    //     color: 'bg-sky-500 hover:bg-sky-600',
+                    //     outlineColor: 'border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white',
+                    //     shareUrl: 'https://t.me/share/url',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         text: this.pageTitle
+                    //     })
+                    // },
+                    // pinterest: {
+                    //     name: 'Share on Pinterest',
+                    //     icon: 'fab fa-pinterest-p',
+                    //     color: 'bg-red-600 hover:bg-red-700',
+                    //     outlineColor: 'border-red-600 text-red-600 hover:bg-red-600 hover:text-white',
+                    //     shareUrl: 'https://pinterest.com/pin/create/button/',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         description: this.pageTitle
+                    //     })
+                    // },
+                    // reddit: {
+                    //     name: 'Share on Reddit',
+                    //     icon: 'fab fa-reddit-alien',
+                    //     color: 'bg-orange-600 hover:bg-orange-700',
+                    //     outlineColor: 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white',
+                    //     shareUrl: 'https://reddit.com/submit',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         title: this.pageTitle
+                    //     })
+                    // },
+                    // email: {
+                    //     name: 'Share via Email',
+                    //     icon: 'fas fa-envelope',
+                    //     color: 'bg-gray-700 hover:bg-gray-800',
+                    //     outlineColor: 'border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white',
+                    //     action: () => {
+                    //         const subject = encodeURIComponent(this.pageTitle);
+                    //         const body = encodeURIComponent(`Check out this page: ${this.currentUrl}`);
+                    //         window.location.href = `mailto:?subject=${subject}&body=${body}`;
+                    //     }
+                    // },
+                    copy: {
+                        name: 'Copy Link',
+                        icon: 'fas fa-link',
+                        color: 'bg-gray-600 hover:bg-gray-700',
+                        outlineColor: 'border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white',
+                        action: () => this.copyToClipboard()
+                    }
+                };
+            }
+            
+            generateShareUrl(platform) {
+                const config = this.platforms[platform];
+                if (!config || !config.shareUrl) return null;
+                
+                const params = config.params();
+                const queryString = new URLSearchParams(params).toString();
+                return `${config.shareUrl}?${queryString}`;
+            }
+            
+            share(platform) {
+                const config = this.platforms[platform];
+                
+                if (config.action) {
+                    config.action();
+                    return;
+                }
+                
+                const shareUrl = this.generateShareUrl(platform);
+                if (!shareUrl) return;
+                
+                // Mobile detection for WhatsApp
+                if (platform === 'whatsapp' && /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    window.location.href = shareUrl;
+                    return;
+                }
+                
+                const width = 600;
+                const height = 500;
+                const left = (window.innerWidth - width) / 2;
+                const top = (window.innerHeight - height) / 2;
+                
+                window.open(shareUrl, `share-${platform}`, `width=${width},height=${height},left=${left},top=${top}`);
+            }
+            
+            copyToClipboard() {
+                navigator.clipboard.writeText(this.currentUrl).then(() => {
+                    this.showCopyFeedback();
+                }).catch(() => {
+                    // Fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = this.currentUrl;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    this.showCopyFeedback();
+                });
+            }
+            
+            showCopyFeedback() {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('translate-y-20', 'opacity-0');
+                feedback.classList.add('translate-y-0', 'opacity-100');
+                
+                setTimeout(() => {
+                    feedback.classList.add('translate-y-20', 'opacity-0');
+                    feedback.classList.remove('translate-y-0', 'opacity-100');
+                }, 3000);
+            }
+            
+            createButton(platform, style = 'default') {
+                const config = this.platforms[platform];
+                if (!config) return null;
+                
+                const button = document.createElement('button');
+                button.setAttribute('aria-label', config.name);
+                
+                // Base classes
+                let baseClasses = 'relative w-12 h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group';
+                
+                // Style specific classes
+                if (style === 'circular') {
+                    button.className = `${baseClasses} rounded-full text-white ${config.color} shadow-lg hover:shadow-xl`;
+                } else if (style === 'square') {
+                    button.className = `${baseClasses} rounded-lg text-white ${config.color} shadow-lg hover:shadow-xl`;
+                } else if (style === 'outlined') {
+                    button.className = `${baseClasses} rounded-full border-2 ${config.outlineColor} transition-colors duration-300`;
+                }
+                
+                // Icon
+                const icon = document.createElement('i');
+                icon.className = `${config.icon} text-xl`;
+                
+                // Tooltip
+                const tooltip = document.createElement('span');
+                tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none';
+                tooltip.textContent = config.name;
+                
+                // Tooltip arrow
+                const arrow = document.createElement('span');
+                arrow.className = 'absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800';
+                tooltip.appendChild(arrow);
+                
+                button.appendChild(icon);
+                button.appendChild(tooltip);
+                
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.share(platform);
+                });
+                
+                return button;
+            }
+            
+            render(containerId, style = 'default') {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                Object.keys(this.platforms).forEach(platform => {
+                    const button = this.createButton(platform, style);
+                    if (button) {
+                        container.appendChild(button);
+                    }
+                });
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const shareButtons = new ShareButtons({
+                url: window.location.href,
+                title: document.title || 'Check out this awesome page!'
+            });
+            
+            // Render different styles
+            // shareButtons.render('share-buttons-circular', 'circular');
+            // shareButtons.render('share-buttons-square', 'square');
+            shareButtons.render('share-buttons-outlined', 'outlined');
+        });
+    </script>
+    <script>
+        // Calculate reading time
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = document.querySelector('article').innerText;
+            const wordCount = text.split(/\s+/).length;
+            const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+            document.getElementById('readingTime').textContent = `${readingTime} min read`;
+        });
+        
+        // Progress bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Back to top button visibility
+            if (winScroll > 300) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+            
+            // Highlight active section in TOC
+            highlightCurrentSection();
+        };
+        
+        // Highlight active section in table of contents
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('h2, h3');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < 100) {
+                    currentSectionId = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Font size adjustment
+        let currentFontSize = 100; // percentage
+        
+        function setupFontSizeButtons(increaseBtn, decreaseBtn, resetBtn) {
+            if (increaseBtn) {
+                increaseBtn.addEventListener('click', function() {
+                    if (currentFontSize < 150) {
+                        currentFontSize += 10;
+                        updateFontSize();
+                    }
+                });
+            }
+            
+            if (decreaseBtn) {
+                decreaseBtn.addEventListener('click', function() {
+                    if (currentFontSize > 70) {
+                        currentFontSize -= 10;
+                        updateFontSize();
+                    }
+                });
+            }
+            
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    currentFontSize = 100;
+                    updateFontSize();
+                });
+            }
+        }
+        
+        setupFontSizeButtons(
+            document.getElementById('increaseFont'), 
+            document.getElementById('decreaseFont'),
+            document.getElementById('resetFont')
+        );
+        
+        setupFontSizeButtons(
+            document.getElementById('mobileIncFont'), 
+            document.getElementById('mobileDcrFont'),
+            document.getElementById('mobileResetFont')
+        );
+        
+        function updateFontSize() {
+            document.querySelector('article').style.fontSize = `${currentFontSize}%`;
+            // Save the preference in localStorage for future visits
+            localStorage.setItem('blogFontSize', currentFontSize);
+        }
+        
+        // Mobile Sidebar Toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        
+        sidebarToggle.addEventListener('click', function() {
+            mobileSidebar.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+        });
+        
+        closeSidebar.addEventListener('click', function() {
+            mobileSidebar.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close sidebar when clicking outside or on a link
+        document.addEventListener('click', function(e) {
+            if (mobileSidebar.classList.contains('active') && 
+                !mobileSidebar.contains(e.target) && 
+                e.target !== sidebarToggle &&
+                !sidebarToggle.contains(e.target)) {
+                mobileSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        document.querySelectorAll('.mobile-sidebar a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function() {
+                mobileSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Load saved font size preference if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedFontSize = localStorage.getItem('blogFontSize');
+            if (savedFontSize) {
+                currentFontSize = parseInt(savedFontSize);
+                updateFontSize();
+            }
+            
+            // Initial highlighting of current section
+            highlightCurrentSection();
+            
+            // Check for tablet and adjust layout
+            const checkForTablet = () => {
+                if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
+                    // Tablet optimizations
+                    document.querySelector('article').classList.add('tablet-optimized');
+                    // Increase base font size slightly for better tablet reading
+                    if (!document.querySelector('.tablet-style')) {
+                        const style = document.createElement('style');
+                        style.className = 'tablet-style';
+                        style.textContent = `
+                            @media (min-width: 768px) and (max-width: 1024px) {
+                                article {
+                                    font-size: 110%;
+                                    line-height: 1.8;
+                                    padding: 0 5%;
+                                }
+                                .max-w-5xl {
+                                    max-width: 90%;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                } else {
+                    // Remove tablet optimizations if not on tablet
+                    document.querySelector('article')?.classList.remove('tablet-optimized');
+                    document.querySelector('.tablet-style')?.remove();
+                }
+            };
+            
+            // Run on load and resize
+            checkForTablet();
+            window.addEventListener('resize', checkForTablet);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+        
+        // Add tailwind classes for whiskey and light blue color scheme
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add tailwind classes to elements
+            const links = document.querySelectorAll('a:not(.toc-link)');
+            links.forEach(link => {
+                link.classList.add('text-primary-700', 'hover:text-primary-500');
+            });
+            
+            // Add highlight to important paragraphs
+            const paragraphs = document.querySelectorAll('article p');
+            // paragraphs.forEach((p, index) => {
+            //     if (index === 0 || index === 1 || index === paragraphs.length - 1) {
+            //         p.classList.add('bg-highlight-50', 'p-4', 'rounded-md', 'border-l-4', 'border-primary-300');
+            //     }
+            // });
+            
+            // Add hover effects to list items
+            const listItems = document.querySelectorAll('article li');
+            listItems.forEach(item => {
+                item.classList.add('transition-colors', 'duration-150', 'hover:bg-highlight-50', 'rounded');
+            });
+        });
+    </script>
+</body>
+</html>

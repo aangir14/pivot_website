@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate HeartSpan — Leadership & Workplace Heart Health | Pivot Health</title>
+    <meta name="description"
+        content="Pivot Health's Corporate HeartSpan helps leaders and teams reduce early heart risk through workshops, baseline screening, one-to-one reviews, and ongoing personalised care.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pivot-blue': '#3B82F6',
+                        'pivot-teal': '#0EA5E9',
+                        'pivot-dark': '#1E293B',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        html,
+        body {
+            font-family: 'EB Garamond', serif !important;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        * {
+            font-family: inherit;
+        }
+
+
+        /* Hero Waveform Animation */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Global Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stagger-children>* {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Parallax layers */
+        .parallax-bg {
+            will-change: transform;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+
+        /* Background pattern */
+        .bg-pattern {
+            background-color: #f8f9fa;
+            background-image: radial-gradient(#e6e9ed 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Quote styling */
+        .quote-marks {
+            font-size: 6rem;
+            line-height: 0;
+            height: 40px;
+            display: inline-block;
+            color: rgba(44, 122, 148, 0.15);
+            font-family: Georgia, serif;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        /* HP Collapsible Sections */
+        .hp-section {
+            background: linear-gradient(180deg, #f2ffff 0%, #f3faff 100%);
+            padding: 60px 0;
+        }
+
+        .hp-title {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #2c7a94, #38a3c4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hp-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #2c7a94, #38a3c4);
+            border-radius: 2px;
+        }
+
+        .hp-description {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+        }
+
+        .hp-collapsible {
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .hp-collapsible:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .hp-collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hp-collapsible-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .hp-collapsible-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2c7a94;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hp-collapsible-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 22px;
+            background: linear-gradient(180deg, #2c7a94, #38a3c4);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .hp-preview-text {
+            color: #718096;
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        .hp-expand-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background-color: rgba(226, 232, 240, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .hp-expand-icon::before,
+        .hp-expand-icon::after {
+            content: '';
+            position: absolute;
+            background-color: #566681;
+            transition: all 0.3s ease;
+        }
+
+        .hp-expand-icon::before {
+            width: 16px;
+            height: 2px;
+        }
+
+        .hp-expand-icon::after {
+            width: 2px;
+            height: 16px;
+        }
+
+        .hp-active .hp-expand-icon {
+            background: linear-gradient(45deg, #2c7a94, #38a3c4);
+            transform: rotate(45deg);
+        }
+
+        .hp-active .hp-expand-icon::before,
+        .hp-active .hp-expand-icon::after {
+            background-color: white;
+        }
+
+        .hp-collapsible-content {
+            display: none;
+            padding: 0 2rem 2rem;
+            animation: fadeInDown 0.5s ease;
+        }
+
+        .hp-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .hp-content-wrapper {
+                flex-direction: row;
+            }
+        }
+
+        .hp-content-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .hp-content-image:hover {
+            transform: scale(1.02);
+        }
+
+        @media (min-width: 768px) {
+            .hp-content-image {
+                width: 35%;
+                max-width: 280px;
+            }
+        }
+
+        .hp-content-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .hp-content-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .hp-content-text {
+            flex: 1;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+
+        .hp-active {
+            box-shadow: 0 10px 40px rgba(44, 122, 148, 0.12);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline */
+        .step-number {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            color: #1f2937;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Feature items */
+        .feature-item:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .icon-container {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover .icon-container {
+            transform: scale(1.1);
+        }
+
+        /* Form styles */
+        .form-input,
+        .form-textarea {
+            transition: all 0.3s ease;
+            border-color: transparent;
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+            border-radius: 0;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-bottom-color: #0ea5e9;
+            box-shadow: 0 2px 0 0 #0ea5e9;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Navbar -->
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div
+            class="max-w-7xl px-6 py-3 md:py-4 lg:px-8 rounded-full bg-black/5 w-full mx-auto flex justify-between items-center backdrop-blur-lg">
+            <a href="/" class="flex items-center">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-28 h-auto">
+            </a>
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href="/" class="text-gray-800 hover:text-teal-800 transition-colors">Home</a>
+                <a href="about-us" class="text-gray-800 hover:text-teal-800 transition-colors">About Us</a>
+                <div class="relative group">
+                    <a href="#programs" class="text-gray-800 hover:text-teal-800 transition-colors">Programs</a>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <a href="/heartspan"
+                                class="block px-4 py-2 text-gray-800 hover:bg-teal-500 hover:text-white transition-colors">HeartSpan</a>
+                            <a href="/corporate-heartspan"
+                                class="block px-4 py-2 text-gray-800 hover:bg-teal-500 hover:text-white transition-colors">HeartSpan
+                                — Corporate</a>
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/insights" class="text-gray-800 hover:text-teal-800 transition-colors">Insights</a>
+                <a href="/#testimonials" class="text-gray-800 hover:text-teal-800 transition-colors">Client Stories</a>
+                <a href="#contact" class="text-gray-800 hover:text-teal-800 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none mobile-menu-btn">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div
+                class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="/" class="text-gray-800 hover:text-teal-500 transition-colors">Home</a>
+                    <a href="/about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <div class="relative">
+                        <button
+                            class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full mobile-programs-btn">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden mobile-programs-submenu">
+                            <a href="/heartspan"
+                                class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <a href="/corporate-heartspan"
+                                class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan —
+                                Corporate</a>
+                        </div>
+                    </div>
+                    <a href="/insights" class="text-gray-800 hover:text-teal-500 transition-colors">Insights</a>
+                    <a href="/#testimonials" class="text-gray-800 hover:text-teal-500 transition-colors">Client
+                        Stories</a>
+                    <a href="#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Waveform Animation -->
+    <div
+        class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-teal-50">
+        <!-- Canvas for waveform animation -->
+        <canvas id="hero-canvas"></canvas>
+
+        <!-- Hero Content -->
+        <div class="hero-content max-w-7xl mx-auto px-6 py-32 text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Headline with word-by-word animation -->
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <span class="hero-word text-teal-600">Building</span>
+                    <span class="hero-word text-teal-600">Heart-Healthy</span>
+                    <span class="hero-word text-teal-600">Workplaces,</span>
+                    <br class="hidden md:block">
+                    <span class="hero-word text-gray-800">One</span>
+                    <span class="hero-word text-gray-800">Team</span>
+                    <span class="hero-word text-gray-800">at</span>
+                    <span class="hero-word text-gray-800">a</span>
+                    <span class="hero-word text-gray-800">Time</span>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="hero-subtitle text-xl md:text-2xl text-gray-600 mb-10 opacity-0">
+                    Trusted by leaders. Science-backed. Built for measurable organisational impact.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 mb-6">
+                    <a href="#contact" data-interest="Discovery Call"
+                        class="cta-primary bg-teal-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-teal-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                        Book a 15-min discovery call
+                    </a>
+                    <a href="#programs"
+                        class="cta-secondary text-gray-700 px-8 py-4 rounded-full font-medium text-lg border-2 border-gray-300 hover:border-teal-600 hover:text-teal-600 transition-all duration-300 flex items-center gap-2">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Micro-CTA Row -->
+                <div class="hero-micro-cta flex flex-wrap gap-3 justify-center items-center opacity-0 text-sm">
+                    <span class="text-gray-500">Quick links:</span>
+                    <button data-interest="Leadership Screening" data-audience="Leadership Teams"
+                        class="micro-cta-btn text-teal-600 hover:text-white hover:bg-teal-600 border border-teal-600 px-4 py-2 rounded-full transition-all duration-200">
+                        For Leadership Teams
+                    </button>
+                    <button data-interest="Discovery Call" data-audience="HR & People Operations (Programme Sponsors)"
+                        class="micro-cta-btn text-teal-600 hover:text-white hover:bg-teal-600 border border-teal-600 px-4 py-2 rounded-full transition-all duration-200">
+                        For HR & People Operations (Programme Sponsors)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-0">
+            <div class="w-6 h-10 rounded-full border-2 border-gray-400 flex justify-center">
+                <div class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post-Hero Value Statement Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-white via-teal-50 to-blue-50 py-20">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="reveal order-2 md:order-1">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop"
+                            alt="Diverse corporate leadership team in wellness consultation"
+                            class="w-full h-[500px] object-cover transform transition-transform duration-700 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-teal-900/30 to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="reveal order-1 md:order-2">
+                    <div
+                        class="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-6">
+                        The Hidden Health Crisis
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Your Leadership Team's Health Is Your Organisation's Foundation
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+                        Heart disease remains the leading cause of unexpected executive absence and long-term incapacity
+                        in India. Most cardiac events in leaders are preceded by years of silent, reversible risk.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Our Corporate HeartSpan programme identifies these early warning signs through advanced
+                        screening, personalised coaching, and evidence-based interventions — before they become crises.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 font-medium">Science-backed</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 font-medium">Confidential</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 font-medium">Proven outcomes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters Section -->
+    <section class="py-16 px-6 md:px-8 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-700 leading-tight mb-4">
+                Why This Matters
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Executive heart events usually develop over years — not overnight. Our programme detects early risk and
+                protects
+                leaders' long-term health.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Stat 1 -->
+            <div class="feature-item bg-white p-8 rounded-xl shadow-lg">
+                <div
+                    class="icon-container bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-heart text-2xl text-blue-600"></i>
+                </div>
+                <div class="text-5xl font-bold text-teal-700 mb-4 text-center">1 in 4</div>
+                <p class="text-gray-700 text-center">
+                    About 1 in 4 deaths in India are due to heart disease — with onset often occurring <strong>~10 years
+                        earlier</strong> in Indians.
+                </p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="feature-item bg-white p-8 rounded-xl shadow-lg">
+                <div
+                    class="icon-container bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-user-shield text-2xl text-indigo-600"></i>
+                </div>
+                <div class="text-5xl font-bold text-teal-700 mb-4 text-center">Invisible Risk</div>
+                <p class="text-gray-700 text-center">
+                    Stress and invisible metabolic risk accumulate <strong>silently</strong>—early action is reversible
+                    and preserves performance.
+                </p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="feature-item bg-white p-8 rounded-xl shadow-lg">
+                <div
+                    class="icon-container bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-chart-line text-2xl text-purple-600"></i>
+                </div>
+                <div class="text-5xl font-bold text-teal-700 mb-4 text-center">ROI</div>
+                <p class="text-gray-700 text-center">
+                    Corporate wellness programs show <strong>measurable ROI</strong> through reduced absenteeism and
+                    improved productivity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Program Is For Section -->
+    <section class="py-16 px-6 md:px-8 lg:px-12 max-w-7xl mx-auto bg-gradient-to-br from-teal-50 to-blue-50">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-700 leading-tight mb-4">
+                Who This Programme Is For
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our Corporate HeartSpan programme is designed for organisations committed to protecting their leadership
+                talent.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+            <!-- Card 1: Senior Leadership -->
+            <div
+                class="audience-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div
+                    class="icon-container bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-user-tie text-3xl text-teal-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-3">Senior Leadership & CXOs</h3>
+                <p class="text-gray-600 text-center">
+                    Executives facing high stress, travel demands, and long working hours who need personalised heart
+                    health insights.
+                </p>
+            </div>
+
+            <!-- Card 2: HR & People Operations -->
+            <div
+                class="audience-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div
+                    class="icon-container bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-users-cog text-3xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-3">HR & People Operations</h3>
+                <p class="text-gray-600 text-center">
+                    People teams responsible for sponsoring and coordinating evidence-based wellbeing programmes for
+                    leadership cohorts.
+                </p>
+            </div>
+
+            <!-- Card 3: Corporate Wellness Committees -->
+            <div
+                class="audience-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div
+                    class="icon-container bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-heartbeat text-3xl text-purple-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-3">Corporate Wellness Committees</h3>
+                <p class="text-gray-600 text-center">
+                    Wellness leaders seeking a science-backed, boutique heart health programme with clear outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-16 bg-pattern">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="mb-12 relative">
+                <span class="quote-marks">"</span>
+                <h2 class="text-3xl sm:text-4xl text-center md:text-5xl font-bold text-teal-700 leading-tight italic">
+                    Executive heart events usually develop over years — not overnight.
+                </h2>
+            </div>
+            <p class="text-lg text-slate-700 text-center leading-relaxed">
+                Our Corporate HeartSpan programme combines an executive workshop, screening, personalised reports and
+                ongoing care to detect early risk and protect leaders' long-term health.
+            </p>
+        </div>
+    </section>
+
+    <!-- Program Introduction Split Layout -->
+    <section class="py-20 px-6 md:px-8 lg:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Content Side (Left) -->
+                <div class="reveal">
+                    <div
+                        class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
+                        Our Approach
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Science-Backed. Personalised. Confidential.
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+                        Unlike generic wellness programmes, HeartSpan focuses on the most critical health risk for
+                        Indian executives: cardiovascular disease.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Advanced Risk Detection</h3>
+                                <p class="text-gray-600">Comprehensive screening identifies hidden markers years before
+                                    symptoms appear</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">1:1 Expert Coaching</h3>
+                                <p class="text-gray-600">Personalised guidance tailored to each leader's unique risk
+                                    profile and lifestyle</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Complete Privacy</h3>
+                                <p class="text-gray-600">Individual results remain confidential unless explicitly shared
+                                    by the participant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Side (Right) -->
+                <div class="reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&fit=crop"
+                            alt="Professional medical screening and health consultation"
+                            class="w-full h-[550px] object-cover transform transition-transform duration-700 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 Phases Program (HP Collapsible Style) -->
+    <section class="hp-section" id="programs">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="hp-title relative inline-block">5 Phases to Lasting Heart Health</h1>
+            </div>
+
+            <p class="hp-description">
+                Our comprehensive approach combines workshops, screening, personalised care, and ongoing support to
+                create lasting organisational impact.
+            </p>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Phase 1: Discovery -->
+                <div class="hp-collapsible">
+                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="flex-1">
+                            <h3 class="hp-collapsible-title">Phase 1 — Discovery</h3>
+                            <p class="hp-preview-text">Understanding your organisation's goals...</p>
+                        </div>
+                        <div class="hp-expand-icon"></div>
+                    </div>
+                    <div class="hp-collapsible-content">
+                        <div class="hp-content-wrapper">
+                            <div class="hp-content-image">
+                                <img src="assets/corporate-hero.png" alt="Discovery consultation">
+                            </div>
+                            <div class="hp-content-text">
+                                <p>A discovery call that helps us understand your organisation's goals, leadership
+                                    profile and expectations. We tailor the program to fit your team's specific needs
+                                    and challenges.</p>
+                                <p class="mt-3">This initial consultation ensures the program aligns perfectly with your
+                                    corporate culture and wellness objectives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Workshop -->
+                <div class="hp-collapsible">
+                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="flex-1">
+                            <h3 class="hp-collapsible-title">Phase 2 — Health Workshop</h3>
+                            <p class="hp-preview-text">Science-backed session for leadership...</p>
+                        </div>
+                        <div class="hp-expand-icon"></div>
+                    </div>
+                    <div class="hp-collapsible-content">
+                        <div class="hp-content-wrapper">
+                            <div class="hp-content-image">
+                                <img src="assets/workshop-stress.png" alt="Executive workshop">
+                            </div>
+                            <div class="hp-content-text">
+                                <p>A science-backed session for senior leadership with Ankur Bhatia that creates clarity
+                                    around cardiac risk and actionable next steps. Interactive, engaging, and
+                                    immediately applicable.</p>
+                                <p class="mt-3"><strong>Workshop Themes:</strong> The Stress-Heart Equation, Metabolic
+                                    Health Beyond Fitness, Longevity Strategies, and Prevention Protocols.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Screening -->
+                <div class="hp-collapsible">
+                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="flex-1">
+                            <h3 class="hp-collapsible-title">Phase 3 — Comprehensive Health Screening</h3>
+                            <p class="hp-preview-text">Complete health profile baseline...</p>
+                        </div>
+                        <div class="hp-expand-icon"></div>
+                    </div>
+                    <div class="hp-collapsible-content">
+                        <div class="hp-content-wrapper">
+                            <div class="hp-content-image">
+                                <img src="assets/benefits-leaders.jpg" alt="Health screening">
+                            </div>
+                            <div class="hp-content-text">
+                                <p>Recommended blood tests and baseline measures to create a complete health profile for
+                                    leaders. Professional, confidential, and comprehensive assessments.</p>
+                                <p class="mt-3">Advanced diagnostics include cholesterol panels, inflammatory markers,
+                                    metabolic health indicators, and cardiovascular risk factors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Report & Review -->
+                <div class="hp-collapsible">
+                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="flex-1">
+                            <h3 class="hp-collapsible-title">Phase 4 — Personal Health Report & 1:1 Review</h3>
+                            <p class="hp-preview-text">Personalized insights and consultation...</p>
+                        </div>
+                        <div class="hp-expand-icon"></div>
+                    </div>
+                    <div class="hp-collapsible-content">
+                        <div class="hp-content-wrapper">
+                            <div class="hp-content-image">
+                                <img src="assets/ankur-corporate.jpg" alt="Health consultation">
+                            </div>
+                            <div class="hp-content-text">
+                                <p>Every leader receives an easy-to-understand health report followed by a 30-minute 1:1
+                                    consultation to explain insights, risks and next steps. <strong>All data remains
+                                        confidential</strong> and shared only with client permission.</p>
+                                <p class="mt-3">The personal review ensures each executive understands their unique
+                                    health profile and has a clear action plan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Enrollment -->
+                <div class="hp-collapsible">
+                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="flex-1">
+                            <h3 class="hp-collapsible-title">Phase 5 — Program Enrollment & Ongoing Care</h3>
+                            <p class="hp-preview-text">Continued support and monitoring...</p>
+                        </div>
+                        <div class="hp-expand-icon"></div>
+                    </div>
+                    <div class="hp-collapsible-content">
+                        <div class="hp-content-wrapper">
+                            <div class="hp-content-image">
+                                <img src="assets/benefits-organization.jpg" alt="Ongoing support">
+                            </div>
+                            <div class="hp-content-text">
+                                <p>Leaders may enrol in HeartSpan for personalised ongoing care, coaching and
+                                    monitoring. Long-term support to ensure sustainable health improvements.</p>
+                                <p class="mt-3">Continuous guidance from dedicated health coaches, nutritionists, and
+                                    exercise physiologists ensures lasting results.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 px-6 md:px-8 lg:px-12 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-teal-700">Benefits</h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- For Leaders -->
+            <div class="reveal">
+                <div class="relative overflow-hidden rounded-xl mb-6">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&fit=crop"
+                        alt="Healthy, engaged business leader"
+                        class="w-full h-[300px] object-cover transition-transform duration-700 hover:scale-105">
+                </div>
+                <h3 class="text-3xl font-bold text-teal-700 mb-6">For Leaders</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">Stable energy & sharper focus supported by data</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">Better stamina for long days, travel and pressure</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">Confidence in health backed by personalised reports</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- For Organizations -->
+            <div class="reveal">
+                <div class="relative overflow-hidden rounded-xl mb-6">
+                    <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80&fit=crop"
+                        alt="Thriving corporate team collaboration"
+                        class="w-full h-[300px] object-cover transition-transform duration-700 hover:scale-105">
+                </div>
+                <h3 class="text-3xl font-bold text-teal-700 mb-6">For Organizations</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">Lower burnout and stress-related fatigue</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">A prevention-first wellbeing culture backed by measurable
+                            outcomes</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">Lower long-term healthcare burden and greater trust in HR wellbeing
+                            initiatives</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Coach -->
+    <section class="py-16 px-6 md:px-8 lg:px-12 max-w-7xl mx-auto bg-gray-50">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-700">Meet Your Coach</h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div class="reveal">
+                <div class="relative overflow-hidden rounded-2xl">
+                    <img src="assets/ankur-corporate.jpg" alt="Ankur Bhatia"
+                        class="w-full h-[500px] object-cover transition-transform duration-700 hover:scale-105 shadow-xl">
+                </div>
+            </div>
+
+            <div class="reveal">
+                <h3 class="text-3xl font-bold text-teal-700 mb-2">Ankur Bhatia</h3>
+                <p class="text-xl text-gray-600 mb-6">Chief Coach, PIVOT Health</p>
+
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Ankur blends ~25 years of corporate leadership with deep expertise in preventive health and
+                    longevity. He has built and scaled preventive health solutions (co-founder Wellcure.com), and has
+                    training in nutrition, metabolic health, stress regulation, and early cardiac risk prevention.
+                </p>
+
+                <p class="text-sm text-gray-600 mt-4 italic border-t pt-4">
+                    All executive consultations are conducted confidentially and shared only with individual consent.
+                </p>
+
+                <a href="/about-us"
+                    class="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium mt-4 transition-colors hover:underline">
+                    Read full bio / credentials
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes & Organisational Impact Section -->
+    <section class="py-16 px-6 md:px-8 lg:px-12 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-700 leading-tight mb-4">
+                Outcomes & Organisational Impact
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+                Measurable results that matter to your organisation's wellbeing strategy.
+            </p>
+            <p class="text-sm text-gray-500 italic">
+                Illustrative outcomes from pilot programmes
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Metric 1 -->
+            <div class="metric-card bg-gradient-to-br from-teal-50 to-blue-50 p-6 rounded-xl text-center reveal">
+                <div class="metric-value text-4xl font-bold text-teal-700 mb-2" data-target="85">0%</div>
+                <p class="text-gray-600 font-medium">Leaders with early risk markers identified</p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="metric-card bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl text-center reveal">
+                <div class="metric-value text-4xl font-bold text-blue-700 mb-2" data-target="92">0%</div>
+                <p class="text-gray-600 font-medium">Participation & engagement rate</p>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="metric-card bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl text-center reveal">
+                <div class="metric-value text-4xl font-bold text-indigo-700 mb-2" data-target="78">0%</div>
+                <p class="text-gray-600 font-medium">Leadership follow-through on recommendations</p>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="metric-card bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl text-center reveal">
+                <div class="metric-value text-4xl font-bold text-purple-700 mb-2" data-target="40">Up to 0%</div>
+                <p class="text-gray-600 font-medium">Reduction in health-related absenteeism</p>
+            </div>
+        </div>
+
+        <p class="text-sm text-gray-500 text-center mt-8 italic">
+            Metrics based on pilot programmes. Results vary by organisation and programme configuration.
+        </p>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-16 px-6 md:px-8 lg:px-12 max-w-4xl mx-auto bg-gray-50">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-700 leading-tight mb-4">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item bg-white rounded-lg shadow-md">
+                <button
+                    class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    onclick="toggleFAQ(this)">
+                    <span class="text-lg font-semibold text-gray-800">How long does the Corporate HeartSpan programme
+                        take?</span>
+                    <svg class="faq-icon w-6 h-6 text-teal-600 transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600 leading-relaxed">
+                    The programme typically spans 4-6 weeks from initial workshop to personalised reports. Ongoing care
+                    is customised based on individual needs and can continue for 3-12 months.
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item bg-white rounded-lg shadow-md">
+                <button
+                    class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    onclick="toggleFAQ(this)">
+                    <span class="text-lg font-semibold text-gray-800">Is leadership health data confidential?</span>
+                    <svg class="faq-icon w-6 h-6 text-teal-600 transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600 leading-relaxed">
+                    Absolutely. All individual health data is strictly confidential. Reports are shared only with the
+                    individual unless they explicitly consent to share with HR or wellness teams.
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item bg-white rounded-lg shadow-md">
+                <button
+                    class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    onclick="toggleFAQ(this)">
+                    <span class="text-lg font-semibold text-gray-800">Can this programme scale to large leadership
+                        teams?</span>
+                    <svg class="faq-icon w-6 h-6 text-teal-600 transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600 leading-relaxed">
+                    Yes. We customise delivery based on cohort size. For teams of 20+, we run multiple workshop batches
+                    and stagger screening appointments to ensure quality and personalisation.
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item bg-white rounded-lg shadow-md">
+                <button
+                    class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    onclick="toggleFAQ(this)">
+                    <span class="text-lg font-semibold text-gray-800">Do we need to enrol everyone into ongoing
+                        care?</span>
+                    <svg class="faq-icon w-6 h-6 text-teal-600 transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600 leading-relaxed">
+                    No. Ongoing care is offered to those with identified risk or interest in deeper support. It's
+                    entirely optional and based on individual choice.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="pl-8 z-10 pr-8">
+                        <div class="space-y-4">
+                            <h1
+                                class="mt-8 md:mt-0 text-xl sm:text-2xl lg:text-3xl font-bold text-teal-700 leading-tight">
+                                Protect Your Leadership Team's Heart Health — Starting Today
+                            </h1>
+                            <p class="text-md text-slate-600 max-w-lg">
+                                Schedule your discovery call. Our team will contact you within 24 hours to discuss your
+                                organisation's needs.
+                            </p>
+                            <p class="text-sm text-teal-600 font-medium">
+                                Our team responds within 24 hours.
+                            </p>
+                            <div>
+                                <a href="#contact" data-interest="Discovery Call"
+                                    class="cta-link bg-teal-600 hover:bg-teal-700 text-white font-medium text-lg px-10 py-3 rounded-md inline-block uppercase tracking-wide transition-all duration-300">
+                                    Book Discovery Call
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-full h-full">
+                        <div class="h-full w-full relative">
+                            <img src="assets/benefits-leaders.jpg" alt="Corporate wellness"
+                                class="w-full max-h-[400px] object-cover md:rounded-r-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="relative py-16 md:py-24 overflow-hidden" id="contact">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="Background" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/90 to-blue-900/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Get in Touch</h2>
+                    <p class="text-gray-300 mb-10 max-w-md leading-relaxed">
+                        Ready to begin your organisation's transformation journey? Connect with us to learn more about
+                        our Corporate HeartSpan program.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pivot-blue" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-white">Email Us</h3>
+                                <p class="mt-1 text-gray-300">ankur@thepivothealth.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white bg-opacity-10 backdrop-blur-sm p-8 md:p-10 rounded-xl shadow-xl border border-white/10">
+                    <form accept-charset='UTF-8' action='https://app.formester.com/forms/4G4UGW0e_StT/submissions'
+                        method='POST'>
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-gray-200 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name"
+                                class="form-input w-full bg-transparent text-white py-3 px-1 focus:ring-0"
+                                placeholder="John Doe" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Email
+                                Address</label>
+                            <input type="email" id="email" name="email"
+                                class="form-input w-full bg-transparent text-white py-3 px-1 focus:ring-0"
+                                placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="company" class="block text-sm font-medium text-gray-200 mb-2">Company
+                                Name</label>
+                            <input type="text" id="company" name="company"
+                                class="form-input w-full bg-transparent text-white py-3 px-1 focus:ring-0"
+                                placeholder="Your Company" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-200 mb-2">Your
+                                Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="form-textarea w-full bg-transparent text-white py-3 px-1 focus:ring-0"
+                                placeholder="Tell us about your organisation's wellness goals..." required></textarea>
+                        </div>
+
+                        <!-- Hidden Interest Field -->
+                        <input type="hidden" id="interest" name="interest" value="Discovery Call">
+
+                        <!-- Consent Checkbox -->
+                        <div class="mb-6">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" id="consent" name="consent" required
+                                    class="mt-1 mr-3 w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500">
+                                <span class="text-sm text-gray-200">
+                                    I consent to Pivot Health contacting me regarding this enquiry.
+                                    <a href="/privacy-policy" class="text-teal-400 hover:text-teal-300 underline">View
+                                        Privacy Policy</a>.
+                                </span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <button type="submit"
+                                class="w-full md:w-auto bg-pivot-blue hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-blue-500/30 transition-all duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-teal-50 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+            <div class="flex justify-center mb-4">
+                <img src="assets/pivot-logo-old.png" alt="Pivot Logo" class="w-32 h-auto">
+            </div>
+            <div>
+                <a href="#contact"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                <a href="/corporate-heartspan"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Corporate Programs
+                    |</a>
+                <a href="privacy-policy"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy
+                    |</a>
+                <a href="t&c" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms
+                    and Conditions |</a>
+                <a href="terms&conditions"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms</a>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Pivot Healthcare. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileProgramsBtn = document.querySelector('.mobile-programs-btn');
+            const mobileProgramsSubmenu = document.querySelector('.mobile-programs-submenu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (mobileProgramsBtn && mobileProgramsSubmenu) {
+                mobileProgramsBtn.addEventListener('click', function () {
+                    mobileProgramsSubmenu.classList.toggle('hidden');
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                if (mobileMenu && menuBtn) {
+                    const isClickInsideMenu = mobileMenu.contains(event.target);
+                    const isClickOnButton = menuBtn.contains(event.target);
+                    if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Collapsible toggle
+        function toggleCollapsible(element) {
+            const parent = element.parentElement;
+            const wasActive = parent.classList.contains('hp-active');
+
+            document.querySelectorAll('.hp-collapsible').forEach(item => {
+                item.classList.remove('hp-active');
+                const content = item.querySelector('.hp-collapsible-content');
+                content.style.display = 'none';
+            });
+
+            if (!wasActive) {
+                parent.classList.add('hp-active');
+                const content = parent.querySelector('.hp-collapsible-content');
+                content.style.display = 'block';
+            }
+        }
+
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // ==================== HERO WAVEFORM ANIMATION ====================
+            const canvas = document.getElementById('hero-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let animationFrameId;
+
+                // Set canvas size
+                function resizeCanvas() {
+                    canvas.width = canvas.offsetWidth;
+                    canvas.height = canvas.offsetHeight;
+                }
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+                // Waveform parameters
+                let time = 0;
+                let waveformOpacity = 1;
+                const waves = [
+                    { amplitude: 30, frequency: 0.02, speed: 0.03, color: 'rgba(44, 122, 148, 0.3)' },
+                    { amplitude: 20, frequency: 0.03, speed: 0.02, color: 'rgba(56, 163, 196, 0.2)' }
+                ];
+
+                function drawWaveform() {
+                    // Clear canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    const centerY = canvas.height / 2;
+
+                    // Draw multiple waves
+                    waves.forEach(wave => {
+                        ctx.beginPath();
+                        ctx.strokeStyle = wave.color;
+                        ctx.lineWidth = 2;
+
+                        for (let x = 0; x < canvas.width; x++) {
+                            const y = centerY + Math.sin(x * wave.frequency + time * wave.speed) * wave.amplitude;
+                            if (x === 0) {
+                                ctx.moveTo(x, y);
+                            } else {
+                                ctx.lineTo(x, y);
+                            }
+                        }
+
+                        // Add glow effect
+                        ctx.shadowBlur = 15;
+                        ctx.shadowColor = wave.color;
+                        ctx.stroke();
+                        ctx.shadowBlur = 0;
+                    });
+
+                    time++;
+
+                    // Fade out after 3 seconds
+                    if (time > 180) {
+                        waveformOpacity -= 0.01;
+                        canvas.style.opacity = Math.max(0, waveformOpacity);
+                        if (waveformOpacity <= 0) {
+                            cancelAnimationFrame(animationFrameId);
+                            return;
+                        }
+                    }
+
+                    animationFrameId = requestAnimationFrame(drawWaveform);
+                }
+
+                // Start animation
+                drawWaveform();
+            }
+
+            // ==================== HERO TEXT ANIMATION ====================
+            const heroWords = document.querySelectorAll('.hero-word');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            const heroCta = document.querySelector('.hero-cta');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+
+            // Animate words one by one
+            gsap.fromTo(heroWords,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    delay: 1
+                }
+            );
+
+            // Animate subtitle
+            gsap.to(heroSubtitle, {
+                opacity: 1,
+                duration: 1,
+                delay: 2.5,
+                ease: "power2.out"
+            });
+
+            // Animate CTA
+            gsap.to(heroCta, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 3.2,
+                ease: "back.out(1.4)"
+            });
+
+            // Animate scroll indicator
+            gsap.to(scrollIndicator, {
+                opacity: 1,
+                duration: 0.8,
+                delay: 4,
+                ease: "power2.out"
+            });
+
+            // ==================== GLOBAL SCROLL ANIMATIONS ====================
+            // Reveal elements on scroll
+            gsap.utils.toArray('.reveal').forEach(element => {
+                gsap.fromTo(element,
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            // Stagger children animation
+            gsap.utils.toArray('.stagger-children').forEach(container => {
+                const children = container.children;
+                gsap.fromTo(children,
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        stagger: 0.15,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: container,
+                            start: "top 75%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            // Parallax background effect
+            gsap.utils.toArray('.parallax-bg').forEach(element => {
+                gsap.to(element, {
+                    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed || 0.3,
+                    ease: "none",
+                    scrollTrigger: {
+                        start: 0,
+                        end: "max",
+                        invalidateOnRefresh: true,
+                        scrub: true
+                    }
+                });
+            });
+
+            //============  COUNTER ANIMATION FOR METRICS ====================
+            // Animate counters when they come into view
+            const metricValues = document.querySelectorAll('.metric-value');
+            metricValues.forEach(metric => {
+                const target = parseInt(metric.dataset.target);
+                const hasPercent = metric.textContent.includes('%');
+                const hasUpTo = metric.textContent.includes('Up to');
+
+                gsap.fromTo(metric,
+                    { textContent: 0 },
+                    {
+                        textContent: target,
+                        duration: 2,
+                        ease: "power1.out",
+                        snap: { textContent: 1 },
+                        scrollTrigger: {
+                            trigger: metric,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        },
+                        onUpdate: function () {
+                            const value = Math.ceil(metric.textContent);
+                            if (hasUpTo) {
+                                metric.textContent = `Up to ${value}%`;
+                            } else if (hasPercent) {
+                                metric.textContent = `${value}%`;
+                            } else {
+                                metric.textContent = value;
+                            }
+                        }
+                    }
+                );
+            });
+
+            // ==================== HERO MICRO-CTA ANIMATION ====================
+            const heroMicroCta = document.querySelector('.hero-micro-cta');
+            if (heroMicroCta) {
+                gsap.to(heroMicroCta, {
+                    opacity: 1,
+                    duration: 0.6,
+                    delay: 3.8,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // ==================== FAQ TOGGLE FUNCTION ====================
+        function toggleFAQ(element) {
+            const faqItem = element.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            const wasOpen = !answer.classList.contains('hidden');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const ans = item.querySelector('.faq-answer');
+                const ic = item.querySelector('.faq-icon');
+                ans.classList.add('hidden');
+                ic.style.transform = 'rotate(0deg)';
+            });
+
+            // Toggle current FAQ
+            if (!wasOpen) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // ==================== FORM PRE-FILL LOGIC ====================
+        // Handle CTA clicks with data-interest attribute
+        document.addEventListener('click', function (e) {
+            const target = e.target.closest('[data-interest]');
+            if (target) {
+                const interest = target.dataset.interest;
+                const audience = target.dataset.audience;
+
+                // Set interest field
+                const interestField = document.getElementById('interest');
+                if (interestField) {
+                    interestField.value = interest;
+                }
+
+                // Pre-fill message if audience is specified
+                if (audience) {
+                    const messageField = document.getElementById('message');
+                    if (messageField) {
+                        messageField.value = `I'm interested in the Corporate HeartSpan programme for our leadership team. Please share more details.`;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

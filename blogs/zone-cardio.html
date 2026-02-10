@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zone 2 Cardio and Cardiac Health - Learn about the benefits of low-intensity cardio training for long-term heart health and fitness.">
+    <title>Zone 2 Cardio and Cardiac Health | Health Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#FDF8F1',
+                100: '#F8ECD9',
+                200: '#F0D9B3',
+                300: '#E7C48D',
+                400: '#DEB366',
+                500: '#D4A76A', /* Main whiskey color */
+                600: '#BF8F4E',
+                700: '#A97532',
+                800: '#836022',
+                900: '#5C4518',
+              },
+              highlight: {
+                50: '#F0E6D2',
+                100: '#E4D1AB',
+              },
+              accent: {
+                50: '#E6F0FD',
+                100: '#C7DFFA',
+                300: '#90C2F4',
+                500: '#63B3ED', /* Light blue */
+                700: '#2B6CB0',
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+        :root {
+            --primary-color: #D4A76A; /* Whiskey color */
+            --accent-color: #63B3ED; /* Light blue */
+            --text-color: #4A5568;
+            --bg-color: #FAF9F7; /* Slight cream background */
+            --sidebar-bg: #FFFAF0; /* Lighter cream for sidebar */
+            --highlight-color: #F0E6D2; /* Light whiskey for highlights */
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        h1, h2, h3 {
+            scroll-margin-top: 2rem;
+            color: #2D3748;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* IMPORTANT FIX: Ensure table of contents is visible */
+        .table-of-contents {
+            position: sticky;
+            top: 2rem;
+            background-color: var(--sidebar-bg);
+            border-left: 3px solid var(--primary-color);
+            display: block !important; /* Force display */
+            z-index: 30;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            font-style: italic;
+            color: #4a5568;
+            background-color: var(--highlight-color);
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Reading Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 50;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--primary-color);
+            width: 0%;
+        }
+        
+        /* Estimated reading time */
+        .reading-time {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+           .table-of-contents {
+            position: sticky;
+            top: 2rem;
+            background-color: var(--sidebar-bg);
+            border-left: 3px solid var(--primary-color);
+            display: block !important; /* Force display */
+        }
+        
+        .back-to-top:hover {
+            background: #BF8F4E; /* Darker whiskey */
+        }
+        
+        /* Text highlight for active section */
+        .toc-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Font size controls */
+        .font-controls {
+            display: flex;
+            gap: 8px;
+            z-index: 30;
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        /* Mobile sidebar */
+        .sidebar-toggle {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .sidebar-toggle:hover {
+            background: #BF8F4E;
+        }
+        
+        .mobile-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background-color: var(--sidebar-bg);
+            overflow-x: hidden;
+            transition: 0.3s;
+            z-index: 60;
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-sidebar.active {
+            width: 300px;
+        }
+        
+        .mobile-sidebar .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        .mobile-sidebar-content {
+            padding: 0 20px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .mobile-sidebar.active .mobile-sidebar-content {
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+        
+        /* IMPORTANT: Media query adjustments for table of contents */
+        @media (max-width: 1023px) {
+            .sidebar-toggle {
+                display: flex;
+            }
+            .font-controls {
+                display: none;
+            }
+            .table-of-contents {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-bg-color">
+    
+    <!-- Navbar -->
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div class="max-w-7xl px-6 py-3 border md:py-4 lg:px-8 rounded-full bg-white/30 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="../assets/logo/main.png" alt="Health Blog Logo" class="w-28 h-auto">
+            </a>
+            <!-- Font Size Controls for Desktop -->
+            <div class="font-controls bg-white text-primary-500 p-2 rounded-lg border">
+                <button class="font-control-btn" id="decreaseFont" aria-label="Decrease font size">A-</button>
+                <button class="font-control-btn" id="resetFont" aria-label="Reset font size">A</button>
+                <button class="font-control-btn" id="increaseFont" aria-label="Increase font size">A+</button>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href=".././" class="text-black hover:text-teal-600 transition-colors">Home</a>
+                <a href="../about-us" class="text-black hover:text-teal-600 transition-colors">About Us</a>
+                <div class="relative group">
+                    <a href="#programs" class="text-black hover:text-teal-600 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="../heartspan.html" class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="../index#contact" class="text-black hover:text-teal-600 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="../heartspan.html" class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../index#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+                </div>
+            </div>
+                
+        </div>
+    </nav>
+    
+    <div class="h-16"></div>
+    
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Mobile Sidebar Toggle Button -->
+    <div class="sidebar-toggle" id="sidebarToggle" aria-label="Open sidebar menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </div>
+    
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="close-btn" id="closeSidebar">&times;</div>
+        <div class="mobile-sidebar-content">
+            <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
+            <nav>
+                <ul class="space-y-2 text-sm mb-8">
+                    <li><a href="#top" class="toc-link text-gray-700 hover:text-primary">Introduction</a></li>
+                    <li><a href="#what-is-zone2" class="toc-link text-gray-700 hover:text-primary">What is Zone 2 Cardio?</a></li>
+                    <li><a href="#how-it-feels" class="toc-link text-gray-700 hover:text-primary">How Zone 2 Cardio Feels</a></li>
+                    <li><a href="#benefits" class="toc-link text-gray-700 hover:text-primary">Benefits for Cardiac Health</a>
+                        <ul class="pl-4 mt-1 space-y-1">
+                            <li><a href="#mitochondrial" class="toc-link text-gray-600 hover:text-primary">Mitochondrial Function</a></li>
+                            <li><a href="#stroke-volume" class="toc-link text-gray-600 hover:text-primary">Stroke Volume</a></li>
+                            <li><a href="#metabolism" class="toc-link text-gray-600 hover:text-primary">Fat Metabolism</a></li>
+                            <li><a href="#heart-rate" class="toc-link text-gray-600 hover:text-primary">Resting Heart Rate</a></li>
+                            <li><a href="#blood-vessels" class="toc-link text-gray-600 hover:text-primary">Blood Vessel Health</a></li>
+                            <li><a href="#disease-risk" class="toc-link text-gray-600 hover:text-primary">Disease Risk</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#balance" class="toc-link text-gray-700 hover:text-primary">Finding Balance</a></li>
+                    <li><a href="#conclusion" class="toc-link text-gray-700 hover:text-primary">Conclusion</a></li>
+                </ul>
+                
+                <!-- Quick Stats Box for Mobile -->
+                <div class="p-4 rounded-lg border border-accent-100 bg-accent-50 mb-6">
+                    <h3 class="text-base font-semibold mb-2 text-accent-700">Zone 2 Quick Facts</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>Heart Rate:</strong> 60-70% of max</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>Talk Test:</strong> Can hold a conversation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>Duration:</strong> 30-90 minutes ideal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>Frequency:</strong> 2-4 times per week</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>Ideal For:</strong> All fitness levels</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-lg font-semibold mb-3">Text Size</h3>
+                <div class="flex items-center space-x-4 mb-6">
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileDcrFont">A-</button>
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileResetFont">A</button>
+                    <button class="p-2 bg-white rounded-md shadow-sm hover:bg-gray-100" id="mobileIncFont">A+</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT SECTION WITH FIXED LAYOUT -->
+    <div class="max-w-5xl mx-auto px-4 py-10 md:px-8">
+        <!-- This div must use flex on lg screens -->
+        <div class="lg:flex lg:gap-12">
+            <!-- Main Content -->
+            <main class="lg:w-3/4">
+                <article class="prose prose-lg max-w-none">
+                    <header class="mb-10">
+                        <h1 id="top" class="text-3xl md:text-4xl font-bold mb-4">Zone 2 Cardio and Cardiac Health</h1>
+                        <div class="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
+                            <time datetime="2025-04-22" class="text-sm">April 22, 2025</time>
+                            <span class="reading-time" id="readingTime">5 min read</span>
+                        </div>
+                        <!-- Hero Image -->
+                        <div class="my-6 rounded-lg overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Person jogging at a gentle pace in a park" class="w-full h-auto object-cover">
+                        </div>
+                        <p class="text-lg font-medium text-gray-700">Fitfluencers who once pushed HIIT as king are now embracing a gentler approach.</p>
+                    </header>
+                    
+                    <div class="space-y-6">
+                        <p>From the lens of children, running is majorly divided into 2 categories - sprints and slow running. However, the categories and potential running or cardio in general holds extends beyond those 2 categories. Running or cardio training is divided into five heart rate zones, each targeting different fitness goals and energy systems. This article will solely be focusing on one of those five categories. This category is known as Zone 2 Cardio.</p>
+                        
+                        <p>You may be focused on your legs, arms, and core when it comes to your workout. But you're likely neglecting the one body part that may be the most helpful compass. An ever-growing body of research suggests that the organ in your chest—your heart—may be the best tool for gauging the intensity of your workout. While there are many different types of cardio, zone 2 cardio (sometimes called "base training") can build your aerobic fitness and increase your endurance—while keeping the strain on your body relatively low.</p>
+                        
+                        <h2 id="what-is-zone2" class="text-2xl font-bold mt-10 mb-4">What is Zone 2 Cardio?</h2>
+                        <p>Zone 2 cardio is a specific intensity level of cardiovascular exercise that occurs at approximately 60-70% of your maximum heart rate. It's characterized by steady, sustainable effort that can be maintained for extended periods while still allowing you to hold a conversation.</p>
+                        
+                        <p>Unlike high-intensity interval training (HIIT) that focuses on short bursts of maximum effort, Zone 2 training emphasizes longer duration at a moderate intensity. This approach has gained significant attention in recent years from both athletes and health professionals for its exceptional benefits to cardiovascular health and metabolic efficiency.</p>
+                        
+                        <h2 id="how-it-feels" class="text-2xl font-bold mt-10 mb-4">How Zone 2 Cardio Looks and Feels</h2>
+                        
+                        <p>In practice, this may look like a long run at a sustainable pace or a lengthy (yet relaxed) bike ride. Zone 2 is at 60 to 70 percent of your max heart rate, so it is a low-intensity, basic endurance pace without intervals. Basically, it is a slow, steady effort that you could maintain for a long time while having a casual conversation with a friend or singing a song to yourself.</p>
+                        
+                        <p>When you go out for a jog, you probably run at a pace that isn't a sprint, but does leave you huffing and puffing. This feels like a "normal" pace to you, but you are almost assuredly in Zone 3 or higher. Unlike the way most people typically do their cardio, Zone 2 does not feel painful or uncomfortable. In fact, you could probably move at that intensity for hours at a time. This helps you build a foundation of fitness—no matter your modality. Over time, it increases your aerobic capacity or your body's ability to use oxygen efficiently during an athletic effort. Your easy workouts will eventually start to feel even easier, and harder workouts will feel, well, slightly less punishing.</p>
+                        
+                        <blockquote class="my-6">
+                            Contrary to popular belief, the hard and intense workouts do not even come close to the magnitude of benefits that the underdog zone 2 cardio encapsulates.
+                        </blockquote>
+                        
+                        <h2 id="benefits" class="text-2xl font-bold mt-10 mb-4">Benefits of Zone 2 Cardio for Cardiac Health</h2>
+                        
+                        <h3 id="mitochondrial" class="text-xl font-semibold mt-8 mb-3">Improved Mitochondrial Function</h3>
+                        <p>Zone 2 training boosts the number and efficiency of mitochondria (your cells' energy producers), enhancing your heart's ability to deliver oxygen to tissues. These cellular powerhouses are crucial for energy production, and Zone 2 training significantly increases their density and function.</p>
+                        
+                        <h3 id="stroke-volume" class="text-xl font-semibold mt-8 mb-3">Increased Stroke Volume</h3>
+                        <p>Regular Zone 2 cardio increases the amount of blood your heart pumps per beat, reducing heart strain during rest and exercise. This improved efficiency means your heart doesn't have to work as hard to circulate blood throughout your body, contributing to lower resting heart rates and better overall cardiovascular function.</p>
+                        
+                        <h3 id="metabolism" class="text-xl font-semibold mt-8 mb-3">Enhanced Fat Metabolism</h3>
+                        <p>Zone 2 cardio trains your body to use fat for energy, improving metabolic flexibility and reducing the risk of cardiovascular disease. At this intensity, your body preferentially burns fat over carbohydrates, which helps improve insulin sensitivity and metabolic health.</p>
+                        
+                        <h3 id="heart-rate" class="text-xl font-semibold mt-8 mb-3">Lower Resting Heart Rate</h3>
+                        <p>Consistent Zone 2 training strengthens your heart, allowing it to pump more efficiently and lower your resting heart rate—a key indicator of heart health. A lower resting heart rate is associated with a reduced risk of cardiovascular events and greater longevity.</p>
+                        
+                        <h3 id="blood-vessels" class="text-xl font-semibold mt-8 mb-3">Improved Endothelial Function</h3>
+                        <p>Zone 2 cardio enhances blood vessel health and elasticity, improving circulation and reducing blood pressure. The endothelium (inner lining of blood vessels) plays a crucial role in regulating blood flow and pressure, and Zone 2 training helps maintain its health and function.</p>
+                        
+                        <h3 id="disease-risk" class="text-xl font-semibold mt-8 mb-3">Reduced Risk of Heart Disease</h3>
+                        <p>This type of training helps control blood pressure, lower cholesterol, and manage blood sugar levels—reducing your risk of heart-related conditions. The combined metabolic and cardiovascular improvements from Zone 2 training create a powerful protective effect against heart disease.</p>
+                        
+                        <h2 id="balance" class="text-2xl font-bold mt-10 mb-4">The Buzz About Balance</h2>
+                        <p>Finally, while Zone 2 cardio should make up most of your cardiovascular exercise — 80% is a good proportion to aim for — doing a small amount of high intensity cardio is still important for health, fitness, and athletic performance. One weekly HIIT session, where you go all-out, should do it.</p>
+                        
+                        <p>What you do not want to be doing is spending all your time in what experts call the "garbage zone," where you're not exercising at a high enough intensity to improve your anaerobic fitness, and you're not exercising at a low enough intensity to improve your aerobic fitness. Get out of this all-too-typical no-man's-land of exercise! Really push yourself when you push yourself, and the rest of the time, take up residence in the slow-and-steady, health-wonder-working Zone 2.</p>
+                        
+                        <h2 id="conclusion" class="text-2xl font-bold mt-10 mb-4">Conclusion</h2>
+                        <p>In essence, Zone 2 cardio is like strength training for your heart—it makes your heart pump more efficiently, reduces disease risk, and supports lifelong cardiac health. By incorporating this often-overlooked training method into your fitness routine, you'll build a strong foundation that improves both your daily quality of life and long-term health outcomes.</p>
+                        
+                        <p>So next time you exercise, consider slowing down to speed up your health gains. Your heart will thank you for years to come.</p>
+                        </div>
+                        
+                            
+                            
+                            <div class="mt-12 border-t pt-6">
+                            <h4 class="text-lg font-semibold mb-4">Share this article</h4>
+                            <div class="text-center max-w-4xl mx-auto">
+    
+        <!--<p class="text-gray-600 mb-8">Click any button to share this page</p>-->
+        
+        
+        <!-- Outlined Style -->
+        <div class="mb-4">
+            <!--<h2 class="text-xl font-semibold text-gray-700 mb-4">Outlined Style</h2>-->
+            <div id="share-buttons-outlined" class="flex flex-wrap gap-4"></div>
+        </div>
+        
+        <!-- Copy feedback message -->
+        <div id="copy-feedback" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 translate-y-20 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none">
+            <i class="fas fa-check-circle"></i>
+            <span>Link copied to clipboard!</span>
+        </div>
+    </div>
+    
+    <!-- Related articles -->
+                        <div class="mt-12 border-t pt-6">
+                            <h4 class="text-lg font-semibold mb-6">You might also like</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <a href="the-buzz-about-habits" class="block group">
+                                    <div class="bg-highlight-50 rounded-lg p-4 transition-all duration-200 hover:shadow-md h-full">
+                                        <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600">The Buzz About Habits: Making and Breaking</h5>
+                                        <p class="text-gray-600 text-sm">Considering we have a certain level of free will that we get to exercise independently, crafting our life in the way we want to should be a rather smooth ride.</p>
+                                    </div>
+                                </a>
+                                <a href="navigating-health" class="block group">
+                                    <div class="bg-highlight-50 rounded-lg p-4 transition-all duration-200 hover:shadow-md h-full">
+                                        <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600">Navigating Health amidst the Modern-Day Chaos: Striking the Balance</h5>
+                                        <p class="text-gray-600 text-sm">In the fast-paced world of today, where time is a precious commodity and the demands of work, family, and personal aspirations never seem to slow down,</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                        
+                        </article>
+                        
+                        </main>
+                      
+                        
+                        
+                        <!--<div class="mt-12 border-t pt-6">-->
+                        <!--    <h4 class="text-lg font-semibold mb-4">Share this article</h4>-->
+                        <!--    <div class="flex space-x-4">-->
+                        <!--        <a href="#" class="text-gray-600 hover:text-primary-500" aria-label="Share on Twitter">-->
+                        <!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">-->
+                        <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>-->
+                        <!--            </svg>-->
+                        <!--        </a>-->
+                        <!--        <a href="#" class="text-gray-600 hover:text-primary-500" aria-label="Share on Facebook">-->
+                        <!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">-->
+                        <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>-->
+                        <!--            </svg>-->
+                        <!--        </a>-->
+                        <!--        <a href="#" class="text-gray-600 hover:text-primary-500" aria-label="Share on LinkedIn">-->
+                        <!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">-->
+                        <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>-->
+                        <!--            </svg>-->
+                        <!--        </a>-->
+                        <!--        <a href="#" class="text-gray-600 hover:text-primary-500" aria-label="Share via Email">-->
+                        <!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">-->
+                        <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>-->
+                        <!--            </svg>-->
+                        <!--        </a>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        <!-- Related articles -->
+                                    <aside class="lg:w-1/4 mt-10 lg:mt-0">
+                <div class="table-of-contents p-6 rounded-lg border border-primary-200 bg-white shadow-sm">
+                    <h2 class="text-lg font-semibold mb-4">Table of Contents</h2>
+                    <nav>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#top" class="toc-link text-gray-700 hover:text-primary-600">Introduction</a></li>
+                            <li><a href="#what-is-zone2" class="toc-link text-gray-700 hover:text-primary-600">What is Zone 2 Cardio?</a></li>
+                            <li><a href="#how-it-feels" class="toc-link text-gray-700 hover:text-primary-600">How Zone 2 Cardio Looks and Feels</a></li>
+                              
+                                    <li><a href="#benefits" class="toc-link text-gray-600 hover:text-primary-600">Benefits of Zone 2 Cardio for Cardiac Health</a>
+                                    
+                                       <ul class="pl-4 mt-1 space-y-1">
+                                    <li><a href="#mitochondrial" class="toc-link text-gray-600 hover:text-primary-600">Improved Mitochondrial Function</a></li>
+                                    <li><a href="#stroke-volume" class="toc-link text-gray-600 hover:text-primary-600">Increased Stroke Volume</a></li>
+                                    <li><a href="#metabolism" class="toc-link text-gray-600 hover:text-primary-600">Enhanced Fat Metabolism</a></li>
+                                 <li><a href="#heart-rate" class="toc-link text-gray-600 hover:text-primary-600">Lower Resting Heart Rate</a></li>
+
+                                    <li><a href="#blood-vessels" class="toc-link text-gray-600 hover:text-primary-600">Improved Endothelial Function</a></li>
+                          <li><a href="#disease-risk" class="toc-link text-gray-600 hover:text-primary-600">Reduced Risk of Heart Disease</a></li>
+                                </ul>
+                                    
+                                    </li>
+                               
+                        
+                            <li><a href="#balance" class="toc-link text-gray-700 hover:text-primary-600">The Buzz About Balance</a></li>
+                          
+                            <li><a href="#conclusion" class="toc-link text-gray-700 hover:text-primary-600">Conclusion</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+                        </div>
+                        </div>
+                        <footer class="py-20 bg-teal-50 relative overflow-hidden">
+    <!-- Text Outline Background -->
+    <!--<div class="absolute inset-0 z-0 text-outline-container overflow-hidden">-->
+    <!--    <div class="text-outline">PIVOT</div>-->
+    <!--</div>-->
+    
+    <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+        <!-- Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="../assets/pivot-logo-old.png" alt="Pivot Logo" class="w-32 h-auto">
+        </div>
+        <!-- Contact Link -->
+        <div>
+                    <a href="../index#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                                        <a href="../privacy-policy" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy |</a>
+                    <a href="../t&c" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms and Conditions |</a>
+                                        <a href="../terms&conditions" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms </a>
+
+
+            
+        </div>
+        <!-- Copyright -->
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Pivot Healthcare. All rights reserved.
+        </p>
+    </div>
+
+    <style>
+        /* Text Outline Background Styles */
+        .text-outline-container {
+            pointer-events: none;
+        }
+        
+        .text-outline {
+            position: absolute;
+            font-size: 25vw;
+            font-family: Georgia, serif;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: 5px;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(0, 128, 128, 0.1);
+            text-stroke: 1px rgba(0, 128, 128, 0.1);
+            white-space: nowrap;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .text-outline {
+                font-size: 40vw;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .text-outline {
+                font-size: 50vw;
+                -webkit-text-stroke: 0.8px rgba(0, 128, 128, 0.1);
+                text-stroke: 0.8px rgba(0, 128, 128, 0.1);
+            }
+        }
+    </style>
+</footer>
+                        
+                 <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+    
+    
+    <script>
+        class ShareButtons {
+            constructor(options = {}) {
+                this.currentUrl = options.url || window.location.href;
+                this.pageTitle = options.title || document.title;
+                
+                this.platforms = {
+                    x: {
+                        name: 'Share on X',
+                        icon: 'fab fa-x-twitter',
+                        color: 'bg-black hover:bg-gray-800',
+                        outlineColor: 'border-black text-black hover:bg-black hover:text-white',
+                        shareUrl: 'https://twitter.com/intent/tweet',
+                        params: () => ({
+                            url: this.currentUrl,
+                            text: this.pageTitle
+                        })
+                    },
+                    whatsapp: {
+                        name: 'Share on WhatsApp',
+                        icon: 'fab fa-whatsapp',
+                        color: 'bg-green-500 hover:bg-green-600',
+                        outlineColor: 'border-green-500 text-green-500 hover:bg-green-500 hover:text-white',
+                        shareUrl: 'https://api.whatsapp.com/send',
+                        params: () => ({
+                            text: `${this.pageTitle} ${this.currentUrl}`
+                        })
+                    },
+                    linkedin: {
+                        name: 'Share on LinkedIn',
+                        icon: 'fab fa-linkedin-in',
+                        color: 'bg-blue-600 hover:bg-blue-700',
+                        outlineColor: 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+                        shareUrl: 'https://www.linkedin.com/sharing/share-offsite/',
+                        params: () => ({
+                            url: this.currentUrl
+                        })
+                    },
+                    facebook: {
+                        name: 'Share on Facebook',
+                        icon: 'fab fa-facebook-f',
+                        color: 'bg-blue-500 hover:bg-blue-600',
+                        outlineColor: 'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white',
+                        shareUrl: 'https://www.facebook.com/sharer/sharer.php',
+                        params: () => ({
+                            u: this.currentUrl
+                        })
+                    },
+                    // telegram: {
+                    //     name: 'Share on Telegram',
+                    //     icon: 'fab fa-telegram-plane',
+                    //     color: 'bg-sky-500 hover:bg-sky-600',
+                    //     outlineColor: 'border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white',
+                    //     shareUrl: 'https://t.me/share/url',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         text: this.pageTitle
+                    //     })
+                    // },
+                    // pinterest: {
+                    //     name: 'Share on Pinterest',
+                    //     icon: 'fab fa-pinterest-p',
+                    //     color: 'bg-red-600 hover:bg-red-700',
+                    //     outlineColor: 'border-red-600 text-red-600 hover:bg-red-600 hover:text-white',
+                    //     shareUrl: 'https://pinterest.com/pin/create/button/',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         description: this.pageTitle
+                    //     })
+                    // },
+                    // reddit: {
+                    //     name: 'Share on Reddit',
+                    //     icon: 'fab fa-reddit-alien',
+                    //     color: 'bg-orange-600 hover:bg-orange-700',
+                    //     outlineColor: 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white',
+                    //     shareUrl: 'https://reddit.com/submit',
+                    //     params: () => ({
+                    //         url: this.currentUrl,
+                    //         title: this.pageTitle
+                    //     })
+                    // },
+                    // email: {
+                    //     name: 'Share via Email',
+                    //     icon: 'fas fa-envelope',
+                    //     color: 'bg-gray-700 hover:bg-gray-800',
+                    //     outlineColor: 'border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white',
+                    //     action: () => {
+                    //         const subject = encodeURIComponent(this.pageTitle);
+                    //         const body = encodeURIComponent(`Check out this page: ${this.currentUrl}`);
+                    //         window.location.href = `mailto:?subject=${subject}&body=${body}`;
+                    //     }
+                    // },
+                    copy: {
+                        name: 'Copy Link',
+                        icon: 'fas fa-link',
+                        color: 'bg-gray-600 hover:bg-gray-700',
+                        outlineColor: 'border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white',
+                        action: () => this.copyToClipboard()
+                    }
+                };
+            }
+            
+            generateShareUrl(platform) {
+                const config = this.platforms[platform];
+                if (!config || !config.shareUrl) return null;
+                
+                const params = config.params();
+                const queryString = new URLSearchParams(params).toString();
+                return `${config.shareUrl}?${queryString}`;
+            }
+            
+            share(platform) {
+                const config = this.platforms[platform];
+                
+                if (config.action) {
+                    config.action();
+                    return;
+                }
+                
+                const shareUrl = this.generateShareUrl(platform);
+                if (!shareUrl) return;
+                
+                // Mobile detection for WhatsApp
+                if (platform === 'whatsapp' && /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    window.location.href = shareUrl;
+                    return;
+                }
+                
+                const width = 600;
+                const height = 500;
+                const left = (window.innerWidth - width) / 2;
+                const top = (window.innerHeight - height) / 2;
+                
+                window.open(shareUrl, `share-${platform}`, `width=${width},height=${height},left=${left},top=${top}`);
+            }
+            
+            copyToClipboard() {
+                navigator.clipboard.writeText(this.currentUrl).then(() => {
+                    this.showCopyFeedback();
+                }).catch(() => {
+                    // Fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = this.currentUrl;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    this.showCopyFeedback();
+                });
+            }
+            
+            showCopyFeedback() {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('translate-y-20', 'opacity-0');
+                feedback.classList.add('translate-y-0', 'opacity-100');
+                
+                setTimeout(() => {
+                    feedback.classList.add('translate-y-20', 'opacity-0');
+                    feedback.classList.remove('translate-y-0', 'opacity-100');
+                }, 3000);
+            }
+            
+            createButton(platform, style = 'default') {
+                const config = this.platforms[platform];
+                if (!config) return null;
+                
+                const button = document.createElement('button');
+                button.setAttribute('aria-label', config.name);
+                
+                // Base classes
+                let baseClasses = 'relative w-12 h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group';
+                
+                // Style specific classes
+                if (style === 'circular') {
+                    button.className = `${baseClasses} rounded-full text-white ${config.color} shadow-lg hover:shadow-xl`;
+                } else if (style === 'square') {
+                    button.className = `${baseClasses} rounded-lg text-white ${config.color} shadow-lg hover:shadow-xl`;
+                } else if (style === 'outlined') {
+                    button.className = `${baseClasses} rounded-full border-2 ${config.outlineColor} transition-colors duration-300`;
+                }
+                
+                // Icon
+                const icon = document.createElement('i');
+                icon.className = `${config.icon} text-xl`;
+                
+                // Tooltip
+                const tooltip = document.createElement('span');
+                tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none';
+                tooltip.textContent = config.name;
+                
+                // Tooltip arrow
+                const arrow = document.createElement('span');
+                arrow.className = 'absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800';
+                tooltip.appendChild(arrow);
+                
+                button.appendChild(icon);
+                button.appendChild(tooltip);
+                
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.share(platform);
+                });
+                
+                return button;
+            }
+            
+            render(containerId, style = 'default') {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                Object.keys(this.platforms).forEach(platform => {
+                    const button = this.createButton(platform, style);
+                    if (button) {
+                        container.appendChild(button);
+                    }
+                });
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const shareButtons = new ShareButtons({
+                url: window.location.href,
+                title: document.title || 'Check out this awesome page!'
+            });
+            
+            // Render different styles
+            // shareButtons.render('share-buttons-circular', 'circular');
+            // shareButtons.render('share-buttons-square', 'square');
+            shareButtons.render('share-buttons-outlined', 'outlined');
+        });
+    </script>
+    <script>
+        // Calculate reading time
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = document.querySelector('article').innerText;
+            const wordCount = text.split(/\s+/).length;
+            const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+            document.getElementById('readingTime').textContent = `${readingTime} min read`;
+        });
+        
+        // Progress bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Back to top button visibility
+            if (winScroll > 300) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+            
+            // Highlight active section in TOC
+            highlightCurrentSection();
+        };
+        
+        // Highlight active section in table of contents
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('h2, h3');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < 100) {
+                    currentSectionId = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Font size adjustment
+        let currentFontSize = 100; // percentage
+        
+        function setupFontSizeButtons(increaseBtn, decreaseBtn, resetBtn) {
+            if (increaseBtn) {
+                increaseBtn.addEventListener('click', function() {
+                    if (currentFontSize < 150) {
+                        currentFontSize += 10;
+                        updateFontSize();
+                    }
+                });
+            }
+            
+            if (decreaseBtn) {
+                decreaseBtn.addEventListener('click', function() {
+                    if (currentFontSize > 70) {
+                        currentFontSize -= 10;
+                        updateFontSize();
+                    }
+                });
+            }
+            
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    currentFontSize = 100;
+                    updateFontSize();
+                });
+            }
+        }
+        
+        setupFontSizeButtons(
+            document.getElementById('increaseFont'), 
+            document.getElementById('decreaseFont'),
+            document.getElementById('resetFont')
+        );
+        
+        setupFontSizeButtons(
+            document.getElementById('mobileIncFont'), 
+            document.getElementById('mobileDcrFont'),
+            document.getElementById('mobileResetFont')
+        );
+        
+        function updateFontSize() {
+            document.querySelector('article').style.fontSize = `${currentFontSize}%`;
+            // Save the preference in localStorage for future visits
+            localStorage.setItem('blogFontSize', currentFontSize);
+        }
+        
+        // Mobile Sidebar Toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        
+        sidebarToggle.addEventListener('click', function() {
+            mobileSidebar.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+        });
+        
+        closeSidebar.addEventListener('click', function() {
+            mobileSidebar.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close sidebar when clicking outside or on a link
+        document.addEventListener('click', function(e) {
+            if (mobileSidebar.classList.contains('active') && 
+                !mobileSidebar.contains(e.target) && 
+                e.target !== sidebarToggle &&
+                !sidebarToggle.contains(e.target)) {
+                mobileSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        document.querySelectorAll('.mobile-sidebar a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function() {
+                mobileSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Load saved font size preference if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedFontSize = localStorage.getItem('blogFontSize');
+            if (savedFontSize) {
+                currentFontSize = parseInt(savedFontSize);
+                updateFontSize();
+            }
+            
+            // Initial highlighting of current section
+            highlightCurrentSection();
+            
+            // Check for tablet and adjust layout
+            const checkForTablet = () => {
+                if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
+                    // Tablet optimizations
+                    document.querySelector('article').classList.add('tablet-optimized');
+                    // Increase base font size slightly for better tablet reading
+                    if (!document.querySelector('.tablet-style')) {
+                        const style = document.createElement('style');
+                        style.className = 'tablet-style';
+                        style.textContent = `
+                            @media (min-width: 768px) and (max-width: 1024px) {
+                                article {
+                                    font-size: 110%;
+                                    line-height: 1.8;
+                                    padding: 0 5%;
+                                }
+                                .max-w-5xl {
+                                    max-width: 90%;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                } else {
+                    // Remove tablet optimizations if not on tablet
+                    document.querySelector('article')?.classList.remove('tablet-optimized');
+                    document.querySelector('.tablet-style')?.remove();
+                }
+            };
+            
+            // Run on load and resize
+            checkForTablet();
+            window.addEventListener('resize', checkForTablet);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+        
+        // Add tailwind classes for whiskey and light blue color scheme
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add tailwind classes to elements
+            const links = document.querySelectorAll('a:not(.toc-link)');
+            links.forEach(link => {
+                link.classList.add('text-primary-700', 'hover:text-primary-500');
+            });
+            
+            // Add hover effects to list items
+            const listItems = document.querySelectorAll('article li');
+            listItems.forEach(item => {
+                item.classList.add('transition-colors', 'duration-150', 'hover:bg-highlight-50', 'rounded');
+            });
+            
+            // Debugging - console log to check if the table of contents is in the DOM
+            console.log('Table of contents element exists:', !!document.querySelector('.table-of-contents'));
+            console.log('Table of contents visibility:', getComputedStyle(document.querySelector('.table-of-contents')).display);
+        });
+    </script>
+</body>
+</html>           
+                        

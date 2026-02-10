@@ -1,0 +1,1511 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pivot Health - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        'pivot-blue': '#3B82F6',
+                        'pivot-teal': '#253774',
+                        'pivot-dark': '#1E293B',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Global font application */
+        html,
+        body {
+            font-family: 'EB Garamond', serif !important;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* All elements inherit the font */
+        * {
+            font-family: inherit;
+        }
+
+        /* Ensure proper font loading with fallback */
+        @font-face {
+            font-family: 'EB Garamond';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('EB Garamond'), url(https://fonts.gstatic.com/s/ebgaramond/v27/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-6_RUA4V-e6yH.woff2) format('woff2');
+        }
+    </style>
+    <style>
+        .icon-container {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover .icon-container {
+            transform: scale(1.1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .btn-evidence {
+            transition: all 0.3s ease;
+        }
+
+        .btn-evidence:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+
+    <style>
+        .bg-pattern {
+            background-color: #f8f9fa;
+            background-image: radial-gradient(#e6e9ed 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .quote-marks {
+            font-size: 6rem;
+            line-height: 0;
+            height: 40px;
+            display: inline-block;
+            color: rgba(23, 118, 142, 0.15);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .quote-marks {
+                font-size: 4rem;
+                top: -5px;
+                left: -20px;
+            }
+        }
+    </style>
+
+    <style>
+        .step-number {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 300;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            z-index: 1;
+            color: #1f2937;
+        }
+
+        .timeline-line {
+            height: 1px;
+            background-color: #e2e8f0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+
+
+
+
+    <style>
+        .heart_hero_btn {
+            transition: all 0.3s ease;
+        }
+
+        .heart_hero_btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 128, 155, 0.3);
+        }
+
+        .heart_hero_image {
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .heart_hero_card {
+            background: linear-gradient(to right, #ffffff, #f7fafc);
+        }
+    </style>
+
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to bottom right, #FF9D6C, #FF5E62);
+            height: 200px;
+        }
+
+        .image-column-up {
+            animation: scrollUp 30s linear infinite;
+        }
+
+        .image-column-down {
+            animation: scrollDown 30s linear infinite;
+        }
+
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        @keyframes scrollDown {
+            0% {
+                transform: translateY(-50%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bpm-badge {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart-icon {
+            color: #FF5E62;
+            margin-left: 5px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+
+    <style>
+        /* Team Preview Cards */
+        .team-preview-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .team-preview-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-preview-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .team-preview-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-preview-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .team-preview-info {
+            text-align: center;
+        }
+
+        /* Profile Images in Slider */
+        .team-profile-modern {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .team-profile-modern {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+
+
+        /* Modern Navigation Buttons */
+        .modern-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: none;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #4F46E5;
+            z-index: 10;
+        }
+
+        .modern-nav-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .modern-nav-prev {
+            left: -32px;
+        }
+
+        .modern-nav-next {
+            right: -32px;
+        }
+
+        @media (max-width: 768px) {
+            .modern-nav-btn {
+                /*background: rgba(255, 255, 255, 0.9);*/
+                backdrop-filter: blur(2px);
+                border: none;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .modern-nav-prev {
+                left: 20px;
+            }
+
+            .modern-nav-next {
+                right: 20px;
+            }
+        }
+
+        /* Progress Bar */
+        .modern-progress-bar {
+            width: 33.33%;
+            transition: width 0.7s ease;
+        }
+
+        /* Modern Dots */
+        .modern-dot {
+            background: none;
+            border: none;
+            color: #9CA3AF;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .modern-dot-active {
+            color: #4F46E5;
+            background: #EEF2FF;
+        }
+
+        .modern-dot:hover {
+            color: #6366F1;
+        }
+
+        /* Card Hover Effects */
+        .team-modern-carousel>div {
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        /* Gradient Text */
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    </style>
+
+</head>
+
+<body class=" antialiased">
+
+    <!-- Navbar -->
+    <nav class="navbar absolute z-50 w-full bg-transparent py-4 px-6 text-white">
+        <div
+            class="max-w-7xl px-6 py-3 md:py-4 border  lg:px-8 rounded-full bg-white/30 w-full mx-auto mx-auto flex justify-between items-center backdrop-blur-lg">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="assets/logo/main.png" alt="Pivot Logo" class="w-28 h-auto">
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-white">
+                <!--<a href="#about" class="text-black hover:text-teal-200 transition-colors">About</a>-->
+                <!-- Programs with dropdown -->
+
+                <a href="/" class="text-black hover:text-teal-600 transition-colors">Home</a>
+
+                <a href="/insights.html" class="text-black hover:text-teal-600 transition-colors">Insights</a>
+
+                <a href="about-us" class="text-black hover:text-teal-600 transition-colors">About Us</a>
+
+
+
+                <div class="relative group">
+                    <a href="#programs" class="text-black hover:text-teal-600 transition-colors">Programs</a>
+                    <!-- Dropdown menu -->
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">
+                        <div class="py-2">
+                            <!-- HeartSpan - clickable -->
+                            <a href="/heartspan.html"
+                                class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan
+                            </a>
+                            <!-- HeartSpan Corporate - NEW -->
+                            <a href="/corporate-heartspan.html"
+                                class="block px-4 py-2 text-black hover:bg-teal-500 hover:text-white transition-colors">
+                                HeartSpan — Corporate
+                            </a>
+                            <!-- GutSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <!-- BrainSpan - with clock icon -->
+                            <div class="block px-4 py-2 text-gray-500 flex items-center">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="relative group">-->
+                <!--    <a href="#evidences" class="text-black hover:text-teal-600 transition-colors">Evidences</a>-->
+                <!-- Dropdown menu -->
+                <!--    <div class="absolute left-0 mt-2 w-48 bg-white/90 backdrop-blur-lg rounded-md shadow-lg overflow-hidden transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200 ease-in-out">-->
+                <!--        <div class="py-2">-->
+                <!-- HeartSpan - clickable -->
+                <!--            <a href="/heartspan-evidence" class="block px-4 py-2 text-gray-800 hover:bg-teal-500 hover:text-white transition-colors">-->
+                <!--                HeartSpan Evidence-->
+                <!--            </a>-->
+                <!-- GutSpan - with clock icon -->
+                <!--            <div class="block px-4 py-2 text-gray-500 flex items-center">-->
+                <!--                <span class="mr-2">GutSpan Evidence</span>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                <!-- BrainSpan - with clock icon -->
+                <!--            <div class="block px-4 py-2 text-gray-500 flex items-center">-->
+                <!--                <span class="mr-2">BrainSpan Evidence</span>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <a href="/#testimonials" class="text-black hover:text-teal-600 transition-colors">Client Stories</a>
+                <a href="/#contact" class="text-black hover:text-teal-600 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Mobile Menu Dropdown (hidden by default) -->
+            <div
+                class="hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-lg mt-2 p-4 rounded-lg shadow-lg md:hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="about-us" class="text-gray-800 hover:text-teal-500 transition-colors">About Us</a>
+                    <!-- Mobile Programs Dropdown -->
+                    <div class="relative">
+                        <button
+                            class="text-gray-800 hover:text-teal-500 transition-colors flex items-center justify-between w-full">
+                            Programs
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="pl-4 mt-2 hidden">
+                            <a href="/heartspan.html"
+                                class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan</a>
+                            <a href="/corporate-heartspan.html"
+                                class="block py-2 text-gray-800 hover:text-teal-500 transition-colors">HeartSpan —
+                                Corporate</a>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">GutSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex items-center py-2 text-gray-500">
+                                <span class="mr-2">BrainSpan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/#testimonials" class="text-gray-800 hover:text-teal-500 transition-colors">Client
+                        Stories</a>
+                    <a href="/#contact" class="text-gray-800 hover:text-teal-500 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-full max-h-[80vh] md:flex md:mx-auto justify-center items-center md:overflow-hidden bg-gray-100 p-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8 py-8">
+
+            </div>
+        </div>
+
+        <!-- Gradient background at bottom -->
+        <!-- <div class="gradient-bg w-full"></div> -->
+    </div>
+
+
+    <main>
+
+        <section id="about-hero" class="relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  relative z-20">
+                <div class="text-center mb-2">
+                    <h1 class="text-4xl md:text-5xl font-serif font-bold text-pivot-navy ">Our Story</h1>
+                    <div class="w-24 h-1 bg-pivot-orange mx-auto"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="our-mission" class="pb-8 md:pb-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="space-y-16">
+                    <div class="space-y-6 animate-fade-in border-t pt-16">
+                        <h3 class="text-2xl font-serif font-bold text-pivot-teal">The PIVOT Purpose</h3>
+                        <p class="text-lg">I started PIVOT because I believe health should be your greatest asset—not a
+                            barrier. For over 15 years, I’ve helped entrepreneurs, professionals, and families reclaim
+                            their health—not just to avoid illness, but to thrive in their careers, relationships, and
+                            purpose.
+                            As a certified Yoga Therapist, Nutrition Coach, and Behavior Change Specialist, I’ve seen
+                            firsthand how powerful it is when we blend modern science with timeless wisdom</p>
+                        <p class="text-lg">But the real turning point came when my son faced a life-threatening illness.
+                            Conventional medicine reached its limits, and I was forced to look deeper. Through
+                            nutrition, yoga, and targeted lifestyle changes, I witnessed a transformation that changed
+                            my life—and my philosophy—forever.
+                            I realized that symptoms are not problems to fix; they’re messages. Clues to deeper
+                            imbalances we can decode and address.</p>
+                        <p class="text-lg">That experience shaped the foundation of PIVOT. Here, we don’t chase trends
+                            or treat health like a checklist. We personalize. We guide. We simplify the overwhelming and
+                            bring clarity to the complex. Because when your health works for you, everything else—your
+                            performance, your relationships, your joy—falls into place.
+                            My mission is simple: to help you build a life where health fuels your potential, not limits
+                            it.</p>
+
+                    </div>
+
+
+                    <!--                       <div class="space-y-6 animate-fade-in pt-16 border-t border-gray-200">-->
+                    <!--                           <h3 class="text-2xl font-serif font-bold text-pivot-teal">What We Do</h3>-->
+
+
+                    <!--<p class="text-lg">At PIVOT, I help individuals prevent chronic conditions and optimize their healthspan through personalized, science-backed programs.-->
+                    <!--My mission is to empower people to take control of their health—before disease forces them to. Whether you're a driven professional, a parent balancing it all, or someone ready to stop surviving and start thriving, PIVOT provides the tools, guidance, and education to make that possible.-->
+                    <!--                         </p>-->
+                    <!--                           <p class="text-lg">This is just the beginning. Over time, we will launch a suite of programs targeting core systems that influence long-term vitality—heart, gut, brain, and beyond. Each one rooted in credible science, deeply personalized, and designed to fit real life.</p>-->
+                    <!--                           <p class="text-lg">Our first program is <span class="font-bold text-pivot-teal"> <a href="heartspan">HeartSpan</a></span>—a comprehensive roadmap to enhance cardiovascular resilience, prevent heart disease, and increase energy and endurance. Through tailored nutrition, movement, and stress protocols, HeartSpan helps you build the stamina and strength to lead, love, and live with purpose. -->
+                    <!--                           It's not just about heart health—it’s about powering the rhythm of your entire life.</p>-->
+
+
+
+                    <!--                   </div>-->
+                </div>
+            </div>
+        </section>
+
+        <!-- Subtle Decorative Elements -->
+        <div class="absolute top-32 left-16 w-24 h-24 bg-gray-200 organic-shape opacity-40 floating"></div>
+        <div class="absolute top-48 right-24 w-16 h-16 bg-gray-300 rounded-full opacity-30 floating"
+            style="animation-delay: 3s;"></div>
+        <div class="absolute bottom-48 left-1/3 w-12 h-12 bg-gray-200 organic-shape opacity-35 floating"
+            style="animation-delay: 6s;"></div>
+
+        <section class="relative py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-10">
+
+                <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8 font-light">
+                    We help people take control of their health before chronic conditions take control of them.
+                </p>
+                <div class="bg-white rounded-2xl p-4 md:p-6 max-w-7xl mx-auto shadow-lg border border-gray-100">
+                    <p class="text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
+                        Our mission is <span class="font-medium text-gray-900">prevention with purpose</span>—extending
+                        healthspan and improving quality of life through personalized, science-backed programs that fit
+                        real lives.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Target Audience -->
+            <div
+                class="bg-white rounded-2xl p-4 md:p-6 mb-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                <p class="text-lg md:text-xl text-gray-600 text-center max-w-4xl mx-auto leading-relaxed">
+                    Whether you're a <span class="text-gray-800 font-medium">high-performing professional</span>,
+                    a <span class="text-gray-800 font-medium">multitasking parent</span>, or someone simply ready to
+                    <span class="text-gray-800 font-medium">stop surviving and start thriving</span>, PIVOT gives you
+                    the tools, insights, and support to get there.
+                </p>
+            </div>
+
+            <!-- DOPH Framework -->
+            <div class="mb-28">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+                        The Foundation: DOPH
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+                        Every PIVOT program is built on our core framework
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Data-Driven -->
+                    <div
+                        class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                        <div class="mb-8">
+                            <div class="w-16 h-16 mx-auto rounded-xl bg-gray-100 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-gray-600 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-gray-900 mb-2">D</h3>
+                                <h4 class="text-lg font-normal text-gray-700">Data-Driven</h4>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                We use health data, lifestyle insights, and real-world context to create relevant,
+                                timely interventions
+                                that align with your body, your life, and your goals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Outcome-Oriented -->
+                    <div
+                        class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                        <div class="mb-8">
+                            <div class="w-16 h-16 mx-auto rounded-xl bg-gray-100 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-gray-600 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-gray-900 mb-2">O</h3>
+                                <h4 class="text-lg font-normal text-gray-700">Outcome-Oriented</h4>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                We go beyond generic metrics. Our programs aim for tangible improvements in how you
+                                feel,
+                                your symptoms, biomarkers, and overall function.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Personalized -->
+                    <div
+                        class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                        <div class="mb-8">
+                            <div class="w-16 h-16 mx-auto rounded-xl bg-gray-100 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-gray-600 rounded-lg transform rotate-45"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-gray-900 mb-2">P</h3>
+                                <h4 class="text-lg font-normal text-gray-700">Personalized</h4>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Hyper-personalization considering your health status, behavioral patterns, lifestyle
+                                demands,
+                                and preferences—from nutrition to stress management.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Human Connection -->
+                    <div
+                        class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                        <div class="mb-8">
+                            <div class="w-16 h-16 mx-auto rounded-xl bg-gray-100 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-gray-600 organic-shape"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-gray-900 mb-2">H</h3>
+                                <h4 class="text-lg font-normal text-gray-700">Human Connection</h4>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                While we leverage technology, lasting change happens through people. Our coaches build
+                                trust
+                                and walk the path with you—because healing is human.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HeartSpan Program -->
+            <div class="bg-white rounded-3xl shadow-xl mb-24 border border-gray-100 overflow-hidden">
+                <div class="grid lg:grid-cols-2 gap-12 items-center p-8 md:p-16">
+                    <div>
+                        <div class="mb-8">
+                            <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
+                                Our First Program:
+                            </h2>
+                            <h3 class="text-3xl md:text-4xl font-medium text-gray-800 heart-pulse">
+                                HeartSpan
+                            </h3>
+                            <div class="w-12 h-0.5 bg-red-400 mt-4"></div>
+                        </div>
+                        <div class="space-y-6 mb-10">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                We've started with the heart—literally. HeartSpan is our flagship program to build
+                                <span class="font-medium text-gray-900">cardiovascular resilience</span>, prevent heart
+                                disease,
+                                and elevate daily energy and endurance.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                It's a full-spectrum system that integrates personalized nutrition, movement, recovery,
+                                and stress
+                                protocols to help you <span class="font-medium text-gray-800">lead, love, and
+                                    live</span> with more vitality.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Nutrition</span>
+                            <span
+                                class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Movement</span>
+                            <span
+                                class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Recovery</span>
+                            <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Stress
+                                Protocols</span>
+                        </div>
+                    </div>
+                    <div class="text-center lg:text-right">
+                        <div class="relative inline-block">
+                            <img src="https://images.unsplash.com/photo-1554244933-d876deb6b2ff?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Heart Health Program"
+                                class="w-full max-w-md mx-auto rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What's Next -->
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-12 tracking-tight">
+                    What's Next
+                </h2>
+                <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 max-w-7xl mx-auto border border-gray-100">
+                    <div class="space-y-3">
+                        <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                            HeartSpan is just the beginning. We're developing a suite of programs that target the core
+                            systems
+                            that influence long-term health—heart, gut, brain, and beyond.
+                        </p>
+                        <p class="text-md md:text-lg text-gray-500 leading-relaxed">
+                            Every offering is designed with one goal: to help you live
+                            <span class="text-gray-900 font-semibold">longer, stronger, and better</span>—with clarity,
+                            energy, and purpose.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Statement -->
+            <div class="text-center">
+                <div
+                    class="bg-gray-900 text-white px-6 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <p class="text-2xl md:text-3xl font-light mb-3 tracking-tight">
+                        PIVOT is where prevention meets precision.
+                    </p>
+                    <p class="text-xl md:text-2xl font-light opacity-90">
+                        And where health becomes power.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-6 md:py-10 px-4 bg-white" id="about">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 md:gap-16">
+
+                    <div class="w-full max-w-xl  flex justify-start lg:justify-start">
+                        <div class="profile-border overflow-hidden bg-white">
+                            <img src="assets/ankur.png" alt="Chief Coach"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+
+                    <div class="w-full lg:w-7/12 max-w-2xl">
+                        <blockquote class="text-pivot-dark">
+                            <p class="text-lg md:text-xl leading-relaxed mb-6 text-blue-700">
+                                "I am the Chief Coach at PIVOT Health, guiding high-achievers to unlock their full
+                                potential
+                                through a transformative health blueprint.
+                            </p>
+
+                            <p class="text-base md:text-lg leading-relaxed mb-6 text-gray-600">
+                                A decade ago, my son's critical illness drove me to explore nutrition, yoga, and
+                                lifestyle
+                                changes—leading to a remarkable recovery.
+                            </p>
+
+                            <p class="text-base md:text-lg leading-relaxed mb-6 text-gray-600">
+                                Since then, I've immersed myself in <span class="highlight">Yoga (from Bihar School Of
+                                    Yoga,
+                                    India),</span> <span class="highlight">Exercise Conditioning (from Joel
+                                    Jamieson),</span>
+                                <span class="highlight">USA Nature Cure (from IMANAH)</span> and <span
+                                    class="highlight">Nutrition Coaching (from Food Matters Institute,
+                                    Australia),</span>
+                                <span class="highlight">Deep Rest program (from Lizzie Yoga, Austria)</span> thereby
+                                blending
+                                Eastern wisdom with Western science.
+                            </p>
+
+                            <p class="text-base md:text-lg leading-relaxed mb-6 text-gray-600">
+                                With 20+ years in corporate leadership, I've seen the toll that stress and poor
+                                lifestyle
+                                choices can take on high-performers.
+                            </p>
+
+                            <p class="text-base md:text-lg leading-relaxed mb-6 text-gray-600">
+                                I have developed PIVOT Health, a transformative system designed to help high-achievers
+                                reclaim
+                                vitality, prevent chronic disease, and unlock their fullest potential."
+                            </p>
+                        </blockquote>
+
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-bold text-pivot-dark">Ankur Bhatia</h3>
+                            <p class="text-gray-600">Chief Coach</p>
+                        </div>
+                        <div class="flex flex-row ">
+                            <img class="w-14 sm:w-24" src="assets/logo 1.png">
+                            <img class="w-14 sm:w-24" src="assets/logo 2.png">
+                            <img class="w-14 sm:w-24" src="assets/logo 3.png">
+                            <img class="w-14 sm:w-24" src="assets/logo  4.png">
+                            <img class="w-14 sm:w-24" src="assets/logo 5.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Team Section -->
+        <!-- Responsive Team Section -->
+        <section class="py-12 md:py-16 lg:py-20 bg-white" id="team">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <!-- Team Header -->
+                <div class="text-center mb-12 md:mb-16 lg:mb-20">
+                    <div class="inline-flex items-center gap-3 mb-3 md:mb-4">
+                        <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-amber-600"></div>
+                        <span class="text-blue-800 font-medium uppercase tracking-wider text-xs md:text-sm">Our
+                            Experts</span>
+                        <div class="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-amber-600"></div>
+                    </div>
+                    <h2
+                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent mb-3 md:mb-4">
+                        Meet Our Team
+                    </h2>
+                    <p class="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+                        Dedicated professionals committed to transforming your health journey
+                    </p>
+                </div>
+
+                <!-- Team Preview Cards -->
+                <div class="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-16 lg:mb-20">
+
+
+                    <div class="team-preview-card group cursor-pointer" data-member="0">
+                        <div class="team-preview-image relative">
+                            <img src="assets/team/charu.png" alt="M.V. Reshma Rajesh"
+                                class="w-full h-full object-cover rounded-lg">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-indigo-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                            </div>
+                        </div>
+                        <div class="team-preview-info text-center mt-3">
+                            <h4 class="font-bold text-gray-900 text-sm sm:text-base">M.V. Reshma Rajesh</h4>
+                            <p class="text-xs sm:text-sm text-indigo-600">Yoga Specialist</p>
+                        </div>
+                    </div>
+
+                    <div class="team-preview-card group cursor-pointer" data-member="1">
+                        <div class="team-preview-image relative">
+                            <img src="assets/team/reshma.png" alt="Dr. Charu Arora"
+                                class="w-full h-full object-cover rounded-lg">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-indigo-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                            </div>
+                        </div>
+                        <div class="team-preview-info text-center mt-3">
+                            <h4 class="font-bold text-gray-900 text-sm sm:text-base">Dr. Charu Arora</h4>
+                            <p class="text-xs sm:text-sm text-indigo-600">Nutrition Coach</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Slider Container -->
+                <div class="relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <div class="team-modern-carousel flex transition-all duration-700 ease-out" id="modernCarousel">
+
+
+
+                            <!-- Slide 2: Reshma Rajesh -->
+                            <div class="w-full flex-shrink-0 px-2 sm:px-4">
+                                <div
+                                    class="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <div class="flex flex-col lg:flex-row">
+                                        <div class="w-full lg:w-5/12 relative">
+                                            <div class="absolute inset-0 bg-gradient-to-br from-[#AC9362] to-[#936E44]">
+                                            </div>
+                                            <div
+                                                class="relative p-6 sm:p-8 lg:p-12 h-full flex flex-col justify-center">
+                                                <div class="team-profile-modern mx-auto mb-6 lg:mb-8">
+                                                    <img src="assets/team/charu.png" alt="M.V. Reshma Rajesh"
+                                                        class="w-full h-full object-cover rounded-full">
+                                                    <div class="absolute inset-0 border-4 border-white/30 rounded-full">
+                                                    </div>
+                                                </div>
+                                                <h3
+                                                    class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 text-center">
+                                                    M.V. Reshma Rajesh</h3>
+                                                <p
+                                                    class="text-base sm:text-lg lg:text-xl text-teal-100 text-center mb-4 lg:mb-8">
+                                                    Therapeutic Yoga & Wellness Specialist</p>
+                                                <div class="flex justify-center flex-wrap gap-2">
+                                                    <span
+                                                        class="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs sm:text-sm rounded-full">9+
+                                                        Years Experience</span>
+                                                    <span
+                                                        class="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs sm:text-sm rounded-full">Medical
+                                                        Yoga Therapy</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full lg:w-7/12 p-6 sm:p-8 lg:p-12 xl:p-16">
+                                            <div class="space-y-4 sm:space-y-5 lg:space-y-6">
+                                                <p
+                                                    class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                                                    M.V. Reshma Rajesh is a Certified Yoga Therapist and Wellness Coach
+                                                    with over 9 years of experience specializing in therapeutic yoga for
+                                                    lifestyle disorders, chronic pain, and women's health. She is
+                                                    trained in Hatha, Power, and Aqua Yoga, and holds certifications
+                                                    from A1000yoga and MYT Delhi in Medical Yoga Therapy.
+                                                </p>
+                                                <p
+                                                    class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                                                    Her expertise spans musculoskeletal rehabilitation, prenatal and
+                                                    postnatal care, and mind-body practices such as pranayama and
+                                                    meditation. Reshma's approach blends classical yogic wisdom with
+                                                    evidence-based techniques to support sustainable healing and
+                                                    emotional resilience. She is known for crafting personalized,
+                                                    goal-focused yoga programs that restore balance and enhance
+                                                    well-being.
+                                                </p>
+                                                <div
+                                                    class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 lg:mt-8">
+                                                    <div class="text-center p-3 sm:p-4 bg-teal-50 rounded-lg">
+                                                        <div class="text-xl sm:text-2xl font-bold text-teal-700">9+
+                                                        </div>
+                                                        <div class="text-xs sm:text-sm text-gray-600">Years Experience
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center p-3 sm:p-4 bg-teal-50 rounded-lg">
+                                                        <div class="text-xl sm:text-2xl font-bold text-teal-700">1000+
+                                                        </div>
+                                                        <div class="text-xs sm:text-sm text-gray-600">Clients Helped
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="text-center p-3 sm:p-4 bg-teal-50 rounded-lg col-span-2 sm:col-span-1">
+                                                        <div class="text-xl sm:text-2xl font-bold text-teal-700">3</div>
+                                                        <div class="text-xs sm:text-sm text-gray-600">Yoga Specialties
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Dr. Charu Arora -->
+                            <div class="w-full flex-shrink-0 px-2 sm:px-4">
+                                <div
+                                    class="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <div class="flex flex-col lg:flex-row">
+                                        <div class="w-full lg:w-5/12 relative">
+                                            <div class="absolute inset-0 bg-gradient-to-br from-[#AC9362] to-[#936E44]">
+                                            </div>
+                                            <div
+                                                class="relative p-6 sm:p-8 lg:p-12 h-full flex flex-col justify-center">
+                                                <div class="team-profile-modern mx-auto mb-6 lg:mb-8">
+                                                    <img src="assets/team/reshma.png" alt="Dr. Charu Arora"
+                                                        class="w-full h-full object-cover rounded-full">
+                                                    <div class="absolute inset-0 border-4 border-white/30 rounded-full">
+                                                    </div>
+                                                </div>
+                                                <h3
+                                                    class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 text-center">
+                                                    Dr. Charu Arora</h3>
+                                                <p class="text-sm sm:text-base lg:text-lg text-purple-200 text-center">
+                                                    (PhD, MSc, RD)</p>
+                                                <p
+                                                    class="text-base sm:text-lg lg:text-xl text-purple-100 text-center mb-4 lg:mb-8">
+                                                    Chief Nutrition Coach</p>
+                                                <div class="flex justify-center flex-wrap gap-2">
+                                                    <span
+                                                        class="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs sm:text-sm rounded-full">PhD
+                                                        in Nutrition</span>
+                                                    <span
+                                                        class="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs sm:text-sm rounded-full">Registered
+                                                        Dietitian</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full lg:w-7/12 p-6 sm:p-8 lg:p-12 xl:p-16">
+                                            <div class="space-y-4 sm:space-y-5 lg:space-y-6">
+                                                <p
+                                                    class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                                                    Dr. Charu Arora is a highly accomplished Registered Dietitian with
+                                                    over 9 years of experience in clinical nutrition, specializing in
+                                                    obesity, diabetes, PCOD, hypertension, and fatty liver. She holds a
+                                                    PhD in Food and Nutrition from the University of Delhi and AIIMS,
+                                                    and is certified in Low FODMAP and Fertility Nutrition.
+                                                </p>
+                                                <p
+                                                    class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                                                    She has served in key academic and policy roles, including as a
+                                                    nutrition consultant at NITI Aayog and Assistant Professor at Lady
+                                                    Irwin College. She is the founder of Sankalp by Charu, where she
+                                                    leads personalized lifestyle interventions rooted in evidence-based
+                                                    nutrition.
+                                                </p>
+                                                <p
+                                                    class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                                                    Dr. Arora is a SCOPE Scholar awarded by the World Obesity Federation
+                                                    and has presented widely at national and international forums. Her
+                                                    work blends scientific rigor with practical coaching, making her a
+                                                    trusted expert in therapeutic and preventive nutrition.
+                                                </p>
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 lg:mt-8">
+                                                    <div class="p-4 bg-purple-50 rounded-lg">
+                                                        <div class="flex items-center gap-3">
+                                                            <div
+                                                                class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-200 rounded-full flex items-center justify-center">
+                                                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-purple-700"
+                                                                    fill="none" stroke="currentColor"
+                                                                    viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2"
+                                                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                                                </svg>
+                                                            </div>
+                                                            <div>
+                                                                <div
+                                                                    class="font-bold text-purple-900 text-sm sm:text-base">
+                                                                    Academic Excellence</div>
+                                                                <div class="text-xs sm:text-sm text-gray-600">PhD from
+                                                                    Delhi University</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="p-4 bg-purple-50 rounded-lg">
+                                                        <div class="flex items-center gap-3">
+                                                            <div
+                                                                class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-200 rounded-full flex items-center justify-center">
+                                                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-purple-700"
+                                                                    fill="none" stroke="currentColor"
+                                                                    viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2"
+                                                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                                                </svg>
+                                                            </div>
+                                                            <div>
+                                                                <div
+                                                                    class="font-bold text-purple-900 text-sm sm:text-base">
+                                                                    SCOPE Scholar</div>
+                                                                <div class="text-xs sm:text-sm text-gray-600">World
+                                                                    Obesity Federation</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modern Navigation -->
+                    <button class="modern-nav-btn modern-nav-prev" id="modernPrevBtn">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button class="modern-nav-btn modern-nav-next" id="modernNextBtn">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Progress Bar -->
+                    <div class="mt-12 sm:mt-16 max-w-xs mx-auto">
+                        <div class="h-1 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                                class="modern-progress-bar h-full bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full transition-all duration-700">
+                            </div>
+                        </div>
+                        <div class="flex justify-between mt-4">
+                            <button class="modern-dot modern-dot-active" data-slide="0">01</button>
+                            <button class="modern-dot" data-slide="1">02</button>
+                            <!--<button class="modern-dot" data-slide="2">03</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="py-12 bg-teal-50">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="assets/pivot-logo-old.png" alt="Pivot Logo" class="w-32 h-auto">
+            </div>
+
+            <!-- Description -->
+            <!--<p class="text-gray-600 max-w-3xl mx-auto mb-6">-->
+            <!--    Lifestyle Medicine is dedicated to helping you improve your health through evidence-based lifestyle-->
+            <!--    changes-->
+            <!--    that can prevent, treat, and reverse chronic disease.-->
+            <!--</p>-->
+
+            <!-- Contact Link -->
+            <div>
+                <a href="index#contact"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact Us |</a>
+                <a href="privacy-policy"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Privacy Policy
+                    |</a>
+                <a href="#" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Terms and
+                    Conditions |</a>
+                <a href="terms&conditions"
+                    class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Program Terms</a>
+
+
+
+            </div>
+            <!--<a href="#contact" class="text-orange-500 hover:text-orange-800 transition-colors inline-block mb-4">Contact-->
+            <!--    Us</a>-->
+
+            <!-- Copyright -->
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Pivot Healthcare. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select the hamburger button and mobile menu
+            const menuButton = document.querySelector('.md\\:hidden.focus\\:outline-none');
+            const mobileMenu = document.querySelector('.hidden.absolute.top-full');
+
+            // Toggle mobile menu when hamburger is clicked
+            menuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // For the Programs dropdown in mobile view
+            const mobilePrograms = document.querySelector('.mobile-programs-dropdown, .relative button');
+            const mobileProgramsMenu = document.querySelector('.pl-4.mt-2.hidden');
+
+            if (mobilePrograms && mobileProgramsMenu) {
+                mobilePrograms.addEventListener('click', function () {
+                    mobileProgramsMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnButton = menuButton.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Close mobile menu when window resizes to desktop size
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 768) { // md breakpoint in Tailwind
+                    mobileMenu.classList.add('hidden');
+                    if (mobileProgramsMenu) {
+                        mobileProgramsMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Modern Carousel Functionality for Two Slides
+        const modernCarousel = document.getElementById('modernCarousel');
+        const modernPrevBtn = document.getElementById('modernPrevBtn');
+        const modernNextBtn = document.getElementById('modernNextBtn');
+        const modernDots = document.querySelectorAll('.modern-dot');
+        const previewCards = document.querySelectorAll('.team-preview-card');
+        const progressBar = document.querySelector('.modern-progress-bar');
+        let currentModernSlide = 0;
+        let isAnimating = false;
+
+        function updateModernCarousel() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            // Update carousel position
+            modernCarousel.style.transform = `translateX(-${currentModernSlide * 100}%)`;
+
+            // Update dots
+            modernDots.forEach((dot, index) => {
+                if (index === currentModernSlide) {
+                    dot.classList.add('modern-dot-active');
+                } else {
+                    dot.classList.remove('modern-dot-active');
+                }
+            });
+
+            // Update progress bar
+            progressBar.style.width = `${(currentModernSlide + 1) * 50}%`;
+
+            // Update preview cards
+            previewCards.forEach((card, index) => {
+                if (index === currentModernSlide) {
+                    card.classList.add('scale-110');
+                } else {
+                    card.classList.remove('scale-110');
+                }
+            });
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 700);
+        }
+
+        function goToNextSlide() {
+            currentModernSlide = 1 - currentModernSlide; // Toggle between 0 and 1
+            updateModernCarousel();
+        }
+
+        function goToPrevSlide() {
+            currentModernSlide = 1 - currentModernSlide; // Toggle between 0 and 1
+            updateModernCarousel();
+        }
+
+        function goToSpecificSlide(slideIndex) {
+            currentModernSlide = slideIndex;
+            updateModernCarousel();
+        }
+
+        // Event listeners
+        modernNextBtn.addEventListener('click', goToNextSlide);
+        modernPrevBtn.addEventListener('click', goToPrevSlide);
+
+        modernDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSpecificSlide(index));
+        });
+
+        previewCards.forEach((card, index) => {
+            card.addEventListener('click', () => goToSpecificSlide(index));
+        });
+
+        // Auto-play with pause
+        let autoPlayTimer = setInterval(goToNextSlide, 8000);
+
+        // Pause on hover
+        const carouselContainer = modernCarousel.parentElement;
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayTimer);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoPlayTimer = setInterval(goToNextSlide, 8000);
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        modernCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modernCarousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleModernSwipe();
+        }, { passive: true });
+
+        function handleModernSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                goToNextSlide();
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                goToPrevSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                goToPrevSlide();
+            } else if (e.key === 'ArrowRight') {
+                goToNextSlide();
+            }
+        });
+
+        // Initialize
+        updateModernCarousel();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animation for each reveal element
+            gsap.utils.toArray('.reveal').forEach(element => {
+                gsap.fromTo(element,
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.7, ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            // Timeline line animation (desktop only)
+            if (window.innerWidth >= 1024) {
+                gsap.fromTo('.timeline-line',
+                    { scaleX: 0, transformOrigin: "left center" },
+                    {
+                        scaleX: 1, duration: 1.2, ease: "power1.inOut",
+                        scrollTrigger: {
+                            trigger: '.timeline-line',
+                            start: "top 80%"
+                        }
+                    }
+                );
+            }
+
+            // Step number animation
+            gsap.utils.toArray('.step-number').forEach((step, index) => {
+                gsap.fromTo(step,
+                    { scale: 0.8, opacity: 0 },
+                    {
+                        scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.5)",
+                        scrollTrigger: {
+                            trigger: step,
+                            start: "top 85%"
+                        },
+                        delay: 0.2 + (index * 0.1)
+                    }
+                );
+            });
+        });
+    </script>
+
+    <script>
+        function toggleCollapsible(element) {
+            const parent = element.parentElement;
+            const wasActive = parent.classList.contains('hp-active');
+            const index = parent.getAttribute('data-index');
+
+            // Close all collapsibles
+            document.querySelectorAll('.hp-collapsible').forEach(item => {
+                item.classList.remove('hp-active');
+                const content = item.querySelector('.hp-collapsible-content');
+                content.style.display = 'none';
+            });
+
+            // Update indicators
+            document.querySelectorAll('.hp-indicator').forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+
+            // If clicked one wasn't active, open it
+            if (!wasActive) {
+                parent.classList.add('hp-active');
+                const content = parent.querySelector('.hp-collapsible-content');
+                content.style.display = 'block';
+
+                // Update indicator
+                document.querySelector(`.hp-indicator[data-index="${index}"]`).classList.add('active');
+            }
+        }
+
+        // Initialize - set first item active
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const firstItem = document.querySelector('.hp-collapsible');
+        //     const firstIndicator = document.querySelector('.hp-indicator');
+
+        //     if (firstItem && firstIndicator) {
+        //         firstItem.classList.add('hp-active');
+        //         firstItem.querySelector('.hp-collapsible-content').style.display = 'block';
+        //         firstIndicator.classList.add('active');
+        //     }
+        // });
+    </script>
+
+    <script>
+        // Function to ensure columns are properly initialized 
+        document.addEventListener('DOMContentLoaded', function () {
+            // Start with the right column showing the first set of images
+            const downColumn = document.querySelector('.image-column-down');
+            downColumn.style.transform = 'translateY(-50%)';
+
+            // After animation completes, adjust for seamless looping if needed
+            document.querySelectorAll('.image-column-up, .image-column-down').forEach(column => {
+                column.addEventListener('animationiteration', () => {
+                    // This helps ensure the animation remains smooth
+                    column.style.animationPlayState = 'running';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

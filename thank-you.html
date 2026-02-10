@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <title>Thank You</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        /* Base styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+            color: #7c5e45;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 10px 25px rgba(172, 142, 104, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(235, 225, 213, 0.7);
+        }
+        
+        .star-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            color: #d4a76a;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #a47c52;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: #8c6b4a;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #d4a76a, #c59b5e);
+            margin: 0 auto 32px;
+            border-radius: 2px;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #c59b5e;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .home-button:hover {
+            background-color: #b38a4d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(172, 142, 104, 0.2);
+        }
+        
+        /* Animation classes */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            z-index: 5;
+        }
+        
+        .heart:nth-child(1) { top: 15%; left: 10%; }
+        .heart:nth-child(2) { top: 20%; right: 15%; }
+        .heart:nth-child(3) { bottom: 15%; left: 20%; }
+        .heart:nth-child(4) { bottom: 25%; right: 25%; }
+        
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hearts background -->
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    
+    <div class="container">
+        <div class="card">
+            <!-- Star icon -->
+            <div class="float">
+                <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            
+            <!-- Content -->
+            <h1 class="hidden">Thank You!</h1>
+            <p class="hidden">Your submission has been received. Thank You for your interest our team will get in touch
+with you soon</p>
+            <div class="divider hidden"></div>
+            <a href="/" class="home-button hidden">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Run animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate hidden elements
+            const hiddenElements = document.querySelectorAll('.hidden');
+            setTimeout(() => {
+                hiddenElements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, index * 200); // Staggered animation
+                });
+            }, 300); // Small initial delay
+            
+            // Animate hearts
+            const hearts = document.querySelectorAll('.heart');
+            hearts.forEach((heart, index) => {
+                // Random starting position adjustments
+                const randomX = Math.random() * 40 - 20;
+                const randomY = Math.random() * 40 - 20;
+                heart.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                
+                // Fade in with delay
+                setTimeout(() => {
+                    heart.style.transition = 'opacity 1s ease';
+                    heart.style.opacity = '0.7';
+                    
+                    // Add floating animation
+                    setInterval(() => {
+                        const newX = Math.random() * 60 - 30;
+                        const newY = Math.random() * 60 - 30;
+                        heart.style.transition = 'transform 3s ease-in-out';
+                        heart.style.transform = `translate(${newX}px, ${newY}px)`;
+                    }, 3000);
+                }, index * 300 + 500);
+            });
+        });
+    </script>
+</body>
+</html>
