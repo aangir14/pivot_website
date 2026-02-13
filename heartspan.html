@@ -958,240 +958,185 @@
                     by step</p>
             </div>
 
-            <!-- Animated Vertical Timeline -->
-            <div class="relative max-w-4xl mx-auto">
-                <!-- Vertical connecting line -->
-                <div
-                    class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-teal-300 to-blue-200 hidden md:block">
-                </div>
-
-                <!-- Step 1 -->
-                <div class="relative mb-16 reveal" data-delay="100">
-                    <div class="flex items-center justify-between md:justify-end">
-                        <div class="w-full md:w-5/12 md:text-right md:pr-12">
-                            <div
-                                class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="flex items-center justify-start md:justify-end mb-4">
-                                    <div class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">1
+            <!-- Scroll-Based Timeline Animation -->
+            <div class="relative h-[600vh]"> <!-- Tall container for scroll -->
+                <div class="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gray-50">
+                    <div class="max-w-6xl w-full mx-auto px-4">
+                        <div class="flex items-center gap-12">
+                            <!-- Left: Card Content -->
+                            <div class="flex-1 relative h-96">
+                                <!-- Step Cards - Only one visible at a time -->
+                                <div class="timeline-card absolute inset-0 transition-all duration-700" data-step="1">
+                                    <div
+                                        class="bg-white p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div
+                                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">
+                                                1</div>
+                                            <h3 class="text-3xl font-bold text-teal-700">Book a Free Consultation</h3>
+                                        </div>
+                                        <p class="text-gray-700 text-lg">Speak with our team, share your health concerns
+                                            and goals.
+                                        </p>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Book a Free Consultation</h3>
-                                <p class="text-gray-700">Speak with our team, share your health concerns and goals.</p>
-                            </div>
-                        </div>
-                        <!-- Center dot -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg hidden md:block">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Step 2 -->
-                <div class="relative mb-16 reveal" data-delay="200">
-                    <div class="flex items-center justify-between md:justify-start">
-                        <div class="w-full md:w-5/12 md:ml-auto md:pl-12">
-                            <div
-                                class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="flex items-center justify-start mb-4">
-                                    <div class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">2
+                                <div class="timeline-card absolute inset-0 transition-all duration-700 opacity-0 scale-95 translate-y-8"
+                                    data-step="2">
+                                    <div
+                                        class="bg-white p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div
+                                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">
+                                                2</div>
+                                            <h3 class="text-3xl font-bold text-teal-700">Share Your Health Details</h3>
+                                        </div>
+                                        <p class="text-gray-700 text-lg">Your journey begins with a deep diagnostic
+                                            experience
+                                            combining advanced tests, genetic and biomarker screening, medical history,
+                                            and
+                                            lifestyle mapping.</p>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Share Your Health Details</h3>
-                                <p class="text-gray-700">Your journey begins with a deep diagnostic experience combining
-                                    advanced tests, genetic and biomarker screening, medical history, and lifestyle
-                                    mapping.</p>
-                            </div>
-                        </div>
-                        <!-- Center dot -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg hidden md:block">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Step 3 -->
-                <div class="relative mb-16 reveal" data-delay="300">
-                    <div class="flex items-center justify-between md:justify-end">
-                        <div class="w-full md:w-5/12 md:text-right md:pr-12">
-                            <div
-                                class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="flex items-center justify-start md:justify-end mb-4">
-                                    <div class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">3
+                                <div class="timeline-card absolute inset-0 transition-all duration-700 opacity-0 scale-95 translate-y-8"
+                                    data-step="3">
+                                    <div
+                                        class="bg-white p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div
+                                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">
+                                                3</div>
+                                            <h3 class="text-3xl font-bold text-teal-700">Enroll in the Program</h3>
+                                        </div>
+                                        <p class="text-gray-700 text-lg">Take the first step towards your health
+                                            transformation.</p>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Enroll in the Program</h3>
-                                <p class="text-gray-700">Take the first step towards your health transformation.</p>
-                            </div>
-                        </div>
-                        <!-- Center dot -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg hidden md:block">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Step 4 -->
-                <div class="relative mb-16 reveal" data-delay="400">
-                    <div class="flex items-center justify-between md:justify-start">
-                        <div class="w-full md:w-5/12 md:ml-auto md:pl-12">
-                            <div
-                                class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="flex items-center justify-start mb-4">
-                                    <div class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">4
+                                <div class="timeline-card absolute inset-0 transition-all duration-700 opacity-0 scale-95 translate-y-8"
+                                    data-step="4">
+                                    <div
+                                        class="bg-white p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div
+                                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">
+                                                4</div>
+                                            <h3 class="text-3xl font-bold text-teal-700">Get a Personalized Action Plan
+                                            </h3>
+                                        </div>
+                                        <p class="text-gray-700 text-lg">Receive a plan tailored to your needs,
+                                            lifestyle, and
+                                            goals.</p>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Get a Personalized Action Plan</h3>
-                                <p class="text-gray-700">Receive a plan tailored to your needs, lifestyle, and goals.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Center dot -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg hidden md:block">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Step 5 -->
-                <div class="relative mb-16 reveal" data-delay="500">
-                    <div class="flex items-center justify-between md:justify-end">
-                        <div class="w-full md:w-5/12 md:text-right md:pr-12">
-                            <div
-                                class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="flex items-center justify-start md:justify-end mb-4">
-                                    <div class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">5
+                                <div class="timeline-card absolute inset-0 transition-all duration-700 opacity-0 scale-95 translate-y-8"
+                                    data-step="5">
+                                    <div
+                                        class="bg-white p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div
+                                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">
+                                                5</div>
+                                            <h3 class="text-3xl font-bold text-teal-700">Meet Your Care Team</h3>
+                                        </div>
+                                        <p class="text-gray-700 text-lg">Your dedicated nutritionist, exercise coach,
+                                            and yoga
+                                            therapist will guide you through routines and track your progress.</p>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Meet Your Care Team</h3>
-                                <p class="text-gray-700">Your dedicated nutritionist, exercise coach, and yoga therapist
-                                    will guide you through routines and track your progress.</p>
-                            </div>
-                        </div>
-                        <!-- Center dot -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg hidden md:block">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Step 6 -->
-                <div class="relative mb-12 reveal" data-delay="600">
-                    <div class="flex items-center justify-between md:justify-start">
-                        <div class="w-full md:w-5/12 md:ml-auto md:pl-12">
-                            <div
-                                class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="flex items-center justify-start mb-4">
-                                    <div class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">6
+                                <div class="timeline-card absolute inset-0 transition-all duration-700 opacity-0 scale-95 translate-y-8"
+                                    data-step="6">
+                                    <div
+                                        class="bg-white p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div
+                                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white">
+                                                6</div>
+                                            <h3 class="text-3xl font-bold text-teal-700">Track & Stay Connected</h3>
+                                        </div>
+                                        <p class="text-gray-700 text-lg">Enjoy daily updates, regular progress reviews,
+                                            and 24x7
+                                            support to keep you motivated and on track.</p>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Track & Stay Connected</h3>
-                                <p class="text-gray-700">Enjoy daily updates, regular progress reviews, and 24x7 support
-                                    to keep you motivated and on track.</p>
                             </div>
-                        </div>
-                        <!-- Center dot -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg hidden md:block">
+
+                            <!-- Right: Timeline Line -->
+                            <div class="w-32 h-96 relative hidden md:block">
+                                <!-- Timeline line -->
+                                <div
+                                    class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-teal-300 to-blue-200 rounded-full">
+                                </div>
+
+                                <!-- Moving dot -->
+                                <div id="timeline-dot"
+                                    class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg transition-all duration-300"
+                                    style="top: 8.33%"></div>
+
+                                <!-- Step markers -->
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full"
+                                    style="top: 8.33%"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full"
+                                    style="top: 25%"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full"
+                                    style="top: 41.67%"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full"
+                                    style="top: 58.33%"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full"
+                                    style="top: 75%"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-300 rounded-full"
+                                    style="top: 91.67%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Timeline for mobile and tablet -->
-            <div class="md:hidden mb-16">
-                <div class="space-y-10">
-                    <!-- Step 1 -->
-                    <div class="reveal flex flex-col sm:flex-row sm:items-start gap-4">
-                        <div class="flex-shrink-0 mb-4 sm:mb-0">
-                            <div
-                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white mx-auto sm:mx-0">
-                                1</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-teal-700 mb-2 text-center sm:text-left">Book a Free
-                                Consultation</h3>
-                            <p class="text-gray-700 text-center sm:text-left">Speak with our team, share your health
-                                concerns and goals.</p>
-                        </div>
-                    </div>
+            <script>
+                // Scroll-based timeline animation
+                window.addEventListener('scroll', () => {
+                    const timelineSection = document.querySelector('.h-\\[600vh\\]');
+                    if (!timelineSection) return;
 
-                    <!-- Step 2 -->
-                    <div class="reveal flex flex-col sm:flex-row sm:items-start gap-4">
-                        <div class="flex-shrink-0 mb-4 sm:mb-0">
-                            <div
-                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white mx-auto sm:mx-0">
-                                2</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-teal-700 mb-2 text-center sm:text-left">Share Your Health
-                                Details</h3>
-                            <p class="text-gray-700 text-center sm:text-left">Your journey begins with a deep diagnostic
-                                experience combining advanced tests, genetic and biomarker screening, medical history,
-                                and lifestyle mapping.</p>
-                        </div>
-                    </div>
+                    const rect = timelineSection.getBoundingClientRect();
+                    const scrollProgress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
 
-                    <!-- Step 3 -->
-                    <div class="reveal flex flex-col sm:flex-row sm:items-start gap-4">
-                        <div class="flex-shrink-0 mb-4 sm:mb-0">
-                            <div
-                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white mx-auto sm:mx-0">
-                                3</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-teal-700 mb-2 text-center sm:text-left">Enroll in the
-                                Program</h3>
-                            <p class="text-gray-700 text-center sm:text-left">Take the first step towards your health
-                                transformation.</p>
-                        </div>
-                    </div>
+                    // Calculate current step (1-6)
+                    const currentStep = Math.min(6, Math.floor(scrollProgress * 6) + 1);
 
-                    <!-- Step 4 -->
-                    <div class="reveal flex flex-col sm:flex-row sm:items-start gap-4">
-                        <div class="flex-shrink-0 mb-4 sm:mb-0">
-                            <div
-                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white mx-auto sm:mx-0">
-                                4</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-teal-700 mb-2 text-center sm:text-left">Get a Personalized
-                                Action Plan</h3>
-                            <p class="text-gray-700 text-center sm:text-left">Receive a plan tailored to your needs,
-                                lifestyle, and goals.</p>
-                        </div>
-                    </div>
+                    // Update dot position (8.33% to 91.67% - positions of 6 markers)
+                    const dotPosition = 8.33 + (scrollProgress * 83.34);
+                    const dot = document.getElementById('timeline-dot');
+                    if (dot) {
+                        dot.style.top = `${dotPosition}%`;
+                    }
 
-                    <!-- Step 5 -->
-                    <div class="reveal flex flex-col sm:flex-row sm:items-start gap-4">
-                        <div class="flex-shrink-0 mb-4 sm:mb-0">
-                            <div
-                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white mx-auto sm:mx-0">
-                                5</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-teal-700 mb-2 text-center sm:text-left">Meet Your Care
-                                Team</h3>
-                            <p class="text-gray-700 text-center sm:text-left">Your dedicated nutritionist, exercise
-                                coach, and yoga therapist will guide you through routines and track your progress.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 6 -->
-                    <div class="reveal flex flex-col sm:flex-row sm:items-start gap-4">
-                        <div class="flex-shrink-0 mb-4 sm:mb-0">
-                            <div
-                                class="step-number bg-gradient-to-br from-blue-500 to-teal-500 text-white mx-auto sm:mx-0">
-                                6</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-teal-700 mb-2 text-center sm:text-left">Track & Stay
-                                Connected</h3>
-                            <p class="text-gray-700 text-center sm:text-left">Enjoy daily updates, regular progress
-                                reviews, and 24x7 support to keep you motivated and on track.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    // Update card visibility with depth animation
+                    const cards = document.querySelectorAll('.timeline-card');
+                    cards.forEach((card, index) => {
+                        const stepNum = index + 1;
+                        if (stepNum === currentStep) {
+                            // Current step: fully visible
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1) translateY(0)';
+                            card.style.zIndex = '10';
+                        } else if (stepNum < currentStep) {
+                            // Previous steps: fade and scale down (recede)
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.9) translateY(-20px)';
+                            card.style.zIndex = '1';
+                        } else {
+                            // Future steps: below, scaled down
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95) translateY(40px)';
+                            card.style.zIndex = '1';
+                        }
+                    });
+                });
+            </script>
 
             <!-- CTA Button -->
             <div class="text-center reveal">
@@ -1200,7 +1145,6 @@
                     I want to live longer
                 </a>
             </div>
-        </div>
     </section>
 
     <section class="py-16 bg-pattern">
