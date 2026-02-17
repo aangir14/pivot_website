@@ -83,4 +83,6 @@
 - **Section Update ("Preventable" Section)**: 
   - **Headline**: Updated to "1 in 3 people face heart attack..." to highlight risk immediately.
   - **Context**: Merged "Risk Awareness" messaging into the main evidence section for better flow.
-  - **Removed**: The standalone "Risk Awareness" section (rolled back favor of this integrated approach).
+  - **Removed**: Standalone "Risk Awareness" section (integrated messaging into "Preventable" section).
+- **Refactor**: Converted "How HeartSpan Works" animation from full-page scroll to a contained, fixed-height scrollable window for better user control.
+- **Removed**: "I want to live longer" button from the timeline section.
