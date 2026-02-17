@@ -87,3 +87,9 @@
 - **Refactor**: Converted "How HeartSpan Works" animation from full-page scroll to a contained, fixed-height scrollable window for better user control.
 - **Removed**: "I want to live longer" button from the timeline section.
 - **New Section**: Added "360° View" section with a 3x3 grid of health markers, replacing the "Preventable" quote and video section.
+
+### 4. Blog/Articles Section
+- **Medical Disclaimer**: Added a standard medical disclaimer to the main blog listing page and all individual blog posts.
+- **Content**: "Disclaimer: This content, including advice, provides generic information only. It is in no way a substitute for a qualified medical opinion. Always consult a specialist or your own doctor for more information. Pivot Health does not claim responsibility for this information."
+- **Styling**: Small, italicized, gray text to be non-intrusive.
+
