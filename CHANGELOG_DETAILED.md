@@ -85,4 +85,4 @@
   - **Context**: Merged "Risk Awareness" messaging into the main evidence section for better flow.
   - **Removed**: Standalone "Risk Awareness" section (integrated messaging into "Preventable" section).
 - **Refactor**: Converted "How HeartSpan Works" animation from full-page scroll to a contained, fixed-height scrollable window for better user control.
-- **Removed**: "I want to live longer" button from the timeline section.
+- **New Section**: Added "360° View" section with a 3x3 grid of health markers, replacing the "Preventable" quote and video section.
