@@ -723,7 +723,7 @@
                 <!-- Left Content -->
                 <div class="w-full mt-20 md:mt-20 md:w-1/2 flex flex-col justify-center">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                        <span class="text-teal-500">India's First</span> Heart Health Program<br>
+                        <span class="text-teal-500">India's First</span> Heart Health Prevention Program<br>
                         <span class="text-gray-700">for Busy Professionals</span>
                     </h1>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -966,18 +966,18 @@
                     z-index: 10;
                 }
 
-                /* Past cards: slide back and fade out */
+                /* Past cards: slide slightly UP and shrink/fade */
                 .timeline-card-past {
                     opacity: 0 !important;
-                    transform: translateY(-40px) scale(0.95) !important;
-                    z-index: 5;
+                    transform: translateY(-100px) scale(0.9) !important;
+                    z-index: 0;
                 }
 
-                /* Future cards: start lower to slide UP over the previous one */
+                /* Future cards: start from BOTTOM and slide UP over the current one */
                 .timeline-card-future {
                     opacity: 0 !important;
-                    transform: translateY(100px) scale(1) !important;
-                    z-index: 15;
+                    transform: translateY(100%) scale(0.9) !important;
+                    z-index: 20;
                 }
 
                 .timeline-step-label {
@@ -1024,7 +1024,7 @@
                             <!-- Left: Card Content -->
                             <div class="flex-1 relative" style="min-height: 400px;">
                                 <!-- Step Cards -->
-                                <div class="timeline-card absolute inset-0 transition-all duration-1500 ease-in-out timeline-card-active"
+                                <div class="timeline-card absolute inset-0 transition-all duration-1000 ease-out timeline-card-active"
                                     data-step="1">
                                     <div
                                         class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col justify-center">
@@ -1041,7 +1041,7 @@
                                     </div>
                                 </div>
 
-                                <div class="timeline-card absolute inset-0 transition-all duration-1500 ease-in-out timeline-card-future"
+                                <div class="timeline-card absolute inset-0 transition-all duration-1000 ease-out timeline-card-future"
                                     data-step="2">
                                     <div
                                         class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col justify-center">
@@ -1058,7 +1058,7 @@
                                     </div>
                                 </div>
 
-                                <div class="timeline-card absolute inset-0 transition-all duration-1500 ease-in-out timeline-card-future"
+                                <div class="timeline-card absolute inset-0 transition-all duration-1000 ease-out timeline-card-future"
                                     data-step="3">
                                     <div
                                         class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col justify-center">
@@ -1075,7 +1075,7 @@
                                     </div>
                                 </div>
 
-                                <div class="timeline-card absolute inset-0 transition-all duration-1500 ease-in-out timeline-card-future"
+                                <div class="timeline-card absolute inset-0 transition-all duration-1000 ease-out timeline-card-future"
                                     data-step="4">
                                     <div
                                         class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col justify-center">
@@ -1092,7 +1092,7 @@
                                     </div>
                                 </div>
 
-                                <div class="timeline-card absolute inset-0 transition-all duration-1500 ease-in-out timeline-card-future"
+                                <div class="timeline-card absolute inset-0 transition-all duration-1000 ease-out timeline-card-future"
                                     data-step="5">
                                     <div
                                         class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col justify-center">
@@ -1109,7 +1109,7 @@
                                     </div>
                                 </div>
 
-                                <div class="timeline-card absolute inset-0 transition-all duration-1500 ease-in-out timeline-card-future"
+                                <div class="timeline-card absolute inset-0 transition-all duration-1000 ease-out timeline-card-future"
                                     data-step="6">
                                     <div
                                         class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col justify-center">
@@ -1127,7 +1127,7 @@
                                 </div>
                             </div>
 
-                            <!-- Right: Timeline REMOVED -->
+
                         </div>
                     </div>
                 </div>
