@@ -73,3 +73,10 @@
 - **HTML Structure**: Fixed nesting issues where the CTA button was orphaned outside its section container.
 - **Code Cleanliness**: Removed placeholder comments and leftover legacy code from previous timeline versions.
 - **Deployment**: All changes committed to GitHub and auto-deployed via Cloudflare Pages.
+
+## 🔄 Revisions (Latest)
+- **Heartspan Hero**: Simplified to a single "Book a Free Consultation" button with improved gradient styling.
+- **Heartspan Animation**:
+  - **Visibility**: Increased animation effect (translateY: 100% -> 0) to ensure cards sliding in are clearly visible.
+  - **Timing**: Slowed down transition to 1s for smoother "slide over" effect.
+  - **Cleanup**: Removed legacy vertical timeline track element.
