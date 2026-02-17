@@ -80,6 +80,7 @@
   - **Visibility**: Increased animation effect (translateY: 100% -> 0) to ensure cards sliding in are clearly visible.
   - **Timing**: Slowed down transition to 1s for smoother "slide over" effect.
   - **Cleanup**: Removed legacy vertical timeline track element.
-- **New Section**: Added "Risk Awareness" block after Hero:
-  - **Design**: Dark theme (`bg-gray-900`) for high contrast.
-  - **Content**: "1 in 3" heart attack statistic with 3 key informational cards.
+- **Section Update ("Preventable" Section)**: 
+  - **Headline**: Updated to "1 in 3 people face heart attack..." to highlight risk immediately.
+  - **Context**: Merged "Risk Awareness" messaging into the main evidence section for better flow.
+  - **Removed**: The standalone "Risk Awareness" section (rolled back favor of this integrated approach).
