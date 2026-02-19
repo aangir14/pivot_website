@@ -2038,6 +2038,22 @@
     </script>
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const interest = urlParams.get('interest');
+            if (interest) {
+                const programSelect = document.getElementById('program');
+                if (programSelect) {
+                    // Check if the interest value exists in options to avoid invalid selection
+                    const options = Array.from(programSelect.options).map(opt => opt.value);
+                    if (options.includes(interest)) {
+                        programSelect.value = interest;
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
