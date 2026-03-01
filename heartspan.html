@@ -722,15 +722,16 @@
             <div class="flex flex-col md:flex-row gap-8 py-8">
                 <!-- Left Content -->
                 <div class="w-full mt-20 md:mt-20 md:w-1/2 flex flex-col justify-center">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    <h1 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4 text-gray-800" style="opacity: 0;">
                         <span class="text-teal-500">India's First</span> Heart Health Prevention Program<br>
                         <span class="text-gray-700">for Busy Professionals</span>
                     </h1>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    <p id="hero-subtitle" class="text-lg text-gray-600 mb-6 leading-relaxed" style="opacity: 0;">
                         HeartSpan is a virtual care program that blends science and personalization into your daily
                         routine so you can prevent disease, protect your heart, and extend your healthspan.
                     </p>
-                    <div class="flex flex-col sm:flex-row items-center gap-6 mb-8">
+                    <div id="hero-buttons" class="flex flex-col sm:flex-row items-center gap-6 mb-8"
+                        style="opacity: 0;">
                         <a href="/heart-health-assessment.html"
                             class="bg-gray-900 text-white px-8 py-3 hover:bg-black hover:shadow-xl transition-all duration-300 rounded-full font-normal inline-block text-center">
                             Check your heart health
@@ -746,7 +747,8 @@
                             </svg>
                         </a>
                     </div>
-                    <p class="text-sm text-gray-500 italic">Take the first step. It only takes 2 minutes.</p>
+                    <p id="hero-subtext" class="text-sm text-gray-500 italic" style="opacity: 0;">Take the first step.
+                        It only takes 2 minutes.</p>
 
                     <!-- Stats -->
                     <!--<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4">-->
@@ -1847,6 +1849,83 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleElement = document.getElementById('hero-title');
+            if (titleElement) {
+                const childNodes = Array.from(titleElement.childNodes);
+                titleElement.innerHTML = '';
+                titleElement.style.opacity = '1';
+
+                childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const text = node.textContent;
+                        for (let i = 0; i < text.length; i++) {
+                            const char = text[i];
+                            if (char === ' ' || char === '\n') {
+                                titleElement.appendChild(document.createTextNode(char));
+                            } else {
+                                const span = document.createElement('span');
+                                span.textContent = char;
+                                span.style.opacity = '0';
+                                span.style.display = 'inline-block';
+                                span.classList.add('hero-letter');
+                                titleElement.appendChild(span);
+                            }
+                        }
+                    } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'SPAN') {
+                        const wrapperSpan = document.createElement('span');
+                        wrapperSpan.className = node.className;
+                        const text = node.textContent;
+                        for (let i = 0; i < text.length; i++) {
+                            const char = text[i];
+                            if (char === ' ' || char === '\n') {
+                                wrapperSpan.appendChild(document.createTextNode(char));
+                            } else {
+                                const span = document.createElement('span');
+                                span.textContent = char;
+                                span.style.opacity = '0';
+                                span.style.display = 'inline-block';
+                                span.classList.add('hero-letter');
+                                wrapperSpan.appendChild(span);
+                            }
+                        }
+                        titleElement.appendChild(wrapperSpan);
+                    } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
+                        titleElement.appendChild(document.createElement('br'));
+                    }
+                });
+
+                // Sequential GSAP Animation (Chromatically down the hero section)
+                gsap.fromTo('.hero-letter',
+                    { opacity: 0, scale: 2, filter: 'blur(4px)' },
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        filter: 'blur(0px)',
+                        duration: 0.2,
+                        stagger: 0.04,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            // After letters are done, flow chronologically into the rest
+                            gsap.fromTo('#hero-subtitle',
+                                { opacity: 0, y: 15 },
+                                { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }
+                            );
+                            gsap.fromTo('#hero-buttons',
+                                { opacity: 0, y: 15 },
+                                { opacity: 1, y: 0, duration: 0.7, delay: 0.3, ease: "power2.out" }
+                            );
+                            gsap.fromTo('#hero-subtext',
+                                { opacity: 0, y: 15 },
+                                { opacity: 1, y: 0, duration: 0.7, delay: 0.5, ease: "power2.out" }
+                            );
+                        }
+                    }
+                );
+            }
+        });
+    </script>
 </body>
 
 </html>
