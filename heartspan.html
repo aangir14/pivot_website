@@ -1896,29 +1896,27 @@
                     }
                 });
 
-                // Sequential GSAP Animation (Chromatically down the hero section)
+                // Sequential GSAP Animation (Typewriter effect down the hero section)
                 gsap.fromTo('.hero-letter',
-                    { opacity: 0, scale: 2, filter: 'blur(4px)' },
+                    { opacity: 0 },
                     {
                         opacity: 1,
-                        scale: 1,
-                        filter: 'blur(0px)',
-                        duration: 0.2,
-                        stagger: 0.04,
-                        ease: "power2.out",
+                        duration: 0.01,
+                        stagger: 0.06, // Typewriter speed (slower)
+                        ease: "none", // Instant pop-in for typing effect
                         onComplete: () => {
                             // After letters are done, flow chronologically into the rest
                             gsap.fromTo('#hero-subtitle',
                                 { opacity: 0, y: 15 },
-                                { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }
+                                { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }
                             );
                             gsap.fromTo('#hero-buttons',
                                 { opacity: 0, y: 15 },
-                                { opacity: 1, y: 0, duration: 0.7, delay: 0.3, ease: "power2.out" }
+                                { opacity: 1, y: 0, duration: 1.0, delay: 0.3, ease: "power2.out" }
                             );
                             gsap.fromTo('#hero-subtext',
                                 { opacity: 0, y: 15 },
-                                { opacity: 1, y: 0, duration: 0.7, delay: 0.5, ease: "power2.out" }
+                                { opacity: 1, y: 0, duration: 1.0, delay: 0.6, ease: "power2.out" }
                             );
                         }
                     }
