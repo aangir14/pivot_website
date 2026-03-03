@@ -1406,160 +1406,402 @@
         </div>
     </section>
 
-    <section class="hp-section" id="how-it-works">
-        <div class="hp-container">
-            <h1 class="hp-title">How this Program works?</h1>
+    <!-- What You'll Get Section -->
+    <section class="hp-section" id="what-you-get">
+        <div class="wyg-container">
+            <h1 class="hp-title">What You'll Get</h1>
 
-            <p class="hp-description">
-                Through metabolic conditioning, therapeutic yoga, and biomarker-driven nutrition, we don't just protect
-                your heart—we rewire it for endurance, longevity, and unstoppable vitality. Because the best heart
-                health
-                strategy isn't a pill or a procedure—it's the power of showing up for yourself, one intentional beat at
-                a
-                time.
-            </p>
+            <div class="wyg-layout">
+                <!-- Left: Accordion -->
+                <div class="wyg-accordion">
 
-            <div class="hp-indicators">
-                <div class="hp-indicator" data-index="0"></div>
-                <div class="hp-indicator" data-index="1"></div>
-                <div class="hp-indicator" data-index="2"></div>
-                <div class="hp-indicator" data-index="3"></div>
-            </div>
-
-            <div class="hp-collapsibles">
-                <!-- Discover Section -->
-                <div class="hp-collapsible" data-index="0">
-                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
-                        <div class="hp-header-content">
-                            <h3 class="hp-collapsible-title">DISCOVER</h3>
-                            <p class="hp-preview-text">Get the Expert-Designed, Precision Heart Health Plan You've
-                                Always Needed</p>
-                        </div>
-                        <div class="hp-expand-icon"></div>
-                    </div>
-                    <div class="hp-collapsible-content">
-                        <div class="hp-content-wrapper">
-                            <div class="hp-content-image">
-                                <img src="assets/nutritionist.jpg" alt="Heart health discovery assessment">
+                    <!-- Item 1: Comprehensive Health Assessment -->
+                    <div class="wyg-item" data-wyg="1">
+                        <button class="wyg-header" onclick="toggleWyg(this)" aria-expanded="false">
+                            <div class="wyg-header-left">
+                                <span class="wyg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M9 11l3 3L22 4" />
+                                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+                                    </svg>
+                                </span>
+                                <span class="wyg-title">Comprehensive Health Assessment</span>
                             </div>
-                            <div class="hp-content-text">
-                                <p>Juggling work, family, and daily stress leaves little room to decode your heart's
-                                    hidden risks—so we start with a <strong>science-backed deep dive</strong>: a review
-                                    of your medical history, genetic risks, and advanced blood diagnostics (cholesterol,
-                                    inflammation, blood sugar) to unmask silent threats. Your unique risks are mapped
-                                    into a personalized plan—no generic tiers, just precision.</p>
-                                <p>Your coach then crafts a <strong>dynamic roadmap</strong> that targets metabolic
-                                    gaps, adapts to travel or work chaos, and evolves with real-time tweaks—balancing
-                                    ambition with safety. No unsustainable hacks, no guesswork.</p>
-                                <p>The result? A <strong>data-driven starting point</strong> and a plan that grows with
-                                    you, turning overwhelm into control—so your heart thrives, no matter what life
-                                    throws at it.</p>
+                            <svg class="wyg-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="wyg-body">
+                            <p>Deep analysis of your blood, DNA, and wearable data to build your personalized heart
+                                &amp; health profile. No guesswork—just precision science mapped to your biology.</p>
+                            <!-- Mobile image: shown below content when open -->
+                            <div class="wyg-mobile-image">
+                                <img src="assets/wyg_1.jpg" alt="Comprehensive Health Assessment">
                             </div>
                         </div>
                     </div>
+
+                    <!-- Item 2: No Cost Welcome Kit -->
+                    <div class="wyg-item" data-wyg="2">
+                        <button class="wyg-header" onclick="toggleWyg(this)" aria-expanded="false">
+                            <div class="wyg-header-left">
+                                <span class="wyg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                                        <path d="M16 3l-4 4-4-4" />
+                                        <path d="M12 12v5" />
+                                    </svg>
+                                </span>
+                                <span class="wyg-title">No Cost Welcome Kit</span>
+                            </div>
+                            <svg class="wyg-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="wyg-body">
+                            <p>Receive easy-to-use smart devices shipped straight to your door—a heart rate monitor,
+                                pro-grade yoga props, and a breath amplifier. All at no cost to you, so you're ready
+                                from day one.</p>
+                            <div class="wyg-mobile-image">
+                                <img src="assets/wyg_2.jpg" alt="Welcome Kit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Personalized Metabolic Training -->
+                    <div class="wyg-item" data-wyg="3">
+                        <button class="wyg-header" onclick="toggleWyg(this)" aria-expanded="false">
+                            <div class="wyg-header-left">
+                                <span class="wyg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                                    </svg>
+                                </span>
+                                <span class="wyg-title">Personalized Metabolic Training</span>
+                            </div>
+                            <svg class="wyg-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="wyg-body">
+                            <p>Workouts tailored to your heart profile—safe, adaptive, and 100% custom. Heart-rate
+                                guided sessions train your cardiovascular system efficiently, building endurance without
+                                overexertion.</p>
+                            <div class="wyg-mobile-image">
+                                <img src="assets/wyg_3.jpg" alt="Personalized Metabolic Training">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Therapeutic Yoga -->
+                    <div class="wyg-item" data-wyg="4">
+                        <button class="wyg-header" onclick="toggleWyg(this)" aria-expanded="false">
+                            <div class="wyg-header-left">
+                                <span class="wyg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="5" r="2" />
+                                        <path d="M12 7v5l-3 3" />
+                                        <path d="M9 15l3 3 3-3" />
+                                        <path d="M6 10c1.5 1 3.5 1.5 6 1.5s4.5-.5 6-1.5" />
+                                    </svg>
+                                </span>
+                                <span class="wyg-title">Therapeutic Yoga</span>
+                            </div>
+                            <svg class="wyg-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="wyg-body">
+                            <p>Science-backed yoga personalized to your mobility, stress levels, and heart needs.
+                                Stabilizes stress-recovery cycles, improves blood flow, and strengthens lung capacity
+                                for a calmer, more resilient you.</p>
+                            <div class="wyg-mobile-image">
+                                <img src="assets/wyg_4.jpg" alt="Therapeutic Yoga">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Heart-Healthy Nutrition -->
+                    <div class="wyg-item" data-wyg="5">
+                        <button class="wyg-header" onclick="toggleWyg(this)" aria-expanded="false">
+                            <div class="wyg-header-left">
+                                <span class="wyg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M3 11l19-9-9 19-2-8-8-2z" />
+                                    </svg>
+                                </span>
+                                <span class="wyg-title">Heart-Healthy Nutrition</span>
+                            </div>
+                            <svg class="wyg-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="wyg-body">
+                            <p>Simple, sustainable, home-friendly food plans customized to your lifestyle and
+                                biomarkers. Circadian-aligned eating and precision nutrition fuel your heart and
+                                metabolism for the long run.</p>
+                            <div class="wyg-mobile-image">
+                                <img src="assets/wyg_5.jpeg" alt="Heart-Healthy Nutrition">
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end wyg-accordion -->
+
+                <!-- Right: Image Panel (Desktop only) -->
+                <div class="wyg-image-panel" id="wygImagePanel">
+                    <img src="assets/support.png" alt="What you'll get" id="wygMainImage"
+                        class="wyg-main-image wyg-img-default">
                 </div>
 
-                <!-- Reset Section -->
-                <div class="hp-collapsible" data-index="1">
-                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
-                        <div class="hp-header-content">
-                            <h3 class="hp-collapsible-title">RESET</h3>
-                            <p class="hp-preview-text">Lay the Foundation for Heart Health</p>
-                        </div>
-                        <div class="hp-expand-icon"></div>
-                    </div>
-                    <div class="hp-collapsible-content">
-                        <div class="hp-content-wrapper">
-                            <div class="hp-content-image">
-                                <img src="assets/therapeutic-yoga.jpg" style="object-position:right;"
-                                    alt="Heart healthy meal plan">
-                            </div>
-                            <div class="hp-content-text">
-                                <p><strong>Nutrition for Heart Vitality</strong> Personalized meal plans and strategic
-                                    supplementation fuel energy, optimize metabolism, and boost recovery, while
-                                    circadian-aligned eating and nutrient timing enhance longevity—so your heart thrives
-                                    with every bite.</p>
-                                <p><strong>Therapeutic Yoga (MTY) for Balance</strong> Science-backed yoga stabilizes
-                                    stress-recovery cycles, improves blood flow, and strengthens lung capacity, ensuring
-                                    oxygen-rich circulation and a calm, resilient mind-body connection.</p>
-                                <p><strong>Metabolic Conditioning for Endurance</strong> Heart rate-guided workouts
-                                    train your heart efficiently, enhancing fat-burning, cardiac output, and oxygen
-                                    utilization—building a fatigue-proof engine for life's demands.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div><!-- end wyg-layout -->
+        </div><!-- end wyg-container -->
 
-                <!-- Welcome Kit Section -->
-                <div class="hp-collapsible" data-index="2">
-                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
-                        <div class="hp-header-content">
-                            <h3 class="hp-collapsible-title">WELCOME KIT</h3>
-                            <p class="hp-preview-text">Everything you need to start strong—delivered to your doorstep
-                            </p>
-                        </div>
-                        <div class="hp-expand-icon"></div>
-                    </div>
-                    <div class="hp-collapsible-content">
-                        <div class="hp-content-wrapper">
-                            <div class="hp-content-image">
-                                <img src="assets/welcome-kit.png" alt="Heart health welcome kit">
-                            </div>
-                            <div class="hp-content-text">
-                                <p>Get empowered with everything you'll need to participate from the comfort of your
-                                    home or wherever you may be, at no additional cost to you!</p>
-                                <div class="mt-4 space-y-3">
-                                    <div class="hp-list-item">❤️<strong> Heart Rate Monitor</strong> <em>Track your
-                                            heart's real-time response</em> to workouts, ensuring you train smarter—not
-                                        harder—with personalized intensity zones.</div>
-                                    <div class="hp-list-item">🧘♀️<strong> Pro-Grade Yoga Props</strong> <em>Elevate
-                                            your therapeutic sessions</em> with ergonomic tools for safe, effective
-                                        poses that boost circulation and stress resilience.</div>
-                                    <div class="hp-list-item">🌬️<strong> Breath Amplifier</strong> <em>Strengthen lung
-                                            power</em> with a respiratory trainer designed to increase oxygen
-                                        efficiency, stamina, and endurance.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <style>
+            .wyg-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px 30px 60px;
+            }
 
-                <!-- Continuous Support Section -->
-                <div class="hp-collapsible" data-index="3">
-                    <div class="hp-collapsible-header" onclick="toggleCollapsible(this)">
-                        <div class="hp-header-content">
-                            <h3 class="hp-collapsible-title">CONTINUOUS SUPPORT</h3>
-                            <p class="hp-preview-text">Unwavering Backing: Your Heart Health Team & Tribe built for Real
-                                Life</p>
-                        </div>
-                        <div class="hp-expand-icon"></div>
-                    </div>
-                    <div class="hp-collapsible-content">
-                        <div class="hp-content-wrapper">
-                            <div class="hp-content-image">
-                                <img src="assets/support.png" alt="Heart health support team">
-                            </div>
-                            <div class="hp-content-text">
-                                <p>You'll never walk this journey alone. Share your progress in a small, trusted group
-                                    while leaning on a dedicated team:</p>
-                                <div class="mt-4 space-y-3">
-                                    <div class="hp-list-item"><strong>Health Coach</strong> (habit architect)</div>
-                                    <div class="hp-list-item"><strong>Yoga Therapist</strong> (stress resilience guide)
-                                    </div>
-                                    <div class="hp-list-item"><strong>Exercise Physiologist</strong> (heart-rate
-                                        whisperer)</div>
-                                    <div class="hp-list-item"><strong>Dietitian</strong> (metabolic engineer)</div>
-                                </div>
-                                <p>Together, they provide real-time tweaks to workouts, meals, and recovery—plus
-                                    compassionate accountability through weekly check-ins and messaging. Life will throw
-                                    curveballs, but your support system adapts with you, ensuring consistency without
-                                    burnout.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            .wyg-layout {
+                display: flex;
+                gap: 60px;
+                align-items: flex-start;
+                margin-top: 50px;
+            }
+
+            /* ── Left Accordion ── */
+            .wyg-accordion {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .wyg-item {
+                border-bottom: 1px solid #c8e6ee;
+            }
+
+            .wyg-item:first-child {
+                border-top: 1px solid #c8e6ee;
+            }
+
+            .wyg-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background: none;
+                border: none;
+                padding: 20px 4px;
+                cursor: pointer;
+                text-align: left;
+                transition: background 0.2s;
+                border-radius: 6px;
+            }
+
+            .wyg-header:hover {
+                background: rgba(44, 122, 148, 0.05);
+            }
+
+            .wyg-header-left {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                flex: 1;
+            }
+
+            .wyg-icon {
+                width: 36px;
+                height: 36px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, #e0f5fa, #c8eaf5);
+                border-radius: 8px;
+                color: #2c7a94;
+            }
+
+            .wyg-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .wyg-title {
+                font-size: 1.05rem;
+                font-weight: 700;
+                color: #1a3a4a;
+            }
+
+            .wyg-chevron {
+                width: 20px;
+                height: 20px;
+                color: #2c7a94;
+                transition: transform 0.3s ease;
+                flex-shrink: 0;
+            }
+
+            .wyg-item.open .wyg-chevron {
+                transform: rotate(180deg);
+            }
+
+            .wyg-item.open .wyg-header {
+                background: rgba(44, 122, 148, 0.07);
+            }
+
+            /* ── Accordion Body ── */
+            .wyg-body {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease, opacity 0.3s ease;
+                opacity: 0;
+            }
+
+            .wyg-item.open .wyg-body {
+                max-height: 600px;
+                opacity: 1;
+            }
+
+            .wyg-body p {
+                padding: 0 4px 20px 50px;
+                color: #2d4a5a;
+                font-size: 0.97rem;
+                line-height: 1.7;
+                margin: 0;
+            }
+
+            /* ── Mobile image inside body ── */
+            .wyg-mobile-image {
+                display: none;
+                padding: 0 4px 20px 50px;
+            }
+
+            .wyg-mobile-image img {
+                width: 100%;
+                border-radius: 12px;
+                object-fit: cover;
+                max-height: 220px;
+            }
+
+            /* ── Right Image Panel ── */
+            .wyg-image-panel {
+                width: 45%;
+                flex-shrink: 0;
+                position: sticky;
+                top: 100px;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 12px 40px rgba(44, 122, 148, 0.15);
+                background: #e8f6fb;
+            }
+
+            .wyg-main-image {
+                width: 100%;
+                height: 420px;
+                object-fit: cover;
+                display: block;
+                transition: opacity 0.4s ease;
+            }
+
+            .wyg-img-default {
+                object-fit: contain;
+                background: #e8f6fb;
+                padding: 20px;
+            }
+
+            .wyg-main-image.wyg-fading {
+                opacity: 0;
+            }
+
+            /* ── Responsive ── */
+            @media (max-width: 900px) {
+                .wyg-layout {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .wyg-image-panel {
+                    display: none;
+                }
+
+                .wyg-mobile-image {
+                    display: block;
+                }
+
+                .wyg-container {
+                    padding: 20px 20px 40px;
+                }
+            }
+        </style>
+
+        <script>
+            const wygImages = {
+                1: 'assets/wyg_1.jpg',
+                2: 'assets/wyg_2.jpg',
+                3: 'assets/wyg_3.jpg',
+                4: 'assets/wyg_4.jpg',
+                5: 'assets/wyg_5.jpeg',
+            };
+            const wygDefaultImage = 'assets/support.png';
+            let wygCurrentOpen = null;
+
+            function toggleWyg(btn) {
+                const item = btn.closest('.wyg-item');
+                const isOpen = item.classList.contains('open');
+                const mainImg = document.getElementById('wygMainImage');
+
+                // Close all
+                document.querySelectorAll('.wyg-item.open').forEach(el => {
+                    el.classList.remove('open');
+                    el.querySelector('.wyg-header').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    // Open clicked item
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                    const idx = parseInt(item.dataset.wyg);
+                    wygCurrentOpen = idx;
+
+                    // Swap desktop image with fade
+                    if (mainImg) {
+                        mainImg.classList.add('wyg-fading');
+                        setTimeout(() => {
+                            mainImg.src = wygImages[idx];
+                            mainImg.classList.remove('wyg-img-default');
+                            mainImg.classList.remove('wyg-fading');
+                        }, 200);
+                    }
+                } else {
+                    // All closed → restore default
+                    wygCurrentOpen = null;
+                    if (mainImg) {
+                        mainImg.classList.add('wyg-fading');
+                        setTimeout(() => {
+                            mainImg.src = wygDefaultImage;
+                            mainImg.classList.add('wyg-img-default');
+                            mainImg.classList.remove('wyg-fading');
+                        }, 200);
+                    }
+                }
+            }
+        </script>
+
     </section>
 
     <section class="py-16 px-6 bg-gray-50">
