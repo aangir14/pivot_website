@@ -5,12 +5,13 @@
  * Goals:
  *  1. Darken body/paragraph text to near-black for maximum contrast
  *  2. Slightly increase base font size of non-heading content
- *  3. Leave headings (h1-h6) untouched in size
+ *  3. Leave headings (h1-h6) untouched in SIZE but darken gray ones to near-black
  */
 
 /* ─── Base body text ───────────────────────────────────────────────────── */
 body {
-    color: #111827;           /* very dark gray — near black */
+    color: #111827;
+    /* very dark gray — near black */
     font-size: 18px;
     line-height: 1.75;
 }
@@ -18,78 +19,144 @@ body {
 /* ─── Paragraphs ────────────────────────────────────────────────────────── */
 p {
     color: #111827;
-    font-size: 1.05rem;       /* ~18.9px — a touch larger than base */
+    font-size: 1.05rem;
     line-height: 1.8;
 }
 
 /* ─── List items ────────────────────────────────────────────────────────── */
-li, ul li, ol li {
+li,
+ul li,
+ol li {
     color: #111827;
     font-size: 1.05rem;
     line-height: 1.8;
 }
 
-/* ─── Spans used as body copy (NOT inside headings) ─────────────────────── */
-p > span,
-li > span {
+/* ─── Spans used as body copy ────────────────────────────────────────────── */
+p>span,
+li>span {
     color: inherit;
 }
 
-/* ─── Override Tailwind gray text utilities on body content ──────────────── */
-/* These are the most common "light" color classes used across the site */
-.text-gray-400 { color: #4b5563 !important; }   /* was very light */
-.text-gray-500 { color: #374151 !important; }   /* was medium light */
-.text-gray-600 { color: #1f2937 !important; }   /* was medium */
-.text-gray-700 { color: #111827 !important; }   /* was already dark, keep consistent */
+/* ─── Override Tailwind gray text utilities — body content AND headings ──── */
+.text-gray-400 {
+    color: #374151 !important;
+}
 
-/* ─── Exceptions: don't darken text that is intentionally muted/decorative ── */
-/* Nav links, badges, captions, labels — keep their explicit colors */
+.text-gray-500 {
+    color: #1f2937 !important;
+}
+
+.text-gray-600 {
+    color: #111827 !important;
+}
+
+.text-gray-700 {
+    color: #0d1117 !important;
+}
+
+.text-gray-800 {
+    color: #0d1117 !important;
+}
+
+.text-gray-900 {
+    color: #0d1117 !important;
+}
+
+/* ─── Headings: force near-black unless a brand color class is present ────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #0d1117;
+    /* near-black — darker than body for hierarchy */
+    line-height: 1.25;
+    /* font-size intentionally NOT set — page-specific sizes are preserved */
+}
+
+/* ─── Preserve intentional brand colors on headings & all elements ───────── */
+/* Tailwind color utility classes that should NOT be overridden */
+[class*="text-teal"] {
+    color: unset;
+}
+
+[class*="text-blue"] {
+    color: unset;
+}
+
+[class*="text-green"] {
+    color: unset;
+}
+
+[class*="text-red"] {
+    color: unset;
+}
+
+[class*="text-purple"] {
+    color: unset;
+}
+
+[class*="text-indigo"] {
+    color: unset;
+}
+
+[class*="text-yellow"] {
+    color: unset;
+}
+
+[class*="text-orange"] {
+    color: unset;
+}
+
+[class*="text-pink"] {
+    color: unset;
+}
+
+[class*="text-sky"] {
+    color: unset;
+}
+
+/* ─── White text on dark backgrounds must stay white ────────────────────── */
+.text-white {
+    color: #ffffff !important;
+}
+
+/* ─── Nav links: keep their own colors ──────────────────────────────────── */
 nav .text-gray-400,
 nav .text-gray-500,
 nav .text-gray-600,
 nav .text-gray-700,
-.text-white,
-footer .text-gray-400,
-footer .text-gray-500,
-footer .text-gray-600,
-.badge,
-[class*="text-teal"],
-[class*="text-blue"],
-[class*="text-green"],
-[class*="text-red"],
-[class*="text-purple"],
-[class*="text-indigo"],
-[class*="text-yellow"] {
-    /* These retain their own colors — do not override */
+nav .text-gray-800 {
     color: unset;
 }
 
-/* Re-apply the explicit colored classes so they aren't broken by the unset above */
-.text-white     { color: #ffffff !important; }
-[class*="text-teal-"]   { /* handled by Tailwind */ }
-[class*="text-blue-"]   { /* handled by Tailwind */ }
-
-/* ─── Headings: size untouched, just ensure they stay dark ──────────────── */
-h1, h2, h3, h4, h5, h6 {
-    /* do NOT set font-size here — that would override page-specific heading sizes */
-    /* only ensure dark color if no other class is set */
-    color: inherit;
-    line-height: 1.25;
+/* ─── Footer: keep its own colors ───────────────────────────────────────── */
+footer .text-gray-400,
+footer .text-gray-500,
+footer .text-gray-600,
+footer .text-gray-700,
+footer .text-gray-800 {
+    color: unset;
 }
 
-/* ─── Italic / subtext slightly lighter but still readable ──────────────── */
-.italic, em {
-    color: #374151;
+/* ─── Italic / subtext still readable ───────────────────────────────────── */
+.italic,
+em {
+    color: #1f2937;
 }
 
-/* ─── Small text / captions : slightly smaller but still readable ────────── */
-small, .text-sm {
+/* ─── Small text / captions ─────────────────────────────────────────────── */
+small,
+.text-sm {
     font-size: 0.9rem;
-    color: #374151;
+    color: #1f2937;
 }
 
 /* ─── Blockquotes ───────────────────────────────────────────────────────── */
-blockquote, blockquote p {
-    color: #1f2937;
+blockquote,
+blockquote p {
+    color: #111827;
     font-size: 1.05rem;
 }
