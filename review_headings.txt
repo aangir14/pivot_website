@@ -1,0 +1,1489 @@
+about-us.html
+  H: <h4 class="text-lg font-normal text-gray-700"> 
+  Content starts with [sm]: Data-Driven 
+                             
+                             
+                           ...
+
+about-us.html
+  H: <h4 class="text-lg font-normal text-gray-700"> 
+  Content starts with [sm]: Outcome-Oriented 
+                             
+                             
+                      ...
+
+about-us.html
+  H: <h4 class="text-lg font-normal text-gray-700"> 
+  Content starts with [sm]: Personalized 
+                             
+                             
+                          ...
+
+about-us.html
+  H: <h4 class="text-lg font-normal text-gray-700"> 
+  Content starts with [sm]: Human Connection 
+                             
+                             
+                      ...
+
+about-us.html
+  H: <h4 class="font-bold text-gray-900 text-sm sm:text-base"> 
+  Content starts with [xs]: M.V. Reshma Rajesh 
+                             Yoga Specialist...
+
+about-us.html
+  H: <h4 class="font-bold text-gray-900 text-sm sm:text-base"> 
+  Content starts with [xs]: Dr. Charu Arora 
+                             Nutrition Coach...
+
+about-us.html
+  H: <h3
+                                                    class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 text-center"> 
+  Content starts with [base]: M.V. Reshma Rajesh 
+                                                 
+                              ...
+
+about-us.html
+  H: <h3
+                                                    class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 text-center"> 
+  Content starts with [sm]: Dr. Charu Arora 
+                                                 
+                                 ...
+
+contact.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Visit Us -->
+                             123 Wellness Way, Mindful Valley, CA 94123 -->
+           ...
+
+contact.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Email Us 
+                                     ankur@thepivothealth.com 
+                           ...
+
+contact.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Call Us -->
+                             hello@pivothealth.com -->
+                             -->
+...
+
+contact.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Call Us -->
+                             (555) 123-4567 -->
+                             -->
+       ...
+
+corporate-heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800 text-center mb-3"> 
+  Content starts with [base/lg (global)]: Senior Leadership & CXOs 
+                 
+                    Executives facing high stress, trave...
+
+corporate-heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800 text-center mb-3"> 
+  Content starts with [base/lg (global)]: HR & People Operations 
+                 
+                    People teams responsible for sponsorin...
+
+corporate-heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800 text-center mb-3"> 
+  Content starts with [base/lg (global)]: Corporate Wellness Committees 
+                 
+                    Wellness leaders seeking a scie...
+
+corporate-heartspan.html
+  H: <h3 class="text-lg font-bold text-gray-800 mb-1"> 
+  Content starts with [base/lg (global)]: Advanced Risk Detection 
+                                 Comprehensive screening identifies hidden ...
+
+corporate-heartspan.html
+  H: <h3 class="text-lg font-bold text-gray-800 mb-1"> 
+  Content starts with [base/lg (global)]: 1:1 Expert Coaching 
+                                 Personalised guidance tailored to each leader'...
+
+corporate-heartspan.html
+  H: <h3 class="text-lg font-bold text-gray-800 mb-1"> 
+  Content starts with [base/lg (global)]: Complete Privacy 
+                                 Individual results remain confidential unless exp...
+
+corporate-heartspan.html
+  H: <h1 class="hp-title relative inline-block"> 
+  Content starts with [base/lg (global)]: 5 Phases to Lasting Heart Health 
+             
+
+             
+                Our comprehensive app...
+
+corporate-heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: Phase 1 — Discovery 
+                             Understanding your organisation's goals... 
+      ...
+
+corporate-heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: Phase 2 — Health Workshop 
+                             Science-backed session for leadership... 
+  ...
+
+corporate-heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: Phase 3 — Comprehensive Health Screening 
+                             Complete health profile basel...
+
+corporate-heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: Phase 4 — Personal Health Report & 1:1 Review 
+                             Personalized insights an...
+
+corporate-heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: Phase 5 — Program Enrollment & Ongoing Care 
+                             Continued support and moni...
+
+corporate-heartspan.html
+  H: <h1
+                                class="mt-8 md:mt-0 text-xl sm:text-2xl lg:text-3xl font-bold text-teal-700 leading-tight"> 
+  Content starts with [base/lg (global)]: Protect Your Leadership Team's Heart Health — Starting Today
+                             
+         ...
+
+heart-health-assessment.html
+  H: <h2 class="text-xl font-semibold text-sky-800"> 
+  Content starts with [base/lg (global)]: Personal Information 
+                     
+
+                     
+                         
+       ...
+
+heart-health-assessment.html
+  H: <h2 class="text-xl font-semibold text-sky-800"> 
+  Content starts with [base/lg (global)]: Cardiovascular Biomarkers 
+                     
+
+                     
+                         
+  ...
+
+heart-health-assessment.html
+  H: <h2 class="text-xl font-semibold text-teal-800"> 
+  Content starts with [base/lg (global)]: Lifestyle Factors 
+                     
+
+                     
+                         
+          ...
+
+heart-health-assessment.html
+  H: <h2 class="text-xl font-semibold text-purple-800"> 
+  Content starts with [base/lg (global)]: Additional Information 
+                     
+
+                     
+                         
+     ...
+
+heart-health-assessment.html
+  H: <h2 class="text-xl font-semibold text-green-800"> 
+  Content starts with [base/lg (global)]: Your Heart Risk Results...
+
+heart-health-assessment.html
+  H: <h3 class="text-lg font-bold"> 
+  Content starts with [xl]: Total Risk Score 
+                             -- 
+                             -- 
+                ...
+
+heart-health-assessment.html
+  H: <h4 class="font-medium mb-3 text-sky-700 border-b pb-2"> 
+  Content starts with [base/lg (global)]: Risk Factor Breakdown  -->
+                         -->
+                         
+                  ...
+
+heart-health-assessment.html
+  H: <h3 class="text-lg font-medium text-sky-700 mb-2"> 
+  Content starts with [base/lg (global)]: What Your Results Mean 
+                             This risk assessment provides an indication of ...
+
+heart-health-assessment.html
+  H: <h3 class="text-lg font-medium text-teal-700 mb-2"> 
+  Content starts with [base/lg (global)]: Next Steps 
+                             At PIVOT health we have a evidence based program for improv...
+
+heart-health-assessment.html
+  H: <h3 class="font-medium text-sky-700"> 
+  Content starts with [sm]: Regular Exercise 
+                     Aim for at least 150 minutes of moderate activity weekly....
+
+heart-health-assessment.html
+  H: <h3 class="font-medium text-sky-700"> 
+  Content starts with [sm]: Balanced Diet 
+                     Focus on fruits, vegetables, whole grains, and lean proteins....
+
+heart-health-assessment.html
+  H: <h3 class="font-medium text-sky-700"> 
+  Content starts with [sm]: Stress Management 
+                     Practice meditation, deep breathing, or yoga regularly. 
+   ...
+
+heart-health-assessment.html
+  H: <h3 class="text-xl font-bold"> 
+  Content starts with [sm]: Heart Risk Calculator 
+                     Take charge of your heart health today 
+                ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: 2x More Cardiac Events Without
+                                    Lifestyle
+                       ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: 90% of Heart Attacks Are
+                                    Preventable 
+                          ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: Exercise for Heart Risk Reduction
+                                 
+                                ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: VO₂ Max is most accurate predictor
+                                    of mortality and lifespan 
+  ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: 40% Risk Reduction with Physical
+                                    Activity
+                      ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: 30% Fewer Cardiac Events with Diet
+                                    intervention 
+               ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: Diet intervention and reduction in
+                                    Blood Pressure
+              ...
+
+heartspan-evidence.html
+  H: <h3 class="text-xl font-semibold mb-3 text-gray-800"> 
+  Content starts with [sm]: 52% Lower CVD Risk on
+                                    Plant-Predominant Diets 
+                 ...
+
+heartspan-evidence.html
+  H: <h3 class="text-lg font-semibold text-gray-800"> 
+  Content starts with [base/lg (global)]: VO₂ max–based aerobic training 
+                             
+                             
+        ...
+
+heartspan-evidence.html
+  H: <h3 class="text-lg font-semibold text-gray-800"> 
+  Content starts with [base/lg (global)]: Therapeutic yoga & breathwork 
+                             
+                             
+         ...
+
+heartspan-evidence.html
+  H: <h3 class="text-lg font-semibold text-gray-800"> 
+  Content starts with [base/lg (global)]: Precision nutrition strategies 
+                             
+                             
+        ...
+
+heartspan-evidence.html
+  H: <h2 class="text-teal-800 text-lg md:text-xl font-medium mb-3"> 
+  Content starts with [base/lg (global)]: Our Vision -->
+
+         
+          -->
+
+         
+         -->
+         -->
+         
+         -->
+...
+
+heartspan.html
+  H: <h3 class="text-xl font-semibold text-gray-800"> 
+  Content starts with [base/lg (global)]: Nutrition 
+                         Heart-optimized eating plans based on your unique metabolism and...
+
+heartspan.html
+  H: <h3 class="text-xl font-semibold text-gray-800"> 
+  Content starts with [base/lg (global)]: Movement 
+                         Personalized activity protocols that strengthen your cardiovascul...
+
+heartspan.html
+  H: <h3 class="text-xl font-semibold text-gray-800"> 
+  Content starts with [base/lg (global)]: Stress Management 
+                         Evidence-based techniques to reduce inflammation and sup...
+
+heartspan.html
+  H: <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight"> 
+  Content starts with [base/lg (global)]: Book a Free Consultation 
+                                             
+                            ...
+
+heartspan.html
+  H: <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight"> 
+  Content starts with [base/lg (global)]: Share Your Health Details 
+                                             
+                           ...
+
+heartspan.html
+  H: <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight"> 
+  Content starts with [base/lg (global)]: Enroll in the Program 
+                                             
+                               ...
+
+heartspan.html
+  H: <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight"> 
+  Content starts with [base/lg (global)]: Get a Personalized Action Plan 
+                                             
+                      ...
+
+heartspan.html
+  H: <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight"> 
+  Content starts with [base/lg (global)]: Meet Your Care Team 
+                                             
+                                 ...
+
+heartspan.html
+  H: <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight"> 
+  Content starts with [base/lg (global)]: Track &amp; Stay Connected 
+                                             
+                          ...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Blood Markers...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Exercise Habit...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Physical Health...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Sleeping Habits...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Stress Management...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Food Diet...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Body Composition...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Genetic Predisposition...
+
+heartspan.html
+  H: <h3 class="text-xl font-bold text-gray-800"> 
+  Content starts with [base/lg (global)]: Age Group...
+
+heartspan.html
+  H: <h1 class="hp-title"> 
+  Content starts with [base/lg (global)]: How this Program works? 
+
+             
+                Through metabolic conditioning, therapeutic ...
+
+heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: DISCOVER 
+                             Get the Expert-Designed, Precision Heart Health Plan You've
+ ...
+
+heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: RESET 
+                             Lay the Foundation for Heart Health 
+                         
+ ...
+
+heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: WELCOME KIT 
+                             Everything you need to start strong—delivered to your door...
+
+heartspan.html
+  H: <h3 class="hp-collapsible-title"> 
+  Content starts with [base/lg (global)]: CONTINUOUS SUPPORT 
+                             Unwavering Backing: Your Heart Health Team & Tribe ...
+
+heartspan.html
+  H: <h1
+                                class="mt-8 md:mt-0 text-xl sm:text-2xl lg:text-3xl font-bold text-teal-700 leading-tight"> 
+  Content starts with [base/lg (global)]: Your Journey To A Healthier Heart Begins Today
+                             
+
+                      ...
+
+heartspan.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Visit Us -->
+                         123 Wellness Way, Mindful Valley, CA 94123 -->
+               ...
+
+heartspan.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Email Us 
+                                 ankur@thepivothealth.com 
+                             
+ ...
+
+heartspan.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Call Us -->
+                         hello@pivothealth.com -->
+                         -->
+        ...
+
+heartspan.html
+  H: <h3 class="text-lg font-medium text-white"> 
+  Content starts with [base/lg (global)]: Call Us -->
+                         (555) 123-4567 -->
+                         -->
+               ...
+
+index.html
+  H: <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center"> 
+  Content starts with [base/lg (global)]: Biology
+                     
+                     
+                        Physical vitality: Your ...
+
+index.html
+  H: <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center"> 
+  Content starts with [base/lg (global)]: Psychology
+                     
+                     
+                        Mental & emotional he...
+
+index.html
+  H: <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center"> 
+  Content starts with [base/lg (global)]: Social
+                     
+                     
+                        Environment, work, relati...
+
+index.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [sm]: Discover
+                                 
+                                 
+                       ...
+
+index.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [sm]: Reset
+                                 
+                                 
+                          ...
+
+index.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [sm]: Perform
+                                 
+                                 
+                        ...
+
+index.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [sm]: Community
+                                 
+                                 
+                      ...
+
+index.html
+  H: <h4 class="font-bold text-pivot-dark"> 
+  Content starts with [sm]: Sarah Johnson -->
+             HeartSpan Program Member, 42 -->
+             -->
+             -->
+  ...
+
+index.html
+  H: <h4 class="font-bold text-pivot-dark"> 
+  Content starts with [sm]: Nipun Nangia -->
+                         Sr Executive SAP -->
+                         -->
+        ...
+
+index.html
+  H: <h4 class="font-bold text-pivot-dark"> 
+  Content starts with [sm]: Puneet Thakur 
+                                         Head of Invest In and Innovation Collaborati...
+
+index.html
+  H: <h4 class="font-bold text-pivot-dark"> 
+  Content starts with [sm]: Siddharth Singh 
+                                         Co-Lead Edelman Business Marketing/B2B 
+  ...
+
+index.html
+  H: <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: The Buzz
+                        About Habits: Making and Breaking 
+                 
+             
+...
+
+index.html
+  H: <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: Navigating
+                        Health amidst the Modern-Day Chaos: Striking the Balance 
+       ...
+
+index.html
+  H: <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: Zone 2
+                        Cardio and Cardiac Health 
+                 
+             
+         
+...
+
+insights.html
+  H: <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: The Buzz
+                                About Habits: Making and Breaking 
+                        ...
+
+insights.html
+  H: <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: Navigating
+                                Health amidst the Modern-Day Chaos: Striking the Balance ...
+
+insights.html
+  H: <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: Zone 2
+                                Cardio and Cardiac Health 
+                         
+        ...
+
+insights.html
+  H: <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"> 
+  Content starts with [base/lg (global)]: The
+                                Spheres of Control: Taking Charge of Your Health with Balance 
+ ...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [base/lg (global)]: Contents 
+             
+                 Introduction 
+                 1. Information We Collect 
+ ...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: Introduction 
+             Last updated: April 2025 
+             Thank you for choosing to be part ...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 1. What Information Do We Collect? 
+             
+                  Personal identification data  (e...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 2. How Do We Use Your Information? 
+             
+                 To create and manage user account...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 3. Legal Basis for Processing 
+             
+                 Consent 
+                 Legitimate i...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 4. Consent and Withdrawal 
+             By using our Services, you provide explicit consent for the ...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 5. Sharing of Information 
+             We may share your data with: 
+             
+                ...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 6. International Data Transfers 
+             Your data may be transferred to and processed in count...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 7. Data Storage and Security 
+             Your data is stored on Amazon Web Services (AWS) and Goog...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 8. User Rights 
+             Users have the right to: 
+             
+                 Access, rectif...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 9. Minors' Data 
+             Our Services are intended for individuals aged 18 or older. If we beco...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 10. Cookies and Tracking Technologies 
+             We use cookies, pixels, and analytics tools (e.g...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 11. Device and Metadata Usage 
+             We collect metadata such as device ID, browser version, ...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 12. Advertising and Remarketing 
+             We may use third-party platforms to deliver targeted a...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 13. Aggregated and Anonymized Data 
+             We may use anonymized and aggregated data for resea...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 14. Notifications and Compliance 
+             We may send periodic notifications about updates to t...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 15. Updates to this Policy 
+             We may update this privacy policy periodically. The updated...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 16. Governing Law and Jurisdiction 
+             This policy is governed by the laws of India. Any d...
+
+privacy-policy.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 17. Contact Information 
+             If you would like to: access, correct, amend or delete any per...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [base/lg (global)]: Contents 
+             
+                 1. Acceptance 
+                 2. Eligibility 
+           ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 1. Acceptance 
+             This document is an electronic record that is generated by a computer sy...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 2. Eligibility 
+             
+                 You must be 18 years or older to use this Website. By...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 3. Our Services 
+             Through the Website, we provide you following services ("Services"), e...
+
+t&c.html
+  H: <h3 class="font-semibold mb-2 text-gray-700"> 
+  Content starts with [base/lg (global)]: a) Health and Wellness Programs 
+             
+                 We provide various kinds of programs...
+
+t&c.html
+  H: <h3 class="font-semibold mb-2 text-gray-700"> 
+  Content starts with [base/lg (global)]: b) Consultancy 
+             
+                 We provide consultancy services. The Consultancy serv...
+
+t&c.html
+  H: <h3 class="font-semibold mb-2 text-gray-700"> 
+  Content starts with [base/lg (global)]: c) Blogs, Videos and Articles 
+             
+                 We publish blogs, videos and articles ...
+
+t&c.html
+  H: <h3 class="font-semibold mt-4 mb-2 text-gray-700"> 
+  Content starts with [base/lg (global)]: Creating and Maintaining Account 
+             
+                 Users may need to register on the W...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 4. Your Obligations and Use of Website and Services 
+             When you use, access or avail any ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 5. Accuracy, Completeness and Timeliness of Information
+             
+             We are not respon...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 6. Modifications to the Service and Prices 
+             The prices for various Services provided on...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 7. Your Feedback 
+             
+                 Company may ask for your feedbacks, reviews, effect...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 8. Accuracy of Billing and Account Information 
+             We reserve the right to refuse any appo...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 9. Third Party Links 
+             
+                 Links on the Website to third-party websites ar...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 10. User Comments and Other Submissions 
+             
+                 If, at our request, you send...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 11. Intellectual Property Rights 
+             You acknowledge and agree that all the materials, tex...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 12. Personal Information 
+             Your submission of personal information through the Website i...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 13. Errors, Inaccuracies and Omissions 
+             There may be information on our Website or in t...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 14. Prohibited Uses 
+             In addition to other prohibitions as set forth in the Terms and Co...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 15. Disclaimer of Warranties; Limitation of Liability 
+             We do not guarantee, represent o...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 16. Medical Disclaimers 
+             
+                 Virtus Growth Labs Private Limited is not a ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 17. Third-Party Devices, Products and Apps 
+             
+                 As part of the Service / ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 18. Assumption of Risk 
+             You understand and acknowledge that: 
+             
+           ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 19. Indemnification 
+             
+                 You agree to indemnify, defend and hold harmless...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 20. Severability 
+             In the event that any provision of the Terms and Conditions is determ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 21. Termination 
+             
+                 Company may terminate, suspend, or modify your regis...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 22. Program and Appointment Terms 
+             The Terms and Conditions specifically applicable in ...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 23. Refund & Payment Terms 
+             
+                 We shall charge you, fees as provided wit...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 24. Electronic Communications 
+             When you visit the Website, or send any text messages vi...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 25. Other Agreements; Software, Services or Access 
+             Company may provide the Services or...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 26. Entire Agreement 
+             The failure of ours to exercise or enforce any right or provision...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 27. Governing Law and Jurisdiction 
+             The Terms and Conditions and any separate agreement...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 28. Changes to Terms and Conditions 
+             You can review the most current version of the Ter...
+
+t&c.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 29. Contact Information 
+             If you have any complaints or queries with respect to the Serv...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3"> 
+  Content starts with [base/lg (global)]: Contents 
+             
+                 1. Definitions 
+                 2. Purpose 
+              ...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 1. Definitions 
+             In the following terms and conditions: 
+             
+                 ...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 2. Purpose 
+             
+                 These terms and conditions ("Terms") shall govern the tra...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 3. Total Fees and Charges 
+             
+                 The Company shall charge the Client, Progr...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 4. Obligations and Covenants of the Client 
+             
+                 The Client undertakes tha...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 5. Disclaimer 
+             Medical Disclaimer 
+             
+                 Virtus Growth Labs Pv...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 6. Confidentiality 
+             The Company and its Associates shall make reasonable efforts to ens...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 7. Website Terms and Conditions 
+             The Privacy Policy of the Website is available at  Pri...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 8. Cancellation or Rescheduling of Appointments/Sessions 
+             
+                 The Client ...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 9. Availability of Services 
+             
+                 Please note that responses from your ass...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 10. Assumption of Risk 
+             You understand and acknowledge that: 
+             
+           ...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 11. Limitation of Liability 
+             In consideration of participation in the Program, you here...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 12. Indemnification 
+             12.1 You agree to indemnify, defend and hold harmless the Company ...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 13. Third-Party Tools & Apps 
+             
+                 As part of the HeartSpan program and ot...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 14. Use of Devices and Products 
+             
+                 Health-related products provided or ...
+
+terms&conditions.html
+  H: <h2 class="text-xl font-bold mb-3 text-blue-700"> 
+  Content starts with [base/lg (global)]: 15. Miscellaneous 
+             
+                 The Company will not incur any liability to the ot...
+
+thank-you.html
+  H: <h1 class="hidden"> 
+  Content starts with [base/lg (global)]: Thank You! 
+             Your submission has been received. Thank You for your interest our team wil...
+
+blogs\blog.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+             
+                 
+                      Introduction  
+            ...
+
+blogs\blog.html
+  H: <h3 class="text-lg font-semibold mb-3"> 
+  Content starts with [base/lg (global)]: Text Size 
+                 
+                     A- 
+                     A 
+                     A...
+
+blogs\blog.html
+  H: <h3 id="sedentary-lifestyle" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Sedentary Lifestyles
+                         
+                         One of the most significa...
+
+blogs\blog.html
+  H: <h3 id="chronic-stress" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Chronic Stress 
+                         Stress has become an omnipresent part of modern life. Fr...
+
+blogs\blog.html
+  H: <h3 id="sleep-deprivation" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Sleep Deprivation 
+                         The demands of work and personal life often leave lit...
+
+blogs\blog.html
+  H: <h3 id="poor-diet" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 4. Poor Diet 
+                         Busy lives often translate to poor eating habits. Fast food, ...
+
+blogs\blog.html
+  H: <h3 id="prioritize-movement" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Prioritize
+                            Movement—Incorporate Physical Activity Throughout Your Day...
+
+blogs\blog.html
+  H: <h3 id="manage-stress" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Manage Stress with Mindfulness
+                            and Restorative Practices 
+           ...
+
+blogs\blog.html
+  H: <h3 id="sleep-health" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Sleep—The Ultimate Health
+                            Booster 
+                         In our mo...
+
+blogs\blog.html
+  H: <h3 id="nutrition" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 4. Nutrition—Fuelling Your Body for
+                            the Demands of Modern Life 
+        ...
+
+blogs\blog.html
+  H: <h3 id="social-connection" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 5. The Importance of Social
+                            Connection 
+                         In our ...
+
+blogs\blog.html
+  H: <h4 class="text-lg font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Share this article...
+
+blogs\blog.html
+  H: <h4 class="text-lg font-semibold mb-6"> 
+  Content starts with [base/lg (global)]: You might also like...
+
+blogs\blog.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: The Power of
+                                            Mindful Eating in a Fast-Paced World 
+     ...
+
+blogs\blog.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: Digital Detox:
+                                            Finding Balance in a Connected World 
+   ...
+
+blogs\blog.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+                     
+                         
+                              Int...
+
+blogs\navigating-health.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+             
+                 
+                      Introduction  
+            ...
+
+blogs\navigating-health.html
+  H: <h3 class="text-lg font-semibold mb-3"> 
+  Content starts with [base/lg (global)]: Text Size 
+                 
+                     A- 
+                     A 
+                     A...
+
+blogs\navigating-health.html
+  H: <h3 id="sedentary-lifestyle" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Sedentary Lifestyles
+                         
+                         One of the most significa...
+
+blogs\navigating-health.html
+  H: <h3 id="chronic-stress" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Chronic Stress 
+                         Stress has become an omnipresent part of modern life. Fr...
+
+blogs\navigating-health.html
+  H: <h3 id="sleep-deprivation" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Sleep Deprivation 
+                         The demands of work and personal life often leave lit...
+
+blogs\navigating-health.html
+  H: <h3 id="poor-diet" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 4. Poor Diet 
+                         Busy lives often translate to poor eating habits. Fast food, ...
+
+blogs\navigating-health.html
+  H: <h3 id="prioritize-movement" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Prioritize
+                            Movement—Incorporate Physical Activity Throughout Your Day...
+
+blogs\navigating-health.html
+  H: <h3 id="manage-stress" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Manage Stress with Mindfulness
+                            and Restorative Practices 
+           ...
+
+blogs\navigating-health.html
+  H: <h3 id="sleep-health" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Sleep—The Ultimate Health
+                            Booster 
+                         In our mo...
+
+blogs\navigating-health.html
+  H: <h3 id="nutrition" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 4. Nutrition—Fuelling Your Body for
+                            the Demands of Modern Life 
+        ...
+
+blogs\navigating-health.html
+  H: <h3 id="social-connection" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 5. The Importance of Social
+                            Connection 
+                         In our ...
+
+blogs\navigating-health.html
+  H: <h4 class="text-lg font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Share this article 
+                             
+
+                                 Click any button...
+
+blogs\navigating-health.html
+  H: <h2 class="text-xl font-semibold text-gray-700 mb-4"> 
+  Content starts with [base/lg (global)]: Outlined Style -->
+                                      
+                                 
+
+       ...
+
+blogs\navigating-health.html
+  H: <h4 class="text-lg font-semibold mb-6"> 
+  Content starts with [base/lg (global)]: You might also like...
+
+blogs\navigating-health.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: The Buzz About
+                                            Habits: Making and Breaking 
+            ...
+
+blogs\navigating-health.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: Zone 2 Cardio
+                                            and Cardiac Health 
+                      ...
+
+blogs\navigating-health.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+                     
+                         
+                              Int...
+
+blogs\spheres-of-health.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+             
+                 
+                      Introduction  
+            ...
+
+blogs\spheres-of-health.html
+  H: <h3 class="text-lg font-semibold mb-3"> 
+  Content starts with [base/lg (global)]: Text Size 
+                 
+                     A- 
+                     A 
+                     A...
+
+blogs\spheres-of-health.html
+  H: <h3 id="daily-habits" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Your Daily Habits 
+                         The first and most obvious area where you have contro...
+
+blogs\spheres-of-health.html
+  H: <h3 id="relationships" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Relationships and Social
+                            Support 
+                         One of the...
+
+blogs\spheres-of-health.html
+  H: <h3 id="environmental" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Environmental Factors 
+                         While we can't always control our environment—suc...
+
+blogs\spheres-of-health.html
+  H: <h3 id="healthcare" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Healthcare Providers and Access
+                            to Care 
+                         Ano...
+
+blogs\spheres-of-health.html
+  H: <h3 id="genetics" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Genetics and Family History 
+                         While we can't change our genes, understand...
+
+blogs\spheres-of-health.html
+  H: <h3 id="illnesses" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Unexpected Illnesses or Accidents
+                         
+                         Sometimes, n...
+
+blogs\spheres-of-health.html
+  H: <h3 id="societal" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Environmental and Societal Factors
+                         
+                         External fa...
+
+blogs\spheres-of-health.html
+  H: <h4 class="text-lg font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Share this article 
+                             
+
+                                 Click any button...
+
+blogs\spheres-of-health.html
+  H: <h2 class="text-xl font-semibold text-gray-700 mb-4"> 
+  Content starts with [base/lg (global)]: Outlined Style -->
+                                      
+                                 
+
+       ...
+
+blogs\spheres-of-health.html
+  H: <h4 class="text-lg font-semibold mb-6"> 
+  Content starts with [base/lg (global)]: You might also like...
+
+blogs\spheres-of-health.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: The Buzz About
+                                            Habits: Making and Breaking 
+            ...
+
+blogs\spheres-of-health.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: Zone 2 Cardio
+                                            and Cardiac Health 
+                      ...
+
+blogs\spheres-of-health.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+                     
+                         
+                              Int...
+
+blogs\the-buzz-about-habits.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+             
+                 
+                      Introduction  
+            ...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 class="text-lg font-semibold mb-3"> 
+  Content starts with [base/lg (global)]: Text Size 
+                 
+                     A- 
+                     A 
+                     A...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 id="brain-regions" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Key Brain Regions 
+
+                         
+                              Basal Ganglia  - Also kn...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 id="neuroplasticity" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Neuroplasticity: The Hope for
+                            Change 
+
+                         Some neg...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 id="connect-why" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 1. Connect to Your "Why" 
+
+                         Through Tina's example, the first pillar of a so...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 id="habit-loop" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 2. Habits vs. The Habit Loop 
+
+                         The secret to whether you are successful or ...
+
+blogs\the-buzz-about-habits.html
+  H: <h4 class="font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Building a Habit: 
+                             
+                                 Repetition strengt...
+
+blogs\the-buzz-about-habits.html
+  H: <h4 class="font-semibold mt-6 mb-4"> 
+  Content starts with [base/lg (global)]: Breaking a Habit: 
+                             
+                                 Old habits don't c...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 id="habit-stacking" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 3. Habit Stacking 
+
+                         It is funny but mostly good habits breed good habits an...
+
+blogs\the-buzz-about-habits.html
+  H: <h3 id="keep-quiet" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: 4. Don't Talk About Your Habits When
+                            You Are in the Process of Forming T...
+
+blogs\the-buzz-about-habits.html
+  H: <h4 class="text-lg font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Share this article 
+                             
+
+                                 Click any button...
+
+blogs\the-buzz-about-habits.html
+  H: <h2 class="text-xl font-semibold text-gray-700 mb-4"> 
+  Content starts with [base/lg (global)]: Outlined Style -->
+                                      
+                                 
+
+       ...
+
+blogs\the-buzz-about-habits.html
+  H: <h4 class="text-lg font-semibold mb-6"> 
+  Content starts with [base/lg (global)]: You might also like...
+
+blogs\the-buzz-about-habits.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: Navigating
+                                            Health amidst the Modern-Day Chaos: Striking ...
+
+blogs\the-buzz-about-habits.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: Zone 2 Cardio
+                                            and Cardiac Health 
+                      ...
+
+blogs\the-buzz-about-habits.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+                     
+                         
+
+                              In...
+
+blogs\zone-cardio.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+             
+                 
+                      Introduction  
+            ...
+
+blogs\zone-cardio.html
+  H: <h3 class="text-base font-semibold mb-2 text-accent-700"> 
+  Content starts with [sm]: Zone 2 Quick Facts 
+                     
+                         
+                             • 
+...
+
+blogs\zone-cardio.html
+  H: <h3 class="text-lg font-semibold mb-3"> 
+  Content starts with [base/lg (global)]: Text Size 
+                 
+                     A- 
+                     A 
+                     A...
+
+blogs\zone-cardio.html
+  H: <h3 id="mitochondrial" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Improved Mitochondrial Function
+                         
+                         Zone 2 training b...
+
+blogs\zone-cardio.html
+  H: <h3 id="stroke-volume" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Increased Stroke Volume 
+                         Regular Zone 2 cardio increases the amount of bloo...
+
+blogs\zone-cardio.html
+  H: <h3 id="metabolism" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Enhanced Fat Metabolism 
+                         Zone 2 cardio trains your body to use fat for ener...
+
+blogs\zone-cardio.html
+  H: <h3 id="heart-rate" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Lower Resting Heart Rate 
+                         Consistent Zone 2 training strengthens your heart...
+
+blogs\zone-cardio.html
+  H: <h3 id="blood-vessels" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Improved Endothelial Function
+                         
+                         Zone 2 cardio enhan...
+
+blogs\zone-cardio.html
+  H: <h3 id="disease-risk" class="text-xl font-semibold mt-8 mb-3"> 
+  Content starts with [base/lg (global)]: Reduced Risk of Heart Disease 
+                         This type of training helps control blood pr...
+
+blogs\zone-cardio.html
+  H: <h4 class="text-lg font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Share this article 
+                         
+
+                             Click any button to shar...
+
+blogs\zone-cardio.html
+  H: <h2 class="text-xl font-semibold text-gray-700 mb-4"> 
+  Content starts with [base/lg (global)]: Outlined Style -->
+                                  
+                             
+
+               ...
+
+blogs\zone-cardio.html
+  H: <h4 class="text-lg font-semibold mb-6"> 
+  Content starts with [base/lg (global)]: You might also like...
+
+blogs\zone-cardio.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: The Buzz About
+                                            Habits: Making and Breaking 
+            ...
+
+blogs\zone-cardio.html
+  H: <h5 class="font-medium text-lg mb-2 group-hover:text-primary-600"> 
+  Content starts with [sm]: Navigating
+                                            Health amidst the Modern-Day Chaos: Striking ...
+
+blogs\zone-cardio.html
+  H: <h4 class="text-lg font-semibold mb-4"> 
+  Content starts with [base/lg (global)]: Share this article -->
+             -->
+             -->
+             -->
+              -->
+        ...
+
+blogs\zone-cardio.html
+  H: <h2 class="text-lg font-semibold mb-4"> 
+  Content starts with [sm]: Table of Contents 
+                     
+                         
+                              Int...
+
